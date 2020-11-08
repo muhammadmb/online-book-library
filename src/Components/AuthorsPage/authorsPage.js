@@ -3,7 +3,7 @@ import AuthorCard from '../AuthorCard/AuthorCard';
 
 const authorPage = () =>{
     return (
-        <div style = {{margin : "4%", display : "flex", flexWrap : "wrap"}}>
+        <div style = {{margin : ".6%", display : "flex", flexWrap : "wrap"}}>
             
             <AuthorCard />
             <AuthorCard />
