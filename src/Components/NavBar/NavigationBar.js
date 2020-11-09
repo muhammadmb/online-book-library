@@ -12,13 +12,13 @@ const NavigationBar = () => {
     return(
         <>
             <Navbar bg="dark" variant="dark">
-                <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+                <Navbar.Brand href="#home">BookReaders</Navbar.Brand>
                 <Nav className="mr-auto">
-                    <Link className = "NavLinks" href="#home">Home</Link>
-                    <Link className = "NavLinks" href="#features">Authors</Link>
-                    <Link className = "NavLinks" href="#features">Books</Link>
-                    <Link className = "NavLinks" href="#pricing">Connect</Link>
-                    <Link className = "NavLinks" href="#pricing">About</Link>
+                    <Link className = "NavLinks" to="/">Home</Link>
+                    <Link className = "NavLinks" to="/authors">Authors</Link>
+                    <Link className = "NavLinks" to="/books">Books</Link>
+                    <Link className = "NavLinks" to="/connect">Connect</Link>
+                    <Link className = "NavLinks" to="/about">About</Link>
                 </Nav>
                 <Form inline>
                 <FormControl type="text" placeholder="Search" className="mr-sm-2" />

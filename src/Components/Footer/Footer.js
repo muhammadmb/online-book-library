@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../Style.css'
 import {Icons, FooterDiv, HR} from './FooterStyle'
 
 const Footer = () => {
