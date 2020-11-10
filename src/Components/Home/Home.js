@@ -2,8 +2,9 @@ import React from 'react';
 import HomePic from "../../Images/HomePic.png";
 import Button from 'react-bootstrap/Button'
 import CatagoryCard from '../CatagoryCard/CatagoryCard';
-import {Image,WelcomeDiv,WelcomeInnerDiv,mainDiv, WelcomeText} from './HomeStyle.js';
+import {Image,WelcomeDiv,WelcomeInnerDiv, WelcomeText} from './HomeStyle.js';
 import MiniBookCard from '../MiniBookCard/MiniBookCard';
+
 const Home = () => {
 
     return(
