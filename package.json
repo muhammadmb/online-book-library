@@ -8,6 +8,8 @@
     "@testing-library/user-event": "^7.2.1",
     "ac-react-simple-image-slider": "^0.0.9",
     "bootstrap": "^4.5.3",
+    "emailjs-com": "^2.6.3",
+    "node-sass": "^4.14.1",
     "react": "^17.0.0",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.0",
@@ -15,7 +17,8 @@
     "react-pro-sidebar": "^0.4.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.4",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "swiper": "^6.3.5"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -47,15 +47,16 @@ export const Button = styled.input
 `
 export const Text = styled.p
 `
-display:block;
-margin:20px;
-font-size:22px;
-font-weight:600;
+    display:block;
+    margin:20px;
+    font-size:22px;
+    font-weight:600;
+    color : white;
 `
 export const Container = styled.div
 `
     margin-top:20%;
-    background-color:#F1F6F8;
+    background-color:#343A40;
     text-align:center;
     padding : 10px
 `

@@ -7,7 +7,6 @@ import {AuthorImage, AText, AuthorName, Descriprion, CatagoryPage} from './Autho
 const AuthorInformation = () =>{
     return (
         <>
-            {/* <RecomendedBar /> */}
             <div>
                 <AuthorImage src = "https://images.unsplash.com/photo-1603550575421-c63eb933c597?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"/>
                 <div style = {{display : "inline-block"}}>    

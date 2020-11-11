@@ -1,6 +1,6 @@
 import React from "react"
 import {Inputs, TextArea, Button, Text, Container} from './DiscussMailStyle.js';
-import emailjs from "emailjs-com"
+import emailjs from "emailjs-com";
 
 const Discuss = () =>{
 

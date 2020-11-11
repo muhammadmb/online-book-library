@@ -36,7 +36,7 @@ export const AuthorParagraph = styled.p
 `
     margin-left:12px;
     color:white;
-    width:80%;
+    width:60%;
     margin-top:3.5px;
     overflow: hidden;
     text-overflow: ellipsis;
