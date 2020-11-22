@@ -8,6 +8,8 @@ const Footer = () => {
     return(
         <>
             <BackgroundDiv style = {{backgroundImage : `url(${Background})`}} >
+                
+                
                 <Text>
                     We Provide special collections of books
                 </Text>
@@ -15,10 +17,12 @@ const Footer = () => {
                     BookReaders Library is an open, editable library catalog, building towards a web page for every book ever published. 
                 </Paragraph>
             </BackgroundDiv>
-            <div>
-                <BookCard/>
-                <BookCard/>
-                <BookCard/>
+            <div style = {{width : 1170, margin:"auto"}}>
+                <div>
+                    <BookCard/>
+                    <BookCard/>
+                    <BookCard/>
+                </div>
             </div>
         </>
     );

@@ -52,6 +52,8 @@ export const Text = styled.p
     font-size:22px;
     font-weight:600;
     color : white;
+    width : 1170px;
+    margin: auto;
 `
 export const Container = styled.div
 `

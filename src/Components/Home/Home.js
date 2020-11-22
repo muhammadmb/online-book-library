@@ -1,19 +1,15 @@
 import React from 'react';
 import HomePic from "../../Images/HomePic.png";
-import Button from 'react-bootstrap/Button'
-import CatagoryCard from '../CatagoryCard/CatagoryCard';
+import Button from 'react-bootstrap/Button';
+import Swipper from '../Swipper/Swipper.js';
 import {Image,WelcomeDiv,WelcomeInnerDiv, WelcomeText} from './HomeStyle.js';
-import MiniBookCard from '../MiniBookCard/MiniBookCard';
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/swiper.scss';
+import { Swiper } from 'swiper/react';
 
 const Home = () => {
 
     return(
-        <div>
+        <div style = {{width : 1170, margin:"auto"}}>
             <mainDiv>
                 <WelcomeDiv>
                     <WelcomeInnerDiv>
@@ -26,26 +22,7 @@ const Home = () => {
                 <text style = {{color:"#A2A5BF", marginLeft:"12%", fontSize: "20px", textDecoration:"underline"}}>Recommended For You</text> 
                 
                 <div style = {{marginTop : 20, width : "80%", marginLeft : "10%", marginBottom : "2%"}}>
-                    <Swiper
-                        spaceBetween={50}
-                        slidesPerView={6}
-                        onSlideChange={() => console.log('slide change')}
-                        onSwiper={(swiper) => console.log(swiper)}
-                        >
-                        <SwiperSlide><MiniBookCard/></SwiperSlide>
-                        <SwiperSlide><MiniBookCard/></SwiperSlide>
-                        <SwiperSlide><MiniBookCard/></SwiperSlide>
-                        <SwiperSlide><MiniBookCard/></SwiperSlide>
-                        <SwiperSlide><MiniBookCard/></SwiperSlide>
-                        <SwiperSlide><MiniBookCard/></SwiperSlide>
-                        <SwiperSlide><MiniBookCard/></SwiperSlide>
-                        <SwiperSlide><MiniBookCard/></SwiperSlide>
-                        <SwiperSlide><MiniBookCard/></SwiperSlide>
-                        <SwiperSlide><MiniBookCard/></SwiperSlide>
-                        <SwiperSlide><MiniBookCard/></SwiperSlide>
-                        <SwiperSlide><MiniBookCard/></SwiperSlide>
-                        <SwiperSlide><MiniBookCard/></SwiperSlide>
-                    </Swiper>
+                    <Swipper BookCard={true} />
                 </div>
                 <text style = {{color:"#A2A5BF", marginLeft:"12%", fontSize: "20px", textDecoration:"underline"}}>Catagories</text> 
 
@@ -56,19 +33,7 @@ const Home = () => {
                         onSlideChange={() => console.log('slide change')}
                         onSwiper={(swiper) => console.log(swiper)}
                         >
-                        <SwiperSlide><CatagoryCard/></SwiperSlide>
-                        <SwiperSlide><CatagoryCard/></SwiperSlide>
-                        <SwiperSlide><CatagoryCard/></SwiperSlide>
-                        <SwiperSlide><CatagoryCard/></SwiperSlide>
-                        <SwiperSlide><CatagoryCard/></SwiperSlide>
-                        <SwiperSlide><CatagoryCard/></SwiperSlide>
-                        <SwiperSlide><CatagoryCard/></SwiperSlide>
-                        <SwiperSlide><CatagoryCard/></SwiperSlide>
-                        <SwiperSlide><CatagoryCard/></SwiperSlide>
-                        <SwiperSlide><CatagoryCard/></SwiperSlide>
-                        <SwiperSlide><CatagoryCard/></SwiperSlide>
-                        <SwiperSlide><CatagoryCard/></SwiperSlide>
-                        <SwiperSlide><CatagoryCard/></SwiperSlide>
+                        <Swipper />
                     </Swiper>
                 </div>
             </mainDiv>

@@ -6,8 +6,8 @@ import {AuthorImage, AText, AuthorName, Descriprion, CatagoryPage} from './Autho
 const AuthorInformation = () =>{
     return (
         <>
-            <div>
-                <div style = {{ backgroundImage : `url(${Background})`, width : "85%", margin:"5%",borderBottomLeftRadius:"20%"}}>
+            <div style = {{width : 1170, margin:"auto"}}>
+                <div style = {{ backgroundImage : `url(${Background})`, width : "75%", margin:"5%",borderBottomLeftRadius:"20%"}}>
                     <AuthorImage src = "https://images.unsplash.com/photo-1603550575421-c63eb933c597?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"/>
                     <div style = {{display : "inline-block", margin : "3%",padding : "1%"}}>    
                         <AuthorName>Scot Allen</AuthorName>
