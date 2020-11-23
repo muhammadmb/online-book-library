@@ -20,9 +20,6 @@ const SendMail = (e) =>{
                 <Text>
                     We are here to recieve your recommendations
                 </Text>
-                <Text>
-                    Give us a few minutes and we’ll give you clarity and direction.
-                </Text>
                 <hr style = {{width : "10%", backgroundColor :"#D04000", height :"4px", border:'none', borderRadius:"10px"}} />
                 <form onSubmit = {SendMail}>
                     <div>
@@ -45,12 +42,12 @@ const SendMail = (e) =>{
                         />
                         <Inputs 
                             type="text" 
-                            placeholder = "Company Name" 
-                            name = "company" 
+                            placeholder = "Books interest" 
+                            name = "books interest" 
                         />
                     </div>
                     <TextArea 
-                        placeholder = "What service are you interested in?" 
+                        placeholder = "We are pleased to know your sugesstions." 
                         name = "message" 
                     />
                     <Button 

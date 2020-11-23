@@ -7,7 +7,7 @@ const Footer = () => {
   
     return(
         <>
-            <BackgroundDiv style = {{backgroundImage : `url(${Background})`}} >
+            <BackgroundDiv style = {{backgroundImage : `url(${Background})`, backgroundSize:'cover'}} >
                 
                 
                 <Text>

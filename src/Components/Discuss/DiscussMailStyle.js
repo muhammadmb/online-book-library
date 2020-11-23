@@ -57,6 +57,7 @@ export const Text = styled.p
 `
 export const Container = styled.div
 `
+    border-top : 5px solid #D04000;
     margin-top:20%;
     background-color:#343A40;
     text-align:center;
