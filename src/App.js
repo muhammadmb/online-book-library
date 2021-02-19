@@ -17,13 +17,15 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <NavBar/>
-        <Route exact path="/" component = {Home}/>
-        <Route exact path="/Home" component = {Home}/>
-        <Route exact path="/books" component = {BookPage}/>
-        <Route exact path="/authors" component = {authorPage}/>
-        <Route exact path="/Connect" component = {Contact}/>
-        <Route exact path="/about" component = {About}/>
-        <Route exact path="/AuthorInformation" component = {AuthorInformation}/>
+          <Switch>
+            <Route exact path="/" component = {Home}/>
+            <Route exact path="/Home" component = {Home}/>
+            <Route exact path="/books" component = {BookPage}/>
+            <Route exact path="/authors" component = {authorPage}/>
+            <Route exact path="/Connect" component = {Contact}/>
+            <Route exact path="/about" component = {About}/>
+            <Route exact path="/AuthorInformation" component = {AuthorInformation}/>
+          </Switch>
         <Footer />
       </BrowserRouter>
     </div>

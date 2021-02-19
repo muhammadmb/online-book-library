@@ -1,0 +1,64 @@
+.welcomeCard{
+    border: 2px solid white;
+    border-radius : 50px;
+    width:90%;
+    min-height: 280px;
+    margin:40px auto ;
+    text-align: left;
+}
+.welcomeTexts{
+    float: left;
+}
+.welcomeCard h2{
+    color: #EEE;
+    margin: 8% 4% 0;
+}
+.welcomeCard h4{
+    color: #FFF;
+    margin: 1% 5%;
+}
+.welcomeCard img{
+    margin-top: -2%;
+    width: 41%;
+}
+
+.sideTitles{
+    color: #17A2B8;
+    margin-left: 12%;
+    font-size: 20px;
+    text-decoration: underline;
+}
+.swipperDiv{
+    margin: 20px 0 20px 7%;
+    width: 85%;
+    display: inline-flex;
+}
+.swipperDiv > .Card{
+    width: 85%;
+    display: inline-flex;
+}
+
+@media (max-width: 767px){  /* phone screen */
+    .welcomeCard img{
+        margin: 10px -7% 0 0;
+        width: 50%;
+        margin-top: -25%;
+        float: right;
+    }
+    .swipperDiv > .Card:nth-of-type(2n + 1){
+        display: none !important;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 991px){ /* small screen */
+    .welcomeCard img{
+        margin: 10px -7% 0 0;
+        width: 50%;
+        margin-top: -25%;
+        float: right;
+    }
+    .swipperDiv .Card:nth-child(3n + 1){
+        display: none !important;
+    }
+}
