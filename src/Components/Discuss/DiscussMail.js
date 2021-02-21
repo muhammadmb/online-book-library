@@ -1,6 +1,7 @@
 import React from "react"
-import {Inputs, TextArea, Button, Text, Container} from './DiscussMailStyle.js';
 import emailjs from "emailjs-com";
+import icon from '../../Images/contactIcon.png'
+import './MailStyle.css';
 
 const Discuss = () =>{
 
@@ -16,46 +17,38 @@ const SendMail = (e) =>{
 }
 
     return (
-        <Container>
-                <Text>
-                    We are here to recieve your recommendations
-                </Text>
-                <hr style = {{width : "10%", backgroundColor :"#D04000", height :"4px", border:'none', borderRadius:"10px"}} />
+        <div className="MailContent">
+            <div className="container">
                 <form onSubmit = {SendMail}>
-                    <div>
-                        <Inputs
-                            type="text" 
-                            placeholder = "First Name" 
-                            name = "firstName" 
-                        />
-                        <Inputs 
-                            type="text"
-                            placeholder = "Last Name"
-                            name = "lastName" 
-                        />
-                    </div>
-                    <div>
-                        <Inputs 
-                            type="email" 
-                            placeholder = "Email Adrress" 
-                            name = "senderEmail" 
-                        />
-                        <Inputs 
-                            type="text" 
-                            placeholder = "Books interest" 
-                            name = "books interest" 
-                        />
-                    </div>
-                    <TextArea 
+                    <input
+                        type="text" 
+                        placeholder = "First Name" 
+                        name = "firstName" 
+                    />
+                    <input 
+                        type="text"
+                        placeholder = "Last Name"
+                        name = "lastName" 
+                    />
+                    <input 
+                        type="email" 
+                        placeholder = "Email Adrress" 
+                        name = "senderEmail" 
+                    />
+                    <textarea 
                         placeholder = "We are pleased to know your sugesstions." 
                         name = "message" 
                     />
-                    <Button 
+                    <input
+                        className = "button"
                         type="submit" 
                         value="Send"
                     />
                 </form>
-        </Container>
+                <img src = {icon}/>
+                <div className="Clear"></div>
+            </div>
+        </div>
     );
 
 }
