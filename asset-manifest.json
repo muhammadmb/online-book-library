@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/online-book-library/static/css/main.cef27227.chunk.css",
+    "main.js": "/online-book-library/static/js/main.e7c11321.chunk.js",
+    "main.js.map": "/online-book-library/static/js/main.e7c11321.chunk.js.map",
+    "runtime-main.js": "/online-book-library/static/js/runtime-main.c90527d5.js",
+    "runtime-main.js.map": "/online-book-library/static/js/runtime-main.c90527d5.js.map",
+    "static/js/2.ea1fd4dc.chunk.js": "/online-book-library/static/js/2.ea1fd4dc.chunk.js",
+    "static/js/2.ea1fd4dc.chunk.js.map": "/online-book-library/static/js/2.ea1fd4dc.chunk.js.map",
+    "index.html": "/online-book-library/index.html",
+    "precache-manifest.ef8cf0f353c0f7d8cc0043fa2a15dd2c.js": "/online-book-library/precache-manifest.ef8cf0f353c0f7d8cc0043fa2a15dd2c.js",
+    "service-worker.js": "/online-book-library/service-worker.js",
+    "static/css/main.cef27227.chunk.css.map": "/online-book-library/static/css/main.cef27227.chunk.css.map",
+    "static/js/2.ea1fd4dc.chunk.js.LICENSE.txt": "/online-book-library/static/js/2.ea1fd4dc.chunk.js.LICENSE.txt",
+    "static/media/AuthorPage.jpg": "/online-book-library/static/media/AuthorPage.3101d6e2.jpg",
+    "static/media/contact.png": "/online-book-library/static/media/contact.88b5a256.png",
+    "static/media/libraryBackground.jpg": "/online-book-library/static/media/libraryBackground.e1dcc292.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c90527d5.js",
+    "static/js/2.ea1fd4dc.chunk.js",
+    "static/css/main.cef27227.chunk.css",
+    "static/js/main.e7c11321.chunk.js"
+  ]
+}
