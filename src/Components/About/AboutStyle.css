@@ -7,13 +7,13 @@
     line-height: 1.7;
 }
 
-.AboutHeader{
-    background-color: #000;
+.about .AboutHeader{
+    background-color: #17A2B8;
     width: 100%;
-    height: 250px;
+    height: 180px;
 }
 
-.AboutHeader h3{
+.about .AboutHeader h3{
     color: #EEE;
     padding: 5%;
     width: 50%;
@@ -32,24 +32,68 @@
     margin: 7% auto;
     border-radius: 50%;
 }
-
-.about .ourMessage .card h2{
-    text-align: left;
+.about .ourMessage .card h4{
+    color: #563D7C;
 }
 .about .ourMessage .blogCard{
+    margin-top: 12%;
     background-color: #EEE;
     border: none;
 }
+
+.about .ourMessage .blogCard h2{
+    text-align: left;
+    color: #563D7C;
+    margin: 5%;
+    width: 100%;
+}
 .about .ourMessage .blogCard .blogButton{
-    background-color: #054651;
+    background-color: #563D7C;
     color: #EEE;
     border: 1px solid #EEE;
     padding: 1.5%;
     margin-top: 2%;
-    width: 25%;
+    width: 35%;
+    border-radius: 5px;
+    outline: none;
 }
 .about .ourMessage .blogCard .blogButton:hover{
     background-color: #EEE;
-    color: #054651;
-    border: 1px solid #054651;
+    color: #563D7C;
+    border: 1px solid #563D7C;
+}
+
+@media (max-width: 767px){  /* phone screen */
+
+    .about .AboutHeader h3{
+        width: 70%;
+    }
+    
+    .about .ourMessage .card{
+        width: 90%;
+    }
+    .about .ourMessage .blogCard {
+        margin-top: 1%;
+    }
+    .about .ourMessage .blogCard h2{
+        margin-top: -2%;
+        width: 80%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px){ /* small screen */
+    .about .AboutHeader h3{
+        width: 70%;
+    }
+    
+    .about .ourMessage .card{
+        width: 90%;
+    }
+    .about .ourMessage .blogCard {
+        margin-top: 1%;
+    }
+    .about .ourMessage .blogCard h2{
+        margin-top: -2%;
+        width: 80%;
+    }
 }
