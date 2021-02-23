@@ -1,0 +1,77 @@
+.AuthorCard{
+    margin: 2% auto;
+    background-color: #2F3236;
+    width: 30%;
+    padding: 2%;
+    border: 1px solid #EEE;
+    box-shadow: 3px 3px #EEE;
+    border-radius: 15px;
+    text-align: center;
+    color: #EEE;
+    padding-bottom: 2%;
+}
+
+.AuthorCard .imageDiv{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin: 10% auto;
+    padding: 3%;
+    border: 2px solid #fcd303;
+}
+
+.AuthorCard img{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin: auto;
+}
+.AuthorCard h4{
+    padding: 1.7%;
+    margin-top: 10%;
+}
+
+.AuthorCard p{
+    color: #CCC;
+    line-height: 1.8;
+}
+
+.AuthorCard span{
+    padding: 2%;
+    color: #ffe043;
+}
+
+.AuthorCard .link{
+    color: #EEE;
+    text-decoration: none;
+}
+
+.AuthorCard .getMore{
+    display: block;
+    margin: 3% auto 0;
+    color: #EEE;
+    outline: none;
+    border: 1px solid #ffe043;
+    background: none;
+    padding: 2% 3%;
+    font-size: large;
+    border-radius: 10px;
+}
+.AuthorCard .getMore:hover{
+    background-color: #ffe043;
+    color: #000;
+}
+
+@media (max-width: 767px){  /* phone screen */
+
+    .AuthorCard{
+        width: 100%;
+    }
+
+}
+@media (min-width: 768px) and (max-width: 991px){ /* small screen */
+
+    .AuthorCard{
+        width: 46%;
+    }
+}
