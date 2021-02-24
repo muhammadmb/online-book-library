@@ -7,9 +7,7 @@ const Footer = () => {
   
     return(
         <>
-            <BackgroundDiv style = {{backgroundImage : `url(${Background})`, backgroundSize:'cover'}} >
-                
-                
+            <BackgroundDiv style = {{ backgroundImage : `url(${Background})`, backgroundSize:'cover'}} >
                 <Text>
                     We Provide special collections of books
                 </Text>
@@ -19,9 +17,15 @@ const Footer = () => {
             </BackgroundDiv>
             <div style = {{width : 1170, margin:"auto"}}>
                 <div>
-                    <BookCard/>
-                    <BookCard/>
-                    <BookCard/>
+                    <BookCard BookTitle="A Milion To One" AuthorName="Tony Faggioli" src="https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg"/>
+                    <BookCard BookTitle="A Milion To One" AuthorName="Tony Faggioli" src="https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg"/>
+                    <BookCard BookTitle="A Milion To One" AuthorName="Tony Faggioli" src="https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg"/>
+                    <BookCard BookTitle="A Milion To One" AuthorName="Tony Faggioli" src="https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg"/>
+                    <BookCard BookTitle="A Milion To One" AuthorName="Tony Faggioli" src="https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg"/>
+                    <BookCard BookTitle="A Milion To One" AuthorName="Tony Faggioli" src="https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg"/>
+                    <BookCard BookTitle="A Milion To One" AuthorName="Tony Faggioli" src="https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg"/>
+                    <BookCard BookTitle="A Milion To One" AuthorName="Tony Faggioli" src="https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg"/>
+                    
                 </div>
             </div>
         </>
