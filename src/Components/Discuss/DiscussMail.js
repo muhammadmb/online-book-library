@@ -45,7 +45,7 @@ const SendMail = (e) =>{
                         value="Send"
                     />
                 </form>
-                <img src = {icon}/>
+                <img src = {icon} alt="readBook"/>
                 <div className="Clear"></div>
             </div>
         </div>

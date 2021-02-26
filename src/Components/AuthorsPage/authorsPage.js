@@ -61,6 +61,7 @@ const authorPage = () => {
                     name="Khaled Ahmed"
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor eros et turpis ultrices pellentesque."
                     dateOfBirth="1980"
+                    dateOfDeath="2008"
                 />
 
             </div>

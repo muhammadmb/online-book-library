@@ -8,15 +8,18 @@
 
 .BookPage .Header .container > h2,
 .BookPage .Header p{
-    background-color: rgba(125, 231, 226, 0.4);
-    color: rgb(0, 48, 48);
+    background-color: rgba(0, 0, 0, 0.555);
+    color: #EEE;
     padding: .7%;
     width: 57%;
     margin: 0;
 }
+.BookPage .Header .container > h2{
+    font-weight: 700;
+    border-bottom: 1.5px solid #000;
+}
 .BookPage .Header p{
     width: 67%;
-    color: #EEE;
     font-size: 24px;
 }
 
@@ -47,9 +50,10 @@
     .BookPage .Header p{
         width: 100%;
         margin: 1%;
+        font-size: 19px;
     }
     .BookPage .Header p{
-        width: 100%;
+        width: 90%;
     }
 }
 

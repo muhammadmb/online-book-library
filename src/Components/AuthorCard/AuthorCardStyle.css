@@ -37,7 +37,6 @@
 }
 
 .AuthorCard span{
-    padding: 2%;
     color: #ffe043;
 }
 
@@ -67,7 +66,13 @@
     .AuthorCard{
         width: 100%;
     }
-
+    
+    .AuthorCard img{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: auto;
+    }
 }
 @media (min-width: 768px) and (max-width: 991px){ /* small screen */
 

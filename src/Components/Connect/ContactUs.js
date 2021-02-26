@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React from 'react';
 import './ContactUsStyle.css';
 import Discuss from '../Discuss/DiscussMail';
 import Contact from '../../Images/contact.png';

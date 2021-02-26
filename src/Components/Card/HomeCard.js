@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './HomeCardStyle.css';
 
-const MiniBookCard = (props) => {
+const MiniCard = (props) => {
 
     const [inHover, setHover] = useState(false);
 
@@ -10,7 +11,7 @@ const MiniBookCard = (props) => {
             <div
                 onMouseEnter={() => setHover(true)}
                 className="box">
-                <img className={inHover ? "imageHoverd" : ""} src={props.cover} />
+                <img className={inHover ? "imageHoverd" : ""} src={props.cover} alt={props.name} />
             </div>
             {
                 inHover &&
@@ -20,7 +21,7 @@ const MiniBookCard = (props) => {
                     <div className="afterHover">
                         <div className="hoverContent">
                             <h5>{props.name}</h5>
-                            <button>Get More</button>
+                            <Link to="/bookInfo"><button>Get More</button></Link>
                         </div>
 
                     </div>
@@ -31,4 +32,4 @@ const MiniBookCard = (props) => {
 
     );
 }
-export default MiniBookCard;
+export default MiniCard;

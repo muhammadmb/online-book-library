@@ -9,6 +9,7 @@ import Contact from './Components/Connect/ContactUs.js';
 
 import './App.css'
 import authorPage from './Components/AuthorsPage/authorsPage.js';
+import BookInfo from './Components/BookInfoPage/BookInfo.js';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route exact path="/authors" component = {authorPage}/>
             <Route exact path="/Connect" component = {Contact}/>
             <Route exact path="/about" component = {About}/>
+            <Route exact path="/BookInfo" component = {BookInfo}/>
           </Switch>
         <Footer />
       </BrowserRouter>

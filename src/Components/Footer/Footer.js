@@ -20,11 +20,11 @@ const Footer = () => {
                         Book<span>Readers</span>
                     </h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus efficitur ex, non efficitur orci semper et. Sed et enim turpis. Cras vehicula velit ipsum, vel laoreet eros sodales vitae. Curabitur quis elit ipsum. Nunc convallis laoreet sodales.</p>
-                    <a target='_blank' href="http://www.facebook.com" title = "Facebook" className="fa fa-facebook"></a>
-                    <a target='_blank' href="http://www.twitter.com" title = "Twitter" className="fa fa-twitter"></a>
-                    <a target='_blank' href="http://www.youtube.com" title = "Youtub" className="fa fa-youtube"></a>
-                    <a target='_blank' href="http://www.linkedin.com" title = "LinkedIn" className="fa fa-linkedin"></a>
-                    <a target='_blank' href="http://www.linkedin.com" title = "LinkedIn" className="fa fa-instagram"></a>
+                    <a target='_blank' rel="noopener noreferrer" href="http://www.facebook.com" title = "Facebook" className="fa fa-facebook"></a>
+                    <a target='_blank' rel="noopener noreferrer"  href="http://www.twitter.com" title = "Twitter" className="fa fa-twitter"></a>
+                    <a target='_blank' rel="noopener noreferrer"  href="http://www.youtube.com" title = "Youtub" className="fa fa-youtube"></a>
+                    <a target='_blank' rel="noopener noreferrer"  href="http://www.linkedin.com" title = "LinkedIn" className="fa fa-linkedin"></a>
+                    <a target='_blank' rel="noopener noreferrer"  href="http://www.linkedin.com" title = "LinkedIn" className="fa fa-instagram"></a>
                 </div>
 
                 <div className = "MostPopular">

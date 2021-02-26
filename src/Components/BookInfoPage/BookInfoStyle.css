@@ -1,0 +1,110 @@
+.bookInfo {
+    padding: 2% 0;
+}
+
+.bookInfo .leftSection{
+    float: left;
+}
+
+.bookInfo .leftSection .imgDiv{
+    width: 285px;
+    height: 430px;
+}
+
+.bookInfo .leftSection .imgDiv img{
+    width: 100%;
+    height: 100%;
+}
+
+.bookInfo .leftSection > span{
+    display: block;
+    margin: 0 5%;
+    color: #DDD;
+}
+
+
+.bookInfo .rightSection{
+    margin: 6% 3%;
+    color: #EEE;
+    float: left;
+    width: 45%;
+}
+
+.bookInfo .rightSection > h1{
+    text-transform: uppercase;
+}
+
+.bookInfo .rightSection > span{
+    margin: 2%;
+    float: left;
+    border-right: 2px solid #AAA;
+    padding-right: 4%;
+    font-size: large;
+}
+
+.bookInfo .rightSection .link{
+    margin-left: 7px;
+    text-decoration: none;
+    color: #17A2B8;
+}
+
+.bookInfo .rightSection .link:hover{
+    color: #17a3b8a2;
+    text-decoration: underline;
+}
+
+.bookInfo .rightSection .rating{
+    margin: 2%;
+    float: left;
+
+}
+
+.bookInfo .rightSection p{
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+.bookInfo hr{
+    border: 1px solid #FFF;
+    width: 80%;
+}
+
+.bookInfo .suggestionSpan{
+    color: #FFF;
+    font-size: 22px;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.bookInfo .books{
+    width: 100%;
+    margin: 2%;
+}
+
+@media (max-width: 767px){  /* phone screen */
+        
+    .bookInfo .leftSection{
+        float: none;
+    }
+
+    .bookInfo .leftSection .imgDiv{
+        margin: 0 auto;
+    }
+
+    .bookInfo .leftSection > span{
+        display: inline;
+    }
+    
+    .bookInfo .rightSection{
+        float: none;
+        width: 90%;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px){ /* small screen */
+
+    
+    .bookInfo .rightSection{
+        width: 50%;
+    }
+
+}

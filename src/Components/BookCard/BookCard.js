@@ -8,13 +8,13 @@ const BookCard = (props) => {
     return(
         <div className="BookCard">
             <div className={hover? "imgHoveresDiv" : "imgDiv"}  onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-                <img src = {props.src}/>
+                <img src = {props.src} alt={props.BookTitle} title={props.BookTitle}/>
             </div>
 
             {
                 hover?
                 <div className="hover" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-                    <img src = {props.src} className="hoverImg"/>
+                    <img className="hoverImg" src = {props.src} alt={props.BookTitle} title={props.BookTitle}/>
                     <h4>{props.BookTitle}</h4>
                     <span>by {props.AuthorName}</span>
                     <Link to="/"><button className="btn btn-primary">More details</button></Link>

@@ -7,7 +7,7 @@ const AuthorCard = (props) =>{
     return (
         <div className="AuthorCard">
             <div className="imageDiv">
-                <img src= {props.src}/>
+                <img src= {props.src} alt={props.name}/>
             </div>
             
             <h4>

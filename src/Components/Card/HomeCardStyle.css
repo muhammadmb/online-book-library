@@ -28,11 +28,17 @@
     background-color: rgba(0, 0, 0, 0.863);
 }
 .hoverContent{
-    position: absolute;
-    bottom: 0;
     padding: 20%;
 }
-.hoverContent > button{
+
+.hoverContent h5{
+    margin-top: 70%;
+}
+
+.hoverContent button{
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
     outline: none;
     border: 2px solid #EEE;
     background: none;
@@ -41,13 +47,20 @@
     padding: 4%;
     border-radius: 5px;
     margin-top: 3%;
-    width: 100%;
+    width: 80%;
 }
 
-.hoverContent > button:hover{
+.hoverContent button:hover{
     background-color: rgb(30, 75, 65);
     border: 2px solid rgb(30, 75, 65);
 }
 .imageHoverd{
     opacity: .8;
+}
+
+@media (max-width: 767px){  /* phone screen */
+    .HomeCard{
+        height: 195px;
+        width: 131.5px;
+    }
 }
