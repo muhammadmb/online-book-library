@@ -1,11 +1,13 @@
-.BookCard{
-    height: 260px; 
+.HomeCard{
+    height: 260px;
+    width: 175px;
     position: relative;
     margin: 7px;
     border: 1px solid #EEE;
     background-color: #EEE;
+    display: inline-flex;
 }
-.BookCard img{
+.HomeCard img{
     width: 100%;
     height: 100%;
     padding: .5%;

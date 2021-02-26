@@ -6,7 +6,7 @@ const MiniBookCard = (props) => {
     const [inHover, setHover] = useState(false);
 
     return (
-        <div className="BookCard container">
+        <div className="HomeCard">
             <div
                 onMouseEnter={() => setHover(true)}
                 className="box">
