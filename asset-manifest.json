@@ -1,24 +1,25 @@
 {
   "files": {
-    "main.css": "/online-book-library/static/css/main.88e16a74.chunk.css",
-    "main.js": "/online-book-library/static/js/main.93f32ba2.chunk.js",
-    "main.js.map": "/online-book-library/static/js/main.93f32ba2.chunk.js.map",
+    "main.css": "/online-book-library/static/css/main.2fdaaaaa.chunk.css",
+    "main.js": "/online-book-library/static/js/main.825f78ee.chunk.js",
+    "main.js.map": "/online-book-library/static/js/main.825f78ee.chunk.js.map",
     "runtime-main.js": "/online-book-library/static/js/runtime-main.c90527d5.js",
     "runtime-main.js.map": "/online-book-library/static/js/runtime-main.c90527d5.js.map",
-    "static/js/2.bb90ed58.chunk.js": "/online-book-library/static/js/2.bb90ed58.chunk.js",
-    "static/js/2.bb90ed58.chunk.js.map": "/online-book-library/static/js/2.bb90ed58.chunk.js.map",
+    "static/js/2.8d467af1.chunk.js": "/online-book-library/static/js/2.8d467af1.chunk.js",
+    "static/js/2.8d467af1.chunk.js.map": "/online-book-library/static/js/2.8d467af1.chunk.js.map",
     "index.html": "/online-book-library/index.html",
-    "precache-manifest.67eeda339868c94c927e0ed0e5719fff.js": "/online-book-library/precache-manifest.67eeda339868c94c927e0ed0e5719fff.js",
+    "precache-manifest.95d3fd7904a2e88d4595048bfa6fd9db.js": "/online-book-library/precache-manifest.95d3fd7904a2e88d4595048bfa6fd9db.js",
     "service-worker.js": "/online-book-library/service-worker.js",
-    "static/css/main.88e16a74.chunk.css.map": "/online-book-library/static/css/main.88e16a74.chunk.css.map",
-    "static/js/2.bb90ed58.chunk.js.LICENSE.txt": "/online-book-library/static/js/2.bb90ed58.chunk.js.LICENSE.txt",
+    "static/css/main.2fdaaaaa.chunk.css.map": "/online-book-library/static/css/main.2fdaaaaa.chunk.css.map",
+    "static/js/2.8d467af1.chunk.js.LICENSE.txt": "/online-book-library/static/js/2.8d467af1.chunk.js.LICENSE.txt",
+    "static/media/bg.jpg": "/online-book-library/static/media/bg.3644ee70.jpg",
     "static/media/contact.png": "/online-book-library/static/media/contact.88b5a256.png",
     "static/media/libraryBackground.jpg": "/online-book-library/static/media/libraryBackground.e1dcc292.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.c90527d5.js",
-    "static/js/2.bb90ed58.chunk.js",
-    "static/css/main.88e16a74.chunk.css",
-    "static/js/main.93f32ba2.chunk.js"
+    "static/js/2.8d467af1.chunk.js",
+    "static/css/main.2fdaaaaa.chunk.css",
+    "static/js/main.825f78ee.chunk.js"
   ]
 }
