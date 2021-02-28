@@ -4,6 +4,7 @@ import Rating from '@material-ui/lab/Rating';
 import Box from '@material-ui/core/Box';
 import './BookInfoStyle.css';
 import MiniCard from '../Card/HomeCard';
+import BooksRate from '../books Rate/BooksRate';
 
 const BookInfo = (props) =>{
 
@@ -26,8 +27,9 @@ const BookInfo = (props) =>{
                     <h1>Book title</h1>
                     <span>By <Link className="link" to = {authorLink}>Authro</Link></span>
                     <Box className="rating" borderColor="transparent">
-                        <Rating name="read-only" value={2} readOnly />
+                        <Rating name="hover-feedback" precision={0.5} value={0} readOnly/>
                     </Box>
+                    <span>(0 Reviews)</span>
                     <div className="Clear"></div>
                     <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor fermentum arcu, quis sodales ante fringilla sed. Suspendisse enim est, auctor auctor cursus et, posuere et quam. Phasellus interdum magna augue, in gravida lectus scelerisque ac. Quisque cursus lacus id iaculis bibendum. Curabitur suscipit fermentum pellentesque. Vestibulum eu accumsan nibh, eu tincidunt massa. In hac habitasse platea dictumst. Aenean rutrum mi eros, non semper lectus semper id. Integer elit lorem, tempor ac dignissim eu, imperdiet eu nibh. Quisque eget gravida neque, nec fermentum nibh. Phasellus molestie semper ullamcorper. Suspendisse enim est, auctor auctor cursus et, posuere et quam. Phasellus interdum magna augue, in gravida lectus scelerisque ac. Quisque cursus lacus id iaculis bibendum. Curabitur suscipit fermentum pellentesque. Vestibulum eu accumsan nibh, eu tincidunt massa. In hac habitasse platea dictumst. Aenean rutrum mi eros, non semper lectus semper id. Integer elit lorem, tempor ac dignissim eu, imperdiet eu nibh. Quisque eget gravida neque, nec fermentum nibh. Phasellus molestie semper ullamcorper.
@@ -35,6 +37,11 @@ const BookInfo = (props) =>{
                 </div>
                 <div className="Clear"></div>
                 <hr/>
+
+                <BooksRate />
+
+                <hr/>
+
                 <span className="suggestionSpan">Editor's Choice</span>
                 <div className="books">
                     <MiniCard name={"Amara the brave"} cover={"https://marketplace.canva.com/EAD7WWWtKSQ/1/0/251w/canva-purple-and-red-leaves-illustration-children%27s-book-cover-hNI7HYnNVQQ.jpg"} />
@@ -52,7 +59,6 @@ const BookInfo = (props) =>{
                     <MiniCard name={"Tress of the road"} cover={"https://images.squarespace-cdn.com/content/v1/5ae2fce87e3c3ae275ea2c9f/1526464175408-W92Q4MSAM40I8YF4HM64/ke17ZwdGBToddI8pDm48kG42nK5MxReh9N1Tgs_dc9t7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UXysNIcM8ERoy824r28kfN5DdNsbvYnFI46u1WARIoKesh_vZu_IHrh0xbom9DKbTA/tess-cover.jpg?format=1500w"} />
                     <MiniCard name={"Story Book"} cover={"https://assets-2.placeit.net/smart_templates/e639b9513adc63d37ee4f577433b787b/assets/wn5u193mcjesm2ycxacaltq8jdu68kmu.jpg"} />
                 </div>
-
 
             </div>
             

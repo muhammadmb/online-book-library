@@ -37,9 +37,12 @@
 .bookInfo .rightSection > span{
     margin: 2%;
     float: left;
-    border-right: 2px solid #AAA;
     padding-right: 4%;
     font-size: large;
+}
+
+.bookInfo .rightSection > span:nth-of-type(1){
+    border-right: 2px solid #AAA;
 }
 
 .bookInfo .rightSection .link{
