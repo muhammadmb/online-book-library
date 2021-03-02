@@ -1,0 +1,51 @@
+.CreateComment{
+    margin: 2%;
+    padding: 2%;
+}
+
+.CreateComment > h2{
+    color: #FFF;
+    margin: 1% 0 2%;
+}
+
+.CreateComment input{
+    margin: 0 2% 1% 0;
+    outline: none;
+    border: none;
+    width: 20%;
+    height: 30px;
+    padding: 1%;
+    border-radius: 10px;
+    background-color: #D3D3D3;
+}
+
+.CreateComment .span{
+    font-size: 22px;
+    color: #FFF;
+    margin: 0 1.5% .5% 5%;
+}
+
+.CreateComment textarea{
+    float: left;
+    width: 80%;
+    margin-top: 2%;
+    padding: 20px;
+    background-color: #D3D3D3;
+    border-radius: 10px;
+    outline: none;
+    height: 140px;
+}
+
+.CreateComment .Tooltip{
+    float: left;
+    outline: none;
+    background-color: #fcc603;
+}
+
+.CreateComment .Tooltip:hover{
+    background-color: #fcc603be;
+}
+
+.CreateComment .Fab{
+    margin: 8% 20px 0;
+}

@@ -5,6 +5,7 @@ import Box from '@material-ui/core/Box';
 import './BookInfoStyle.css';
 import MiniCard from '../Card/HomeCard';
 import BooksRate from '../books Rate/BooksRate';
+import CreateComment from '../CreateComment/CreateComment';
 
 const BookInfo = (props) =>{
 
@@ -39,6 +40,7 @@ const BookInfo = (props) =>{
                 <hr/>
 
                 <BooksRate />
+                <CreateComment />
 
                 <hr/>
 
