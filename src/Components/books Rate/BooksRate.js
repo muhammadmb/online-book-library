@@ -51,7 +51,7 @@ const BooksRate = () =>{
                 <span>0</span>
                 <span>Average from 0 Reviews</span>
                 <Box className="rating" borderColor="transparent">
-                    <Rating className="ratingStarts" name="hover-feedback" size="large" value={0} readOnly/>
+                    <Rating className="ratingStarts" precision={0.5} name="hover-feedback" size="large" value={0} readOnly/>
                 </Box>
             </div>
             <div className="Clear"></div>

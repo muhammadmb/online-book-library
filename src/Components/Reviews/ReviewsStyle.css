@@ -1,0 +1,49 @@
+.Reviews{
+    color: #EEE;
+    margin-bottom: 3%;
+}
+
+.Reviews .avatar{
+    float: left;
+    margin-right: 1%;
+    background-color: #FF5722;
+}
+
+.Reviews p{
+    width: 70%;
+    margin: 1% 0 2%;
+    float: left;
+}
+
+.voting{
+    display: block;
+    float: left;
+    width: 20%;
+    margin: 1% 0 0 1%;
+}
+
+.Reviews .vote{
+    background: none;
+    border: none;
+    outline: none;
+    color: #17A288;
+    display: inline;
+}
+
+.Reviews .vote .icon{
+    font-size: 45px;
+}
+
+.Reviews .vote:hover{
+    color: #17a288bb;
+}
+
+.Reviews .counter{
+    color: #DDD;
+}
+
+.Reviews .date{
+    color: #EEE;
+    display: block;
+    margin-left: 5%;
+}

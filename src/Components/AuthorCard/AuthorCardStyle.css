@@ -12,19 +12,19 @@
 }
 
 .AuthorCard .imageDiv{
-    width: 130px;
+    width: 110px;
     height: 130px;
     border-radius: 50%;
     margin: 10% auto;
-    padding: 3%;
-    border: 2px solid #fcd303;
 }
 
 .AuthorCard img{
+    border: 2px solid #FFF;
+    padding: 5%;
     width: 110px;
-    height: 110px;
+    height: 130px;
     border-radius: 50%;
-    margin: auto;
+    margin: 0;
 }
 .AuthorCard h4{
     padding: 1.7%;
@@ -61,19 +61,19 @@
     color: #000;
 }
 
-@media (max-width: 767px){  /* phone screen */
+@media (max-width: 500px){  /* phone screen */
 
     .AuthorCard{
         width: 100%;
     }
-    
-    .AuthorCard img{
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        margin: auto;
+}
+
+@media (max-width: 767px){  /* phone screen */
+    .AuthorCard{
+        width: 47%;
     }
 }
+
 @media (min-width: 768px) and (max-width: 991px){ /* small screen */
 
     .AuthorCard{

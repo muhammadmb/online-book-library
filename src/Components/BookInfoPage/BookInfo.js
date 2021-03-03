@@ -6,6 +6,7 @@ import './BookInfoStyle.css';
 import MiniCard from '../Card/HomeCard';
 import BooksRate from '../books Rate/BooksRate';
 import CreateComment from '../CreateComment/CreateComment';
+import Reviews from '../Reviews/Reviews';
 
 const BookInfo = (props) =>{
 
@@ -41,6 +42,7 @@ const BookInfo = (props) =>{
 
                 <BooksRate />
                 <CreateComment />
+                <Reviews />
 
                 <hr/>
 

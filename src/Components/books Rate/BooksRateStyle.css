@@ -9,10 +9,6 @@
     margin: 3% 0 4%;
 }
 
-.reviewsRating .rating .ratingStarts{
-    color: #17A2B8;
-}
-
 .reviewsRating .ratingRatio,
 .reviewsRating .ratingRatio > span{
 
@@ -23,13 +19,13 @@
 
 .reviewsRating .ratingRatio{
     background-color: #D3D3D3;
-    width: 30%;
+    width: 60%;
     display: inline-block;
     margin: 1% 3%;
 }
 
 .reviewsRating .ratingRatio > span{
-    background-color: #17A2B8;
+    background-color: #FFB400;
     width: 0;
     display: block;
     line-height: 10px;
@@ -53,4 +49,11 @@
 
 .reviewsStatistics .ratingStarts{
     margin: 3%;
+}
+
+@media (max-width: 767px){  /* phone screen */
+    
+    .reviewsRating .ratingRatio{
+        width: 90%;
+    }
 }

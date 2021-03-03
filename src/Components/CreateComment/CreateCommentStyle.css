@@ -2,6 +2,22 @@
     margin: 2%;
     padding: 2%;
 }
+.CreateComment .buttonDiv{
+    text-align: center;
+}
+
+.CreateComment .ReviewButton{
+    outline: none;
+    color: #FFF;
+    padding: 1.5% 2.5%;
+    border: none;
+    background-color: #17A288;
+    margin-right: 16.5%;
+}
+
+.CreateComment .ReviewButton:hover{
+    background-color: #2ca08ba8;
+}
 
 .CreateComment > h2{
     color: #FFF;
@@ -48,4 +64,27 @@
 
 .CreateComment .Fab{
     margin: 8% 20px 0;
+}
+
+@media (max-width: 767px){  /* phone screen */
+    
+    .CreateComment input{
+        width: 48%;
+        height: 35px;
+        margin-bottom: 5%;
+    }
+    
+    .CreateComment .span{
+        margin: 0 5% 0 0;
+    }
+
+    .CreateComment textarea{
+        width: 100%;
+        height: 150px;
+    }
+
+
+}
+    
+@media (min-width: 768px) and (max-width: 991px){ /* small screen */
 }
