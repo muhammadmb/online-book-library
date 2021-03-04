@@ -1,0 +1,100 @@
+.Genre{
+    background-color: #DDD;
+    padding: 5%;
+}
+
+.Genre .SortBy,
+.Genre .GenreDetails .phoneScreen{
+    margin: 22% 2% 2%;
+    font-size: 20px;
+    float: left;
+    width: 16%;
+    border-right: 1px solid #000;
+}
+
+.Genre .GenreDetails .phoneScreen{
+    display: none;
+    border: none;
+}
+
+.Genre .SortBy button,
+.Genre .GenreDetails .phoneScreen button{
+    background: none;
+    border: none;
+    outline: none;
+    margin: 1%;
+    padding: 1%;
+    font-weight: 600;
+    display: block;
+    color: rgb(204, 54, 54);
+}
+
+.Genre .SortBy button:hover,
+.Genre .GenreDetails .phoneScreen button:hover{
+    color: rgb(150, 37, 37);
+}
+
+.Genre .GenreDetails{
+    float: left;
+    width: 80%;
+}
+
+.Genre .GenreDetails .header{
+    color: #990c4b;
+}
+
+.Genre .GenreDetails .GenrsDesc{
+    width: 80%;
+    padding: 2%;
+    line-height: 1.7;
+    color: #111;
+}
+
+.Genre .PaginationDiv{
+    color: brown;
+    outline: none;
+    margin: 4% 33% 0;
+    align-content: center;
+}
+
+.Genre .GenreDetails .BookCards{
+    margin: 0 auto;
+    padding: 0;
+}
+
+@media (max-width: 767px){  /* phone screen */
+    
+    .Genre{
+        background-color: #DDD;
+        padding: 5% 0;
+    }
+
+    .Genre .GenreDetails{
+        float: none;
+        width: 100%;
+    }
+
+    .Genre .SortBy{
+        display: none;
+    }
+
+    .Genre .GenreDetails .phoneScreen{
+        display: unset;
+        width: 100%;
+        margin: 3% 2%;
+    }
+    .Genre .GenreDetails .phoneScreen button{
+        display: inline;
+    }
+    .Genre .SortBy button{
+        display: inline;
+    }
+
+    .Genre .GenreDetails .GenrsDesc{
+        width: 100%;
+    }
+
+    .Genre .GenreDetails .BookCards{
+        text-align: center;
+    }
+}

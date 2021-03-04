@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css'
 import About from './Components/About/About.js';
 import NavBar from './Components/NavBar/NavigationBar.js';
 import Home from './Components/Home/Home.js';
@@ -6,11 +7,10 @@ import Footer from './Components/Footer/Footer.js';
 import BookPage from './Components/BooksPage/BooksPage';
 import {BrowserRouter,Route,Switch} from 'react-router-dom';
 import Contact from './Components/Connect/ContactUs.js';
-
-import './App.css'
 import authorPage from './Components/AuthorsPage/authorsPage.js';
 import BookInfo from './Components/BookInfoPage/BookInfo.js';
 import NotFoundPage from './Components/NotFoundPage/NotFoundPage.js';
+import Genres from './Components/GenresPage/Genres';
 
 
 function App() {
@@ -27,6 +27,7 @@ function App() {
             <Route exact path="/Connect" component = {Contact}/>
             <Route exact path="/about" component = {About}/>
             <Route exact path="/BookInfo" component = {BookInfo}/>
+            <Route exact path="/genre" component = {Genres}/>
             <Route path="/*" component = {NotFoundPage}/>
           </Switch>
         <Footer />

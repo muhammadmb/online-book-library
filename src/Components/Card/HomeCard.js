@@ -5,6 +5,7 @@ import './HomeCardStyle.css';
 const MiniCard = (props) => {
 
     const [inHover, setHover] = useState(false);
+    const url = `/${props.page}`;
 
     return (
         <div className="HomeCard">
@@ -21,7 +22,7 @@ const MiniCard = (props) => {
                     <div className="afterHover">
                         <div className="hoverContent">
                             <h5>{props.name}</h5>
-                            <Link to="/bookInfo"><button>Get More</button></Link>
+                            <Link to={url}><button>Get More</button></Link>
                         </div>
 
                     </div>
