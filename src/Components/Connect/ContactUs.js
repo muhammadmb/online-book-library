@@ -14,7 +14,6 @@ const Connect = () => {
                 </div>
             </div>
 
-            {/* <div className="Clear"></div> */}
             <Discuss />
         </div>
     );

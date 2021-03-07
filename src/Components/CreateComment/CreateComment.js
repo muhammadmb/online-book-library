@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import './CreateCommentStyle.css';
 import Rating from '@material-ui/lab/Rating';
-import Tooltip from '@material-ui/core/Tooltip';
-import Fab from '@material-ui/core/Fab';
 import SendIcon from '@material-ui/icons/Send';
 
 const CreateComment = () => {
 
     const [writeReview, setWriteReview] = useState(false);
+
+    const handleSubmit = (event) =>{
+        event.preventDefault();
+        console.log("DONE");
+    }
 
     return (
         <div className="CreateComment">
@@ -25,26 +28,26 @@ const CreateComment = () => {
                 writeReview ?
                 <>
                     <h2>Review the book</h2>
-                    <input type="text" placeholder="Name"/>
-                    <input type="email" placeholder="Email address"/>
+                    <form onSubmit={handleSubmit}>
+                        <input type="text" placeholder="Name" required/>
+                        <input type="email" placeholder="Email address" required/>
 
-                    <span className="span">Book rate</span>
+                        <span className="span">Book rate</span>
 
-                    <Rating
-                    className="rating"
-                    name="simple-controlled"
-                    size="small"
-                    defaultValue={.5}
-                    precision={0.5} 
-                    />
+                        <Rating
+                        className="rating"
+                        name="simple-controlled"
+                        size="small"
+                        defaultValue={.5}
+                        precision={0.5}
+                        required
+                        />
 
-                    <textarea placeholder="Write Your Review"/>
+                        <textarea placeholder="Write Your Review" required/>
+                        
+                        <button className="SendButton"><SendIcon className="AddIcon"/></button>
+                    </form>
                     
-                    <Tooltip className="Tooltip" title="Add" aria-label="add">
-                        <Fab className="Fab" color="primary">
-                            <SendIcon className="AddIcon"/>
-                        </Fab>
-                    </Tooltip>
                 </> 
                 :
                 null

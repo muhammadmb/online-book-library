@@ -23,21 +23,25 @@ const SendMail = (e) =>{
                     <input
                         type="text" 
                         placeholder = "First Name" 
-                        name = "firstName" 
+                        name = "firstName"
+                        required
                     />
                     <input 
                         type="text"
                         placeholder = "Last Name"
-                        name = "lastName" 
+                        name = "lastName"
+                        required
                     />
                     <input 
                         type="email" 
                         placeholder = "Email Adrress" 
-                        name = "senderEmail" 
+                        name = "senderEmail"
+                        required
                     />
                     <textarea 
                         placeholder = "We are pleased to know your sugesstions." 
                         name = "message" 
+                        required
                     />
                     <input
                         className = "button"
