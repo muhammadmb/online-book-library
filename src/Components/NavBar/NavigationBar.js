@@ -12,15 +12,15 @@ const NavigationBar = () => {
                 <button className="navbar-toggler" 
                     type="button" 
                     data-toggle="collapse" 
-                    data-target="#navbarTogglerDemo01" 
-                    aria-controls="navbarTogglerDemo01" 
+                    data-target="#navbarContent" 
+                    aria-controls="navbarContent"
                     aria-expanded="false" 
                     aria-label="Toggle navigation"
                     style={{outline:"none"}}
                 >
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <div className="collapse navbar-collapse" id="navbarContent">
                     <Link className="navbar-brand" to="/">BookReaders</Link>
                     <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li className="nav-item active">

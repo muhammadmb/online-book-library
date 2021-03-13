@@ -25,6 +25,8 @@
 }
 
 .hover{
+    -webkit-transition: all 3s ease-in-out;
+            transition: all 3s ease-in-out;
     position: absolute;
     top: 0;
     left: 0;

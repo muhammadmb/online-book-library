@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import './AuthorCardStyle.css';
 
 
-const AuthorCard = (props) =>{
+const AuthorCard = (props) => {
     return (
         <div className="AuthorCard">
             <div className="imageDiv">
-                <img src= {props.src} alt={props.name}/>
+                <img src={props.src} alt={props.name} />
             </div>
-            
+
             <h4>
                 {props.name}
             </h4>
@@ -21,13 +21,13 @@ const AuthorCard = (props) =>{
             <span>{props.dateOfBirth}</span>
             {
                 props.dateOfDeath ?
-                <span> - {props.dateOfDeath}</span>
-                :
-                null
+                    <span> - {props.dateOfDeath}</span>
+                    :
+                    null
             }
-            <Link className="link" to="/"><button className="getMore">Get More</button></Link>
+            <Link className="link" to="/Authors/name"><button className="getMore">Get More</button></Link>
         </div>
-        
+
     );
 }
 

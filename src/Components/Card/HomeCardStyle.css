@@ -26,6 +26,7 @@
     color: #EEE;
     z-index: 9;
     background-color: rgba(0, 0, 0, 0.863);
+
 }
 .hoverContent{
     padding: 20%;
@@ -48,6 +49,8 @@
     border-radius: 5px;
     margin-top: 3%;
     width: 80%;
+    -webkit-transition: all .7s ease-in-out;
+    transition: all .7s ease-in-out;
 }
 
 .hoverContent button:hover{
