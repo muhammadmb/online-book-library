@@ -31,6 +31,13 @@
 .swipperDiv{
     margin: 20px 0 20px 7%;
 }
+
+.swipperDiv .Skeleton{
+    margin: 7px;
+    display: inline-block;
+    background-color: #777;
+}
+
 @media (max-width: 767px){  /* phone screen */
     .welcomeCard img{
         margin: 10px -7% 0 0;

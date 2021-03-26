@@ -19,6 +19,11 @@
     background-color: #2ca08ba8;
 }
 
+.CreateComment .alert{
+    margin-top: 4%;
+    padding: 1%;
+}
+
 .CreateComment > h2{
     color: #FFF;
     margin: 1% 0 2%;

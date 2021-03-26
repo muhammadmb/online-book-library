@@ -27,9 +27,9 @@ function App() {
           <Route exact path="/authors" component={authorPage} />
           <Route exact path="/Connect" component={Contact} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/BookInfo" component={BookInfo} />
+          <Route path="/BookInfo" component={BookInfo} />
           <Route exact path="/genre" component={Genres} />
-          <Route exact path="/Authors/name" component={AuthorPage} />
+          <Route exact path="/Authors/:Id" component={AuthorPage} />
           <Route path="/*" component={NotFoundPage} />
         </Switch>
         <Footer />

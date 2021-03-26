@@ -1,29 +1,68 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-
+import DataServices from "../API/DataServices/DataServices";
 import HomePic from "../../Images/HomePic.png";
 import Button from 'react-bootstrap/Button';
 import './HomeStyle.css';
 import MiniCard from '../Card/HomeCard';
+import Skeleton from '@material-ui/lab/Skeleton';
+
 
 const Home = () => {
 
-  const [items, setItems] = useState([]);
+  const [classicsBooks, setClassicsBooks] = useState([]);
+  const [any, setAny] = useState([]);
+  const [genres, setGenres] = useState([]);
+  const Skeletons = [1, 2, 3, 4, 5];
 
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios.get('http://localhost:51044/api/Genres/00000000-0000-0000-abcd-000000000000/Books');
-      setItems(result.data);
+    const GetEditorsBooks = async () => {
+      const result = await DataServices.GetBooksByGenre(`00000000-0000-0000-abcd-000000000000`, "id,booktitle,bookCover,genre", 1, 5);
+      setClassicsBooks(result.data);
     }
 
-    fetchData();
+    const GetGenres = async () => {
+      const result = await DataServices.GetGenres(1, 10);
+      setGenres(result.data);
+    }
+
+    const GetAny = async () => {
+      const result = await DataServices.GetBooksByGenre(`00000000-0000-0000-abcd-000000000002`, "id,booktitle,bookCover,genre", 1, 5);
+      setAny(result.data);
+    }
+
+    GetEditorsBooks();
+    GetGenres();
+    GetAny();
 
   }, []);
 
-  const BooksList = () => (
-    items.map(item => <MiniCard key={item.id} name={item.bookTitle} page={"BookInfo"} cover={item.bookCover} />)
+  const BooksList = (props) => (
+    props.list.map(item =>
+      <MiniCard
+        key={item.id}
+        name={item.bookTitle}
+        page={`BookInfo/${item.genre.id}/${item.id}`}
+        cover={item.bookCover}
+      />
+    )
   )
 
+  const GenresList = () => (
+    genres.map(item =>
+      <MiniCard
+        key={item.id}
+        name={item.genreName}
+        page="genre"
+        cover={item.picUrl}
+      />
+    )
+  )
+
+  const SkeletonView = () => (
+    Skeletons.map(index =>
+      <Skeleton key={index} className="Skeleton" variant="rect" width={175} height={260} />
+    )
+  )
 
   return (
     <div className="container">
@@ -37,36 +76,41 @@ const Home = () => {
           <img src={HomePic} alt="Homepicture" />
         </div>
 
-        <span className="sideTitles" >Recommended For You</span>
-
-
+        <span className="sideTitles" >Classics</span>
 
         <div className="swipperDiv">
-          <BooksList />
+
+          {
+            classicsBooks.length === 0 ?
+              <SkeletonView />
+              :
+              <BooksList list={classicsBooks} />
+          }
+
         </div>
 
-        <span className="sideTitles" >Editor's Choice</span>
+        <span className="sideTitles" >Action and Adventure</span>
 
         <div className="swipperDiv">
-          <MiniCard name={"A Million to one"} page={"BookInfo"} cover={"https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg"} />
-          <MiniCard name={"Amara the brave"} page={"BookInfo"} cover={"https://marketplace.canva.com/EAD7WWWtKSQ/1/0/251w/canva-purple-and-red-leaves-illustration-children%27s-book-cover-hNI7HYnNVQQ.jpg"} />
-          <MiniCard name={"The king of drugs"} page={"BookInfo"} cover={"https://d1csarkz8obe9u.cloudfront.net/posterpreviews/action-thriller-book-cover-design-template-3675ae3e3ac7ee095fc793ab61b812cc_screen.jpg?ts=1588152105"} />
-          <MiniCard name={"The Martian"} page={"BookInfo"} cover={"https://static01.nyt.com/images/2014/02/05/books/05before-and-after-slide-T6H2/05before-and-after-slide-T6H2-superJumbo.jpg?quality=75&auto=webp&disable=upscale"} />
-          <MiniCard name={"Tress of the road"} page={"BookInfo"} cover={"https://images.squarespace-cdn.com/content/v1/5ae2fce87e3c3ae275ea2c9f/1526464175408-W92Q4MSAM40I8YF4HM64/ke17ZwdGBToddI8pDm48kG42nK5MxReh9N1Tgs_dc9t7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UXysNIcM8ERoy824r28kfN5DdNsbvYnFI46u1WARIoKesh_vZu_IHrh0xbom9DKbTA/tess-cover.jpg?format=1500w"} />
-          <MiniCard name={"Story Book"} page={"BookInfo"} cover={"https://assets-2.placeit.net/smart_templates/e639b9513adc63d37ee4f577433b787b/assets/wn5u193mcjesm2ycxacaltq8jdu68kmu.jpg"} />
-          <MiniCard name={"City on the edge"} page={"BookInfo"} cover={"https://i.pinimg.com/originals/a4/aa/c1/a4aac1f3d86869bcfd2833e8be768014.jpg"} />
+          {
+            any.length === 0 ?
+              <SkeletonView />
+              :
+              <BooksList list={any} />
+          }
         </div>
 
         <span className="sideTitles">Genres</span>
 
         <div className="swipperDiv">
-          <MiniCard name={"Fantasy"} page={"genre"} cover={"https://www.rd.com/wp-content/uploads/2019/12/book-e1576790089347.jpg"} />
-          <MiniCard name={"Detective and Mystery "} cover={"https://static.prod.abebookscdn.com/cdn/com/images/30-essential-mystery-authors/arthur-conan-doyle.jpg"} />
-          <MiniCard name={"Comic Book"} cover={"https://www.sun-sentinel.com/resizer/1fuMDdJE7v3kltVnXX07CWZ58Ws=/415x614/top/www.trbimg.com/img-5caf8a09/turbine/fl-1555008005-hc4qu2941s-snap-image"} />
-          <MiniCard name={"Classics "} cover={"https://cdn.shopify.com/s/files/1/0064/5342/8271/products/PCCP5-Penguin_Classics_Cameo_angle_1200_300x.jpg?v=1556052881"} />
-          <MiniCard name={"Action and Adventure"} cover={"https://alisonmortonauthor.com/wp-content/uploads/2014/01/books.jpg"} />
-          <MiniCard name={"Horror"} cover={"https://images.thestar.com/xN_oIrR10VL8zpaa1-hDq0ELBE8=/1086x1652/smart/filters:cb(1594158289211)/https://www.thestar.com/content/dam/thestar/entertainment/books/2020/07/09/horror-books-to-make-you-lose-your-cool-on-a-hot-summers-night/if_it_bleeds.jpg"} />
-          <MiniCard name={"Romance"} cover={"https://pbs.twimg.com/media/EQuNRJoU0AAvyKD.jpg"} />
+
+          {
+            genres.length === 0 ?
+              <SkeletonView />
+              :
+              <GenresList />
+          }
+
         </div>
 
       </div>

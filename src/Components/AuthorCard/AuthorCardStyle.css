@@ -25,6 +25,7 @@
     height: 130px;
     border-radius: 50%;
     margin: 0;
+    object-fit: cover;
 }
 .AuthorCard h4{
     padding: 1.7%;
