@@ -32,6 +32,14 @@ class DataServices {
             console.log(error);
         });
     }
+
+    GetAuthor(authorId) {
+        return axios.get(`${API_URL}/Authors/${authorId}`);
+    }
+
+    GetAuthors() {
+        return axios.get(`${API_URL}/Authors`);
+    }
 }
 
 export default new DataServices();

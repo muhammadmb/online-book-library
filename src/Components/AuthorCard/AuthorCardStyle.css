@@ -1,44 +1,52 @@
 .AuthorCard{
     margin: 2% auto;
-    background-color: #2F3236;
+    background-color: #FFF;
     width: 30%;
-    padding: 2%;
-    border: 1px solid #EEE;
-    box-shadow: 3px 3px #EEE;
-    border-radius: 15px;
     text-align: center;
-    color: #EEE;
+    color: #000;
     padding-bottom: 2%;
+    transition: all .4s ease-in-out;
 }
 
-.AuthorCard .imageDiv{
-    width: 110px;
-    height: 130px;
-    border-radius: 50%;
-    margin: 10% auto;
+.AuthorCard:hover{
+    transform: scale(1.05);
+}
+
+.AuthorCard .cardHeader{
+    background-image: url("https://images.unsplash.com/photo-1463320726281-696a485928c7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+    background-size: cover;
+    height: 200px;
 }
 
 .AuthorCard img{
-    border: 2px solid #FFF;
     padding: 5%;
-    width: 110px;
-    height: 130px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    margin: 0;
     object-fit: cover;
+    position: relative;
+    top: 80px;
+    background-color: #EEE;
+    padding: 2%;
+    transition: all .4s ease-in-out;
 }
+
+.AuthorCard img:hover{
+    transform: scale(1.05);
+}
+
 .AuthorCard h4{
     padding: 1.7%;
-    margin-top: 10%;
+    margin-top: 30%;
 }
 
 .AuthorCard p{
-    color: #CCC;
-    line-height: 1.8;
+    line-height: 1.6;
 }
 
 .AuthorCard span{
-    color: #ffe043;
+    color: #000444;
+    font-weight: 600;
 }
 
 .AuthorCard .link{
@@ -49,17 +57,20 @@
 .AuthorCard .getMore{
     display: block;
     margin: 3% auto 0;
-    color: #EEE;
+    color: #FFF;
     outline: none;
-    border: 1px solid #ffe043;
-    background: none;
-    padding: 2% 3%;
+    border: 1px solid #66A29D;
+    background-color: #66A29D;
+        padding: 2% 3%;
     font-size: large;
     border-radius: 10px;
+    transition: all .3s ease-in-out;
 }
+
 .AuthorCard .getMore:hover{
-    background-color: #ffe043;
-    color: #000;
+    background-color: #FFF;
+    color: #66A29D;
+    transform: translateY(-5px);
 }
 
 @media (max-width: 500px){  /* phone screen */

@@ -10,9 +10,10 @@ import Reviews from '../Reviews/Reviews';
 import DataServices from '../API/DataServices/DataServices';
 import Skeleton from '@material-ui/lab/Skeleton';
 
-const BookInfo = () => {
+const BookInfo = (props) => {
 
-    let Ids = window.location.pathname.substring(10).split('/');
+    const id = props.match.params.id;
+    const genreId = props.match.params.genreId;
     const [genreBooks, setGenreBooks] = useState([]);
     const [genres, setGenres] = useState([]);
     const [bookData, setBookData] = useState([]);
@@ -21,13 +22,13 @@ const BookInfo = () => {
 
     useEffect(() => {
         const GetBook = async () => {
-            const result = await DataServices.GetBookDetails(Ids[0], Ids[1]);
+            const result = await DataServices.GetBookDetails(genreId, id);
             setBookData(result.data);
             setIsLoad(true);
         }
 
         const GetGenreBooks = async () => {
-            const result = await DataServices.GetBooksByGenre(`${Ids[0]}`, "id,booktitle,bookCover,genre", 1, 5);
+            const result = await DataServices.GetBooksByGenre(`${genreId}`, "id,booktitle,bookCover,genre", 1, 5);
             setGenreBooks(result.data);
         }
 
@@ -39,14 +40,14 @@ const BookInfo = () => {
         GetBook();
         GetGenreBooks();
         GetGenres();
-    }, []);
+    }, [id]);
 
     const BooksList = (props) => (
         props.list.map(item =>
             <MiniCard
                 key={item.id}
                 name={item.bookTitle}
-                page={`BookInfo/${item.genre.id}/${item.id}`}
+                page={`genre/${item.genre.id}/books/${item.id}`}
                 cover={item.bookCover}
             />
         )
@@ -68,7 +69,6 @@ const BookInfo = () => {
 
             {
                 isLoad ?
-
                     <div className="bookInfo">
                         <div className="leftSection">
                             <div className="imgDiv">

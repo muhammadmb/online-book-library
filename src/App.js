@@ -7,12 +7,11 @@ import Footer from './Components/Footer/Footer.js';
 import BookPage from './Components/BooksPage/BooksPage';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Contact from './Components/Connect/ContactUs.js';
-import authorPage from './Components/AuthorsPage/authorsPage.js';
+import AuthorPage from './Components/AuthorsPage/AuthorsPage.js';
 import BookInfo from './Components/BookInfoPage/BookInfo.js';
 import NotFoundPage from './Components/NotFoundPage/NotFoundPage.js';
 import Genres from './Components/GenresPage/Genres';
-import AuthorPage from './Components/AuthorInfoPage/AuthorInfo';
-
+import AuthorInfo from './Components/AuthorInfoPage/AuthorInfo';
 
 function App() {
   return (
@@ -24,12 +23,12 @@ function App() {
           <Route exact path="/online-book-library" component={Home} />
           <Route exact path="/Home" component={Home} />
           <Route exact path="/books" component={BookPage} />
-          <Route exact path="/authors" component={authorPage} />
+          <Route exact path="/authors" component={AuthorPage} />
           <Route exact path="/Connect" component={Contact} />
           <Route exact path="/about" component={About} />
-          <Route path="/BookInfo" component={BookInfo} />
-          <Route exact path="/genre" component={Genres} />
-          <Route exact path="/Authors/:Id" component={AuthorPage} />
+          <Route path="/genre/:genreId/books/:id" component={BookInfo} />
+          <Route exact path="/genre/:id" component={Genres} />
+          <Route exact path="/Authors/:Id" component={AuthorInfo} />
           <Route path="/*" component={NotFoundPage} />
         </Switch>
         <Footer />

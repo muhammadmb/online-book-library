@@ -2,3 +2,8 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.AuthorPage .skeleton{
+    background-color: #777;
+    margin: 2% auto;
+}

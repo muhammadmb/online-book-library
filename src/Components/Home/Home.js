@@ -41,7 +41,7 @@ const Home = () => {
       <MiniCard
         key={item.id}
         name={item.bookTitle}
-        page={`BookInfo/${item.genre.id}/${item.id}`}
+        page={`genre/${item.genre.id}/books/${item.id}`}
         cover={item.bookCover}
       />
     )
@@ -52,7 +52,7 @@ const Home = () => {
       <MiniCard
         key={item.id}
         name={item.genreName}
-        page="genre"
+        page={`genre/${item.id}`}
         cover={item.picUrl}
       />
     )

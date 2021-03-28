@@ -11,6 +11,7 @@
 
 .author-content .img-box img{
     width: 100%;
+    object-fit: cover;
 }
 
 
@@ -57,4 +58,8 @@
 .author-content .author-books{
     margin-top: 5%;
     color: #EEE;
+}
+
+.author-books h3 span{
+    color:#0dbdd8;
 }

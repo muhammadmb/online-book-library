@@ -17,7 +17,7 @@ const BookCard = (props) => {
                         <img className="hoverImg" src={props.src} alt={props.BookTitle} title={props.BookTitle} />
                         <h4>{props.BookTitle}</h4>
                         <span>by {props.AuthorName}</span>
-                        <Link to="/"><button className="btn btn-primary">More details</button></Link>
+                        <Link to={`${props.page}`}><button className="btn btn-primary">More details</button></Link>
                     </div>
                     :
                     null

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './HomeCardStyle.css';
+import { Link } from 'react-router-dom';
 
 const MiniCard = (props) => {
 
@@ -21,7 +22,7 @@ const MiniCard = (props) => {
                     <div className="afterHover">
                         <div className="hoverContent">
                             <h5>{props.name}</h5>
-                            <a href={url}><button>Get More</button></a>
+                            <Link to={url}><button>Get More</button></Link>
                         </div>
                     </div>
                 </div>

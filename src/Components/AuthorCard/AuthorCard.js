@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './AuthorCardStyle.css';
 
-
 const AuthorCard = (props) => {
     return (
         <div className="AuthorCard">
-            <div className="imageDiv">
+            <div className="cardHeader">
                 <img src={props.src} alt={props.name} />
             </div>
+
 
             <h4>
                 {props.name}
@@ -25,7 +25,7 @@ const AuthorCard = (props) => {
                     :
                     null
             }
-            <Link className="link" to="/Authors/name"><button className="getMore">Get More</button></Link>
+            <Link className="link" to={props.page}><button className="getMore">Get More</button></Link>
         </div>
 
     );
