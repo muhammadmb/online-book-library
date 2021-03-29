@@ -7,3 +7,11 @@
     background-color: #777;
     margin: 2% auto;
 }
+
+@media (max-width: 500px){  /* phone screen */
+
+    .AuthorPage{
+        display: block;
+    }
+
+}

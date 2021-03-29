@@ -5,11 +5,6 @@
     text-align: center;
     color: #000;
     padding-bottom: 2%;
-    transition: all .4s ease-in-out;
-}
-
-.AuthorCard:hover{
-    transform: scale(1.05);
 }
 
 .AuthorCard .cardHeader{
@@ -73,16 +68,10 @@
     transform: translateY(-5px);
 }
 
-@media (max-width: 500px){  /* phone screen */
-
-    .AuthorCard{
-        width: 100%;
-    }
-}
-
 @media (max-width: 767px){  /* phone screen */
     .AuthorCard{
-        width: 47%;
+        width: 100%;
+        margin: 6% 0;
     }
 }
 

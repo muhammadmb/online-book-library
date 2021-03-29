@@ -44,6 +44,15 @@
     padding:0 10px; 
     color: #FFF;
 }
+
+.BookPage .content .section span:hover{
+    color: #17A2B8;
+}
+
+.link:hover{
+    text-decoration: none;
+}
+
 @media (max-width: 767px){  /* phone screen */
     
     .BookPage .Header .container > h2,

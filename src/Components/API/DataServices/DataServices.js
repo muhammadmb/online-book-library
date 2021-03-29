@@ -3,12 +3,16 @@ import { API_URL } from '../APIConstants';
 
 class DataServices {
 
-    GetGenres(PageNumber, PageSize) {
-        return axios.get(`${API_URL}/Genres?fields=genreName,id,picUrl&PageNumber=${PageNumber}&PageSize=${PageSize}`);
+    GetGenres(PageNumber, PageSize, fields) {
+        return axios.get(`${API_URL}/Genres?fields=${fields}&PageNumber=${PageNumber}&PageSize=${PageSize}`);
     }
 
-    GetBooksByGenre(genreId, fields, PageNumber, PageSize) {
-        return axios.get(`${API_URL}/Genres/${genreId}/Books?fields=${fields}&PageNumber=${PageNumber}&PageSize=${PageSize}`);
+    GetGenre(id) {
+        return axios.get(`${API_URL}/Genres/${id}`);
+    }
+
+    GetBooksByGenre(genreId, fields, PageNumber, PageSize, sortby) {
+        return axios.get(`${API_URL}/Genres/${genreId}/Books?fields=${fields}&PageNumber=${PageNumber}&PageSize=${PageSize}&sortby=${sortby}`);
     }
 
     GetBookDetails(genreId, bookId) {
@@ -38,8 +42,9 @@ class DataServices {
     }
 
     GetAuthors() {
-        return axios.get(`${API_URL}/Authors`);
+        return axios.get(`${API_URL}/Authors?fields=id,name,bio,pictureUrl,dateOfBirth,dateOfDeath`);
     }
+
 }
 
 export default new DataServices();

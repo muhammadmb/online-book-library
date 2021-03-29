@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './AuthorCardStyle.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const AuthorCard = (props) => {
+
+    useEffect(() => {
+        AOS.init({ duration: 1000 });
+    }, [])
+
     return (
-        <div className="AuthorCard">
+        <div className="AuthorCard" data-aos="zoom-in">
             <div className="cardHeader">
                 <img src={props.src} alt={props.name} />
             </div>

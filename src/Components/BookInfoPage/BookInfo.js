@@ -58,7 +58,7 @@ const BookInfo = (props) => {
             <MiniCard
                 key={item.id}
                 name={item.genreName}
-                page="genre"
+                page={`genre/${item.id}`}
                 cover={item.picUrl}
             />
         )

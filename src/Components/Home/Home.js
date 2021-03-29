@@ -5,12 +5,12 @@ import Button from 'react-bootstrap/Button';
 import './HomeStyle.css';
 import MiniCard from '../Card/HomeCard';
 import Skeleton from '@material-ui/lab/Skeleton';
-
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 
   const [classicsBooks, setClassicsBooks] = useState([]);
-  const [any, setAny] = useState([]);
+  const [action, setAction] = useState([]);
   const [genres, setGenres] = useState([]);
   const Skeletons = [1, 2, 3, 4, 5];
 
@@ -21,18 +21,18 @@ const Home = () => {
     }
 
     const GetGenres = async () => {
-      const result = await DataServices.GetGenres(1, 10);
+      const result = await DataServices.GetGenres(1, 10, "genreName,id,picUrl");
       setGenres(result.data);
     }
 
-    const GetAny = async () => {
+    const GetAction = async () => {
       const result = await DataServices.GetBooksByGenre(`00000000-0000-0000-abcd-000000000002`, "id,booktitle,bookCover,genre", 1, 5);
-      setAny(result.data);
+      setAction(result.data);
     }
 
     GetEditorsBooks();
     GetGenres();
-    GetAny();
+    GetAction();
 
   }, []);
 
@@ -67,18 +67,21 @@ const Home = () => {
   return (
     <div className="container">
       <div>
-        <div className="welcomeCard">
+        <div className="welcomeCard"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+        >
           <div className="welcomeTexts">
             <h2>Hi, welcome back!</h2>
             <h4 >Here is a customised world of books for you.</h4>
-            <Button variant="outline-info" style={{ margin: 25 }}>Browse Latest</Button>
+            <Link to="/books"><Button variant="outline-info" style={{ margin: 25 }}>Browse Latest</Button></Link>
           </div>
           <img src={HomePic} alt="Homepicture" />
         </div>
 
         <span className="sideTitles" >Classics</span>
 
-        <div className="swipperDiv">
+        <div className="swipperDiv" >
 
           {
             classicsBooks.length === 0 ?
@@ -93,10 +96,10 @@ const Home = () => {
 
         <div className="swipperDiv">
           {
-            any.length === 0 ?
+            action.length === 0 ?
               <SkeletonView />
               :
-              <BooksList list={any} />
+              <BooksList list={action} />
           }
         </div>
 

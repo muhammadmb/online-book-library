@@ -1,51 +1,94 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './GenresStyle.css';
 import BookCard from '../BookCard/BookCard';
 import Pagination from '@material-ui/lab/Pagination';
+import DataServices from '../API/DataServices/DataServices';
 
-const Genres = () =>{
+const Genres = (props) => {
 
-    return(
+    const Id = props.match.params.id;
+    const [genreData, setGenreData] = useState();
+    const [books, setBooks] = useState([]);
+    const [page, setPage] = useState(1);
+    const [sortBy, setSortBy] = useState();
+
+    const handleChange = (event, value) => {
+        setPage(value);
+    };
+
+    const handleSortBy = (name) => {
+        setSortBy(name);
+    };
+
+    useEffect(() => {
+        const GetGenreData = async () => {
+            const result = await DataServices.GetGenre(Id);
+            setGenreData(result.data)
+        }
+        GetGenreData();
+    }, [Id])
+
+    useEffect(() => {
+        const GetBooks = async () => {
+            const result = await DataServices.GetBooksByGenre(Id, "id,booktitle,bookCover,genre, author", page, 8, sortBy);
+            setBooks(result.data)
+        }
+        GetBooks();
+    }, [page, sortBy]);
+
+    return (
         <div className="Genre">
             <div className="container">
 
                 <div className="SortBy">
                     Sort By
-                    <button>Title</button>
-                    <button>Popularity</button>
-                    <button>Rating</button>
+                    <button onClick={() => handleSortBy("title")}>Title</button>
+                    <button onClick={() => handleSortBy("popularity")}>Popularity</button>
+                    <button onClick={() => handleSortBy("rating")}>Rating</button>
                 </div>
-               
+
                 <div className="GenreDetails">
-                    <h1 className="header">GenresName</h1>
-                    <p className="GenrsDesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus quis nibh non sagittis. Nulla viverra felis eget posuere mattis. Nulla facilisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse id accumsan lacus. Phasellus condimentum volutpat libero id finibus. Nunc placerat fermentum aliquam. Mauris velit est, semper a nisi laoreet, venenatis vulputate ipsum. Aenean erat odio, suscipit sit amet mollis et.</p>
+                    {
+                        genreData != null ?
+                            <>
+                                <h1 className="header">{genreData.genreName}</h1>
+                                <p className="GenrsDesc">{genreData.description}</p>
+                            </>
+                            :
+                            null
+                    }
+
 
                     <div className="phoneScreen">
                         Sort By
-                        <button>Title</button>
-                        <button>Popularity</button>
-                        <button>Rating</button>
+                        <button onClick={() => handleSortBy("title")}>Title</button>
+                        <button onClick={() => handleSortBy("popularity")}>Popularity</button>
+                        <button onClick={() => handleSortBy("rating")}>Rating</button>
                     </div>
-                    
+
                     <div className="BookCards">
-                        <BookCard BookTitle="A Milion To One" AuthorName="Tony Faggioli" src="https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg"/>
-                        <BookCard BookTitle="A Milion To One" AuthorName="Tony Faggioli" src="https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg"/>
-                        <BookCard BookTitle="A Milion To One" AuthorName="Tony Faggioli" src="https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg"/>
-                        <BookCard BookTitle="A Milion To One" AuthorName="Tony Faggioli" src="https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg"/>
-                        <BookCard BookTitle="A Milion To One" AuthorName="Tony Faggioli" src="https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg"/>
-                        <BookCard BookTitle="A Milion To One" AuthorName="Tony Faggioli" src="https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg"/>
-                        <BookCard BookTitle="A Milion To One" AuthorName="Tony Faggioli" src="https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg"/>
-                        <BookCard BookTitle="A Milion To One" AuthorName="Tony Faggioli" src="https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg"/>
-                        <BookCard BookTitle="A Milion To One" AuthorName="Tony Faggioli" src="https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg"/>
-                        <BookCard BookTitle="A Milion To One" AuthorName="Tony Faggioli" src="https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg"/>
-                        <BookCard BookTitle="A Milion To One" AuthorName="Tony Faggioli" src="https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg"/>
-                        <BookCard BookTitle="A Milion To One" AuthorName="Tony Faggioli" src="https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg"/>
+
+                        {
+                            books != null ?
+
+                                books.map((item) => (
+                                    <BookCard
+                                        key={item.id}
+                                        BookTitle={item.bookTitle}
+                                        AuthorName={item.author != null ? item.author.name : null}
+                                        src={item.bookCover}
+                                        page={`${item.genre.id}/books/${item.id}`}
+                                    />
+                                ))
+                                :
+                                null
+                        }
                     </div>
 
                 </div>
                 <div className="Clear"></div>
                 <div className="PaginationDiv">
-                    <Pagination className="Pagination" count={10} color="secondary"/>
+                    <Pagination className="Pagination" count={10} color="secondary" onChange={handleChange} />
                 </div>
             </div>
         </div>
