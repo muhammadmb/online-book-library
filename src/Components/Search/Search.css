@@ -1,0 +1,19 @@
+.header{
+    color: #EEE;
+    margin: 2% 0 4%;
+}
+
+.Cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.alert{
+    justify-self: center;
+    margin: 5% auto;
+    width: 80%;
+    color: #EEE;
+    font-size: 44px;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+}

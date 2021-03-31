@@ -33,7 +33,7 @@ const BookInfo = (props) => {
         }
 
         const GetGenres = async () => {
-            const result = await DataServices.GetGenres(1, 10);
+            const result = await DataServices.GetGenres(1, 10, "");
             setGenres(result.data);
         }
 

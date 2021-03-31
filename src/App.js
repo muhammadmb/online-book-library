@@ -12,6 +12,7 @@ import BookInfo from './Components/BookInfoPage/BookInfo.js';
 import NotFoundPage from './Components/NotFoundPage/NotFoundPage.js';
 import Genres from './Components/GenresPage/Genres';
 import AuthorInfo from './Components/AuthorInfoPage/AuthorInfo';
+import Search from './Components/Search/Search';
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
           <Route path="/genre/:genreId/books/:id" component={BookInfo} />
           <Route exact path="/genre/:id" component={Genres} />
           <Route exact path="/Authors/:Id" component={AuthorInfo} />
+          <Route exact path="/search/:SearchQuery" component={Search} />
+          <Route exact path="/search" component={Search} />
           <Route path="/*" component={NotFoundPage} />
         </Switch>
         <Footer />

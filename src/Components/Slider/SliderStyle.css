@@ -84,8 +84,8 @@
 }
 
 .buttonLink .button:hover{
-    background-color: #EEE;
-    color: #100224;
+    background-color: rgba(0, 0, 0, .8);
+    color: #EEE;
     border: 1px solid #100224;
     transform: translateY(-10px);
 }

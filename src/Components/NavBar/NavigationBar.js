@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../Style.css';
 import { Link, NavLink } from 'react-router-dom';
 
 const NavigationBar = () => {
+
+    const [search, setSearch] = useState("");
+
+    const handelChange = (event) => {
+        setSearch(event.target.value);
+    }
 
     return (
 
@@ -40,8 +46,15 @@ const NavigationBar = () => {
                         </li>
                     </ul>
                     <form className="form-inline my-2 my-lg-0">
-                        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+                        <input
+                            className="form-control mr-sm-2"
+                            type="search"
+                            placeholder="Search"
+                            aria-label="Search"
+                            onChange={handelChange}
+                            value={search}
+                        />
+                        <Link to={`/search/${search}`}><button className="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button></Link>
                     </form>
                 </div>
             </div>

@@ -15,6 +15,10 @@ class DataServices {
         return axios.get(`${API_URL}/Genres/${genreId}/Books?fields=${fields}&PageNumber=${PageNumber}&PageSize=${PageSize}&sortby=${sortby}`);
     }
 
+    GetBookSearch(fields, SearchQuery) {
+        return axios.get(`${API_URL}/Genres/00000000-0000-0000-0000-000000000000/Books?fields=${fields}&SearchQuery=${SearchQuery}`);
+    }
+
     GetBookDetails(genreId, bookId) {
         return axios.get(`${API_URL}/Genres/${genreId}/Books/${bookId}`);
     }
@@ -43,6 +47,10 @@ class DataServices {
 
     GetAuthors() {
         return axios.get(`${API_URL}/Authors?fields=id,name,bio,pictureUrl,dateOfBirth,dateOfDeath`);
+    }
+
+    GetAuthorsSearch(SearchQuery) {
+        return axios.get(`${API_URL}/Authors?fields=id,name,bio,pictureUrl,dateOfBirth,dateOfDeath&SearchQuery=${SearchQuery}`);
     }
 
 }

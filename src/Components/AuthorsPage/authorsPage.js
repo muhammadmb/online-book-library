@@ -19,8 +19,6 @@ const AuthorPage = () => {
         GetAuthors();
     }, [])
 
-    console.log(authorData)
-
     return (
         <div className="container">
 
