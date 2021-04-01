@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import DataServices from '../API/DataServices/DataServices';
 import AuthorCard from '../AuthorCard/AuthorCard';
 import BookCard from '../BookCard/BookCard';
+import notFoundImg from '../../Images/search.png';
 import './Search.css'
 
 const Search = (props) => {
@@ -32,11 +33,11 @@ const Search = (props) => {
         <div className="container">
 
             {
-                books.length === 0 && authors.length === 0 ?
-                    SearchQuery === undefined ?
-                        <p className="alert">For effecient searching try search by book's title, author's name or publisher</p>
-                        :
-                        <p className="alert" severity="info">Unfortunately {SearchQuery} is not found, For effecient searching try search by book's title, author's name or publisher</p>
+                books.length === 0 || authors.length === 0 || SearchQuery === undefined ?
+                    <>
+                        <img src={notFoundImg} alt="not found" />
+                        <p className="alert">We tried hard to find what you want, could you help us by search by book's title, author's name or publisher</p>
+                    </>
                     :
                     null
             }

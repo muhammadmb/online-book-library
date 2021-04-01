@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import DataServices from '../API/DataServices/DataServices';
 import AuthorCard from '../AuthorCard/AuthorCard';
-import './authorPageStyle.css';
+import './AuthorPageStyle.css';
 import Skeleton from '@material-ui/lab/Skeleton';
 
 const AuthorPage = () => {

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import DataServices from "../API/DataServices/DataServices";
 import HomePic from "../../Images/HomePic.png";
-import Button from 'react-bootstrap/Button';
 import './HomeStyle.css';
 import MiniCard from '../Card/HomeCard';
 import Skeleton from '@material-ui/lab/Skeleton';
@@ -74,7 +73,7 @@ const Home = () => {
           <div className="welcomeTexts">
             <h2>Hi, welcome back!</h2>
             <h4 >Here is a customised world of books for you.</h4>
-            <Link to="/books"><Button variant="outline-info" style={{ margin: 25 }}>Browse Latest</Button></Link>
+            <Link to="/books"><button style={{ margin: 25 }}>Browse Latest</button></Link>
           </div>
           <img src={HomePic} alt="Homepicture" />
         </div>

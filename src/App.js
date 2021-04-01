@@ -7,7 +7,7 @@ import Footer from './Components/Footer/Footer.js';
 import BookPage from './Components/BooksPage/BooksPage';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Contact from './Components/Connect/ContactUs.js';
-import AuthorPage from './Components/AuthorsPage/AuthorsPage.js';
+import AuthorsPage from './Components/AuthorsPage/AuthorsPage.js';
 import BookInfo from './Components/BookInfoPage/BookInfo.js';
 import NotFoundPage from './Components/NotFoundPage/NotFoundPage.js';
 import Genres from './Components/GenresPage/Genres';
@@ -24,7 +24,7 @@ function App() {
           <Route exact path="/online-book-library" component={Home} />
           <Route exact path="/Home" component={Home} />
           <Route exact path="/books" component={BookPage} />
-          <Route exact path="/authors" component={AuthorPage} />
+          <Route exact path="/authors" component={AuthorsPage} />
           <Route exact path="/Connect" component={Contact} />
           <Route exact path="/about" component={About} />
           <Route path="/genre/:genreId/books/:id" component={BookInfo} />
