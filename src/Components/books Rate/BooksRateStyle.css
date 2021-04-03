@@ -9,13 +9,16 @@
     margin: 3% 0 4%;
 }
 
+.ReadersReviewsHeader.light{
+    color: black;
+}
+
 .reviewsRating .ratingRatio,
 .reviewsRating .ratingRatio > span{
 
     border-radius: 15px;
     height: 10px;
 }
-
 
 .reviewsRating .ratingRatio{
     background-color: #D3D3D3;
@@ -36,10 +39,15 @@
     width: 50%;
     text-align: center;
 }
+
 .reviewsStatistics > span{
     color: #FFF;
     display: block;
     font-size: 22px;
+}
+
+.reviewsStatistics.light > span{
+    color: black;
 }
 
 .reviewsStatistics > span:nth-of-type(1){

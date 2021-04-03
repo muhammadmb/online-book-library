@@ -11,6 +11,7 @@ const Home = () => {
   const [classicsBooks, setClassicsBooks] = useState([]);
   const [action, setAction] = useState([]);
   const [genres, setGenres] = useState([]);
+  const theme = localStorage.getItem("theme");
   const Skeletons = [1, 2, 3, 4, 5];
 
   useEffect(() => {
@@ -65,57 +66,63 @@ const Home = () => {
 
   return (
     <div className="container">
-      <div>
-        <div className="welcomeCard"
-          data-aos="fade-down"
-          data-aos-duration="1000"
-        >
-          <div className="welcomeTexts">
-            <h2>Hi, welcome back!</h2>
-            <h4 >Here is a customised world of books for you.</h4>
-            <Link to="/books"><button style={{ margin: 25 }}>Browse Latest</button></Link>
-          </div>
-          <img src={HomePic} alt="Homepicture" />
-        </div>
+      <div
+        className={theme === 'light' ? "welcomeCard light" : "welcomeCard"}
+        data-aos="fade-down"
+        data-aos-duration="1000"
+      >
+        <div className="welcomeTexts">
 
-        <span className="sideTitles" >Classics</span>
+          <h2 className={theme === 'light' ? "light" : ""}>Hi, welcome back!</h2>
+          <h4 className={theme === 'light' ? "light" : ""}>Here is a customised world of books for you.</h4>
 
-        <div className="swipperDiv" >
-
-          {
-            classicsBooks.length === 0 ?
-              <SkeletonView />
-              :
-              <BooksList list={classicsBooks} />
-          }
+          <Link to="/books">
+            <button className="button">
+              Browse Latest
+              </button>
+          </Link>
 
         </div>
+        <img src={HomePic} alt="Homepicture" />
+      </div>
 
-        <span className="sideTitles" >Action and Adventure</span>
+      <span className={theme === 'light' ? "light sideTitles" : "sideTitles"} >Classics</span>
 
-        <div className="swipperDiv">
-          {
-            action.length === 0 ?
-              <SkeletonView />
-              :
-              <BooksList list={action} />
-          }
-        </div>
+      <div className="swipperDiv" >
 
-        <span className="sideTitles">Genres</span>
-
-        <div className="swipperDiv">
-
-          {
-            genres.length === 0 ?
-              <SkeletonView />
-              :
-              <GenresList />
-          }
-
-        </div>
+        {
+          classicsBooks.length === 0 ?
+            <SkeletonView />
+            :
+            <BooksList list={classicsBooks} />
+        }
 
       </div>
+
+      <span className={theme === 'light' ? "light sideTitles" : "sideTitles"}>Action and Adventure</span>
+
+      <div className="swipperDiv">
+        {
+          action.length === 0 ?
+            <SkeletonView />
+            :
+            <BooksList list={action} />
+        }
+      </div>
+
+      <span className={theme === 'light' ? "light sideTitles" : "sideTitles"}>Genres</span>
+
+      <div className="swipperDiv">
+
+        {
+          genres.length === 0 ?
+            <SkeletonView />
+            :
+            <GenresList />
+        }
+
+      </div>
+
     </div>
   );
 }

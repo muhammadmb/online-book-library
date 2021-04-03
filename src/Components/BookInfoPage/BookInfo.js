@@ -18,6 +18,7 @@ const BookInfo = (props) => {
     const [genres, setGenres] = useState([]);
     const [bookData, setBookData] = useState([]);
     const [isLoad, setIsLoad] = useState(false);
+    const theme = localStorage.getItem("theme");
     let authorLink = `/authors/${bookData.author != null ? bookData.author.id : 0}`;
 
     useEffect(() => {
@@ -40,7 +41,7 @@ const BookInfo = (props) => {
         GetBook();
         GetGenreBooks();
         GetGenres();
-    }, [id]);
+    }, [genreId, id]);
 
     const BooksList = (props) => (
         props.list.map(item =>
@@ -76,27 +77,61 @@ const BookInfo = (props) => {
                                 <img src={bookData.bookCover} alt={bookData.bookTitle} title={bookData.bookTitle} />
 
                             </div>
-                            <span>Published {bookData.dateOfPublish != null ? bookData.dateOfPublish.substring(0, 4) : 2000}</span>
-                            <span>Pages {bookData.numberOfBookPages}</span>
-                            <span>Publisher {bookData.publisher}</span>
+                            <span
+                                className={theme === 'light' ? 'light' : ''}
+                            >
+                                Published <span>{bookData.dateOfPublish != null ? bookData.dateOfPublish.substring(0, 4) : 2000}</span>
+                            </span>
+                            <span
+                                className={theme === 'light' ? 'light' : ''}
+                            >
+                                Pages <span>{bookData.numberOfBookPages}</span>
+                            </span>
+                            <span
+                                className={theme === 'light' ? 'light' : ''}
+                            >
+                                Publisher <span>{bookData.publisher}</span>
+                            </span>
                         </div>
 
                         <div className="rightSection">
 
-                            <h1>{bookData.bookTitle}</h1>
+                            <h1 className={theme === 'light' ? "light" : ""}>{bookData.bookTitle}</h1>
 
-                            <span>By <Link className="link" to={authorLink}>{bookData.author != null ? bookData.author.name : null}</Link></span>
-                            <Box className="rating" borderColor="transparent">
-                                <Rating name="hover-feedback" precision={1} value={bookData.bookRating != null ? bookData.bookRating.bookRate : 0} readOnly />
+                            <span
+                                className={theme === 'light' ? "light" : ""}
+                            >
+                                By <Link className="link" to={authorLink}>{bookData.author != null ? bookData.author.name : null}</Link>
+                            </span>
+
+                            <Box
+                                className="rating"
+                                borderColor="transparent"
+                            >
+                                <Rating
+                                    name="hover-feedback"
+                                    precision={1}
+                                    value={bookData.bookRating != null ? bookData.bookRating.bookRate : 0}
+                                    readOnly
+                                />
                             </Box>
-                            <span>({bookData.reviews != null ? bookData.reviews.length : 0} Reviews)</span>
+
+                            <span
+                                className={theme === 'light' ? "light" : ""}
+                            >
+                                ({bookData.reviews != null ? bookData.reviews.length : 0} Reviews)
+                            </span>
+
                             <div className="Clear"></div>
-                            <p>
+
+                            <p className={theme === 'light' ? "light" : ""}>
                                 {bookData.description}
                             </p>
                         </div>
+
                         <div className="Clear"></div>
-                        <hr />
+
+                        <hr className={theme === 'light' ? "light" : ""} />
 
                         {
                             bookData.bookRating != null ?
@@ -111,14 +146,20 @@ const BookInfo = (props) => {
                             <Reviews content={item} key={item.id} />
                         ))}
 
-                        <hr />
+                        <hr className={theme === 'light' ? "light" : ""} />
 
-                        <span className="suggestionSpan">Popular books in {bookData.genre != null ? bookData.genre.genreName : 0}</span>
+                        <span
+                            className={theme === 'light' ? "suggestionSpan light" : "suggestionSpan"}
+                        >
+                            Popular books in {bookData.genre != null ? bookData.genre.genreName : 0}
+                        </span>
+
                         <div className="books">
                             <BooksList list={genreBooks} />
                         </div>
 
-                        <span className="suggestionSpan">Genres</span>
+                        <span className={theme === 'light' ? "suggestionSpan light" : "suggestionSpan"}>Genres</span>
+
                         <div className="books">
                             <GenresList />
                         </div>

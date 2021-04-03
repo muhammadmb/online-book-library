@@ -9,6 +9,10 @@
     background-color: #FF5722;
 }
 
+.Reviews .reviwer{
+    text-transform: capitalize;
+}
+
 .Reviews p{
     width: 70%;
     margin: 1% 0 2%;
@@ -16,10 +20,8 @@
 }
 
 .voting{
-    display: block;
-    float: left;
-    width: 20%;
-    margin: 1% 0 0 1%;
+    position: relative;
+    right: 0;
 }
 
 .Reviews .vote{
@@ -46,4 +48,10 @@
     color: #EEE;
     display: block;
     margin-left: 5%;
+}
+
+.light,
+.Reviews .counter.light,
+.Reviews .reviwer.light{
+    color: #001f19;
 }

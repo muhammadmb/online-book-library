@@ -10,7 +10,7 @@ const AuthorInfo = (props) => {
     const id = props.match.params.Id;
     const [authorData, setAuthorData] = useState([]);
     const [isLoad, setIsLoad] = useState(false);
-
+    const theme = localStorage.getItem("theme")
     useEffect(() => {
         const authorInfo = async () => {
             const result = await DataServices.GetAuthor(id);
@@ -18,7 +18,7 @@ const AuthorInfo = (props) => {
             setIsLoad(true);
         }
         authorInfo();
-    }, []);
+    }, [id]);
 
     return (
         <div className="container">
@@ -29,7 +29,7 @@ const AuthorInfo = (props) => {
                             <img src={authorData.pictureUrl} alt="author" />
                         </div>
 
-                        <div className="author-info">
+                        <div className={theme === 'light' ? "author-info light" : "author-info"}>
                             <h2>{authorData.name}</h2>
                             <p>
                                 {authorData.bio}
@@ -47,9 +47,9 @@ const AuthorInfo = (props) => {
 
                         <div className="Clear"></div>
 
-                        <hr />
+                        <hr className={theme === 'light' ? "light" : ""} />
 
-                        <div className="author-books">
+                        <div className={theme === 'light' ? "author-books light" : "author-books"}>
                             <h3>Popular books of <span>{authorData.name}</span></h3>
 
                             {

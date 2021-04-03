@@ -20,3 +20,17 @@
 .skeleton{
     background-color: #777;
 }
+
+.App{
+    background-color: #061724;
+    transition: .3s;
+}
+
+.App.light{
+    background-color: #DDE4E7;
+    transition: .3s;
+}
+
+.light{
+    color: #061724;
+}

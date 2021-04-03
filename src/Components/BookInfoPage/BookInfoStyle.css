@@ -21,8 +21,16 @@
     display: block;
     margin: 0 5%;
     color: #DDD;
+    font-size: 17px;
 }
 
+.bookInfo .leftSection > span.light{
+    color: #000444;
+}
+
+.bookInfo .leftSection > span > span{
+    font-weight: 600;
+}
 
 .bookInfo .rightSection{
     margin: 6% 3%;
@@ -60,7 +68,6 @@
 .bookInfo .rightSection .rating{
     margin: 2%;
     float: left;
-
 }
 
 .bookInfo .rightSection p{
@@ -71,6 +78,7 @@
 .bookInfo hr{
     border: 1px solid #FFF;
     width: 80%;
+    margin: 5% auto;
 }
 
 .bookInfo .suggestionSpan{
@@ -78,6 +86,15 @@
     font-size: 22px;
     text-decoration: underline;
     font-weight: 600;
+}
+
+.bookInfo .suggestionSpan.light,
+.loght{
+    color: #000;
+}
+
+hr.light{
+    border-color: #000;
 }
 
 .bookInfo .books{

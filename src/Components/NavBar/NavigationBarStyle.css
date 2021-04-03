@@ -1,0 +1,14 @@
+.navbar{
+    background-color: #0C2233;
+}
+
+.toogelIcon{
+    color: #EEE;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.toogelIcon:hover{
+    transition: all .4s ease-in-out;
+    transform: rotate(-15deg);
+}

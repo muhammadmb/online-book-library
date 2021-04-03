@@ -1,1 +1,1 @@
-export const API_URL = "http://localhost:51044/api";
+export const API_URL = "https://bookapi.azure-api.net/api";

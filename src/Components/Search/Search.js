@@ -11,6 +11,7 @@ const Search = (props) => {
 
     const [books, setBooks] = useState([]);
     const [authors, setAuthors] = useState([]);
+    const theme = localStorage.getItem("theme");
 
     useEffect(() => {
         const GetBooks = async () => {
@@ -27,16 +28,14 @@ const Search = (props) => {
         GetAuthors();
     }, [SearchQuery])
 
-    console.log(SearchQuery)
-
     return (
         <div className="container">
 
             {
                 books.length === 0 || authors.length === 0 || SearchQuery === undefined ?
                     <>
-                        <img src={notFoundImg} alt="not found" />
-                        <p className="alert">We tried hard to find what you want, could you help us by search by book's title, author's name or publisher</p>
+                        <img className="searchImg" src={notFoundImg} alt="not found" />
+                        <p className={theme === 'light' ? "alert light" : "alert"}>we recommend you to search by book's title, author's name or publisher</p>
                     </>
                     :
                     null
@@ -45,7 +44,7 @@ const Search = (props) => {
             {
                 books.length !== 0 ?
                     <>
-                        <h2 className="header">Books</h2>
+                        <h2 className={theme === 'light' ? "header light" : "header"}>Books</h2>
                         {
                             books.map((item) => (
                                 <BookCard
@@ -64,7 +63,7 @@ const Search = (props) => {
 
             {authors.length !== 0 ?
                 <>
-                    <h2 className="header">Authors</h2>
+                    <h2 className={theme === 'light' ? "header light" : "header"}>Authors</h2>
                     <div className="Cards">
                         {
                             authors.map((item) => (

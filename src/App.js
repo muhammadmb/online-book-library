@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css'
 import About from './Components/About/About.js';
 import NavBar from './Components/NavBar/NavigationBar.js';
@@ -15,10 +15,13 @@ import AuthorInfo from './Components/AuthorInfoPage/AuthorInfo';
 import Search from './Components/Search/Search';
 
 function App() {
+
+  const [theme, setTheme] = useState(localStorage.getItem("theme"));
+
   return (
-    <div className="App">
+    <div className={theme === 'light' ? "App light" : "App"}>
       <BrowserRouter>
-        <NavBar />
+        <NavBar onChange={(value) => setTheme(value)} />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/online-book-library" component={Home} />

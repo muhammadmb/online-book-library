@@ -6,6 +6,25 @@
     margin:40px auto ;
     text-align: left;
 }
+
+.welcomeCard.light{
+    border: 2px solid #061724;
+}
+
+.button{
+    margin: 30px;
+    background-color: #061724;
+    color: #17A2B8;
+    padding: 10px 15px;
+    border-radius: 25px;
+    transition: .5s;
+    border: 1px solid #17A2B8;
+}
+
+.button:hover{
+    transform: translateY(-20px);
+}
+
 .welcomeTexts{
     float: left;
 }
@@ -25,9 +44,11 @@
 .sideTitles{
     color: #17A2B8;
     margin-left: 5%;
-    font-size: 20px;
+    font-size: 24px;
+    font-weight: 500;
     text-decoration: underline;
 }
+
 .swipperDiv{
     margin: 20px 0 20px 7%;
 }
@@ -36,6 +57,12 @@
     margin: 7px;
     display: inline-block;
     background-color: #777;
+}
+
+h2.light,
+h4.light,
+.sideTitles.light{
+    color: #061724;
 }
 
 @media (max-width: 767px){  /* phone screen */

@@ -1,53 +1,63 @@
 .Genre{
-    background-color: #DDD;
-    padding: 5%;
+    padding: 3%;
 }
 
-.Genre .SortBy,
-.Genre .GenreDetails .phoneScreen{
-    margin: 22% 2% 2%;
+.Genre .header{
+    color: #990c4b;
+}
+
+.Genre .GenrsDesc{
+    width: 80%;
+    padding: 0 0 2%;
+    line-height: 1.7;
+    color: #EEE;
+    font-weight: 300;
+    font-size: 19px;
+}
+
+.Genre .GenrsDesc.light{
+    color: #111;
+}
+
+.Genre .GenreDetails{
+    display: flex;
+    flex-direction: row;
+}
+
+.Genre .SortBy{
+    margin: 1% 5% 2% 3%;
+    padding-right: 2.5%;
     font-size: 20px;
-    float: left;
     width: 16%;
-    border-right: 1px solid #000;
+    color: #EEE;
+    font-weight: 500;
+    border-right: 1px solid #EEE;
 }
 
-.Genre .GenreDetails .phoneScreen{
-    display: none;
-    border: none;
+.Genre .SortBy.light{
+    color: #000444;
+    border-color: #000444;
 }
 
-.Genre .SortBy button,
-.Genre .GenreDetails .phoneScreen button{
+.Genre .SortBy button{
     background: none;
     border: none;
     outline: none;
-    margin: 1%;
+    margin: 3%;
     padding: 1%;
     font-weight: 600;
     display: block;
     color: rgb(204, 54, 54);
 }
 
-.Genre .SortBy button:hover,
-.Genre .GenreDetails .phoneScreen button:hover{
+.Genre .SortBy button:hover{
     color: rgb(150, 37, 37);
 }
 
-.Genre .GenreDetails{
-    float: left;
-    width: 80%;
-}
-
-.Genre .GenreDetails .header{
-    color: #990c4b;
-}
-
-.Genre .GenreDetails .GenrsDesc{
-    width: 80%;
-    padding: 2%;
-    line-height: 1.7;
-    color: #111;
+.Genre .GenreDetails .BookCards{
+    margin: 0;
+    padding: 0;
+    display: inline-table;
 }
 
 .Genre .PaginationDiv{
@@ -57,35 +67,22 @@
     align-content: center;
 }
 
-.Genre .GenreDetails .BookCards{
-    margin: 0 auto;
-    padding: 0;
-}
-
 @media (max-width: 767px){  /* phone screen */
     
     .Genre{
-        background-color: #DDD;
         padding: 5% 0;
     }
 
     .Genre .GenreDetails{
-        float: none;
-        width: 100%;
+        display: inline-block;
     }
 
     .Genre .SortBy{
-        display: none;
+        width: 100%;
+        border: none;
+        margin-top: 1%;
     }
 
-    .Genre .GenreDetails .phoneScreen{
-        display: unset;
-        width: 100%;
-        margin: 3% 2%;
-    }
-    .Genre .GenreDetails .phoneScreen button{
-        display: inline;
-    }
     .Genre .SortBy button{
         display: inline;
     }

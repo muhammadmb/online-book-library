@@ -11,6 +11,7 @@ const Genres = (props) => {
     const [books, setBooks] = useState([]);
     const [page, setPage] = useState(1);
     const [sortBy, setSortBy] = useState();
+    const theme = localStorage.getItem("theme");
 
     const handleChange = (event, value) => {
         setPage(value);
@@ -34,38 +35,29 @@ const Genres = (props) => {
             setBooks(result.data)
         }
         GetBooks();
-    }, [page, sortBy]);
+    }, [Id, page, sortBy]);
 
     return (
         <div className="Genre">
             <div className="container">
-
-                <div className="SortBy">
-                    Sort By
-                    <button onClick={() => handleSortBy("title")}>Title</button>
-                    <button onClick={() => handleSortBy("popularity")}>Popularity</button>
-                    <button onClick={() => handleSortBy("rating")}>Rating</button>
-                </div>
+                {
+                    genreData != null ?
+                        <>
+                            <h1 className="header">{genreData.genreName}</h1>
+                            <p className={theme === 'light' ? "GenrsDesc light" : "GenrsDesc"}>{genreData.description}</p>
+                        </>
+                        :
+                        null
+                }
 
                 <div className="GenreDetails">
-                    {
-                        genreData != null ?
-                            <>
-                                <h1 className="header">{genreData.genreName}</h1>
-                                <p className="GenrsDesc">{genreData.description}</p>
-                            </>
-                            :
-                            null
-                    }
 
-
-                    <div className="phoneScreen">
+                    <div className={theme === 'light' ? "SortBy light" : "SortBy"}>
                         Sort By
                         <button onClick={() => handleSortBy("title")}>Title</button>
                         <button onClick={() => handleSortBy("popularity")}>Popularity</button>
                         <button onClick={() => handleSortBy("rating")}>Rating</button>
                     </div>
-
                     <div className="BookCards">
 
                         {
@@ -86,6 +78,7 @@ const Genres = (props) => {
                     </div>
 
                 </div>
+
                 <div className="Clear"></div>
                 <div className="PaginationDiv">
                     <Pagination className="Pagination" count={10} color="secondary" onChange={handleChange} />

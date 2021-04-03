@@ -1,7 +1,5 @@
 .author-content{
-
-    margin: 2% 0;
-
+    padding: 70px 0;
 }
 
 .author-content .img-box{
@@ -36,14 +34,14 @@
 }
 
 .author-content .author-info .link{
-    color: #1a7e8d;
+    color: #990c4b;
     font-weight: 700;
     font-size: 22px;
 }
 
 .author-content .author-info .link:hover{
     transition: .3s;
-    color: #0dbdd8;
+    color: #ff0676;
     text-decoration: none;
 }
 
@@ -55,6 +53,10 @@
     background-color: #DDD;
 }
 
+.author-content > hr.light{
+    background-color: #061724;
+}
+
 .author-content .author-books{
     margin-top: 5%;
     color: #EEE;
@@ -62,4 +64,8 @@
 
 .author-books h3 span{
     color:#0dbdd8;
+}
+.author-books.light,
+.author-content .author-info.light{
+    color:#061724;
 }

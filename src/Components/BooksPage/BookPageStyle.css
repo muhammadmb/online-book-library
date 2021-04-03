@@ -39,14 +39,19 @@
 }
 
 .BookPage .content .section span{
-    background:#2F3236;
+    background:#061724;
     margin-left: 30px;
     padding:0 10px; 
-    color: #FFF;
+    color: #990c4b;
+}
+
+.BookPage .content .section span.light{
+    background: #DDE4E7;
+    color: #990c4b;
 }
 
 .BookPage .content .section span:hover{
-    color: #17A2B8;
+    color: #ff0676;
 }
 
 .link:hover{

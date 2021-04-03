@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 const BookPage = () => {
 
     const [genres, setGenres] = useState([]);
+    const theme = localStorage.getItem("theme");
 
     useEffect(() => {
         const GetGenres = async () => {
@@ -28,7 +29,15 @@ const BookPage = () => {
                     genres.map((item) => (
                         item.books.length !== 0 ?
                             <div key={item.id}>
-                                <h2 className="section"><Link className="link" to={`/genre/${item.id}`}><span>{item.genreName}</span></Link></h2>
+                                <h2 className="section">
+                                    <Link className="link" to={`/genre/${item.id}`}>
+                                        <span
+                                            className={theme === 'light' ? "light" : ""}
+                                        >
+                                            {item.genreName}
+                                        </span>
+                                    </Link>
+                                </h2>
 
                                 {
                                     item.books.map((book) => (

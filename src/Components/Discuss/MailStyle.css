@@ -1,7 +1,11 @@
 .MailContent{
-    background-color: white;
+    background-color: #061724;
     border-top: 5px solid #17A2B8;
     padding: 2%;
+}
+
+.MailContent.light{
+    background-color: #DDE4E7;
 }
 
 .MailContent form{
@@ -28,6 +32,7 @@
     border: none;
     background-color: #F4F5F7;
     height: 170px;
+    resize: none;
 }
 .MailContent .button{
     display: block;
