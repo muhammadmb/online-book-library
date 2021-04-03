@@ -1,25 +1,26 @@
 {
   "files": {
-    "main.css": "/online-book-library/static/css/main.d4defba4.chunk.css",
-    "main.js": "/online-book-library/static/js/main.8673a4cd.chunk.js",
-    "main.js.map": "/online-book-library/static/js/main.8673a4cd.chunk.js.map",
-    "runtime-main.js": "/online-book-library/static/js/runtime-main.c90527d5.js",
-    "runtime-main.js.map": "/online-book-library/static/js/runtime-main.c90527d5.js.map",
-    "static/js/2.52e0ebf2.chunk.js": "/online-book-library/static/js/2.52e0ebf2.chunk.js",
-    "static/js/2.52e0ebf2.chunk.js.map": "/online-book-library/static/js/2.52e0ebf2.chunk.js.map",
+    "main.css": "/online-book-library/static/css/main.116cf8e2.chunk.css",
+    "main.js": "/online-book-library/static/js/main.f54c2267.chunk.js",
+    "main.js.map": "/online-book-library/static/js/main.f54c2267.chunk.js.map",
+    "runtime-main.js": "/online-book-library/static/js/runtime-main.be7d996a.js",
+    "runtime-main.js.map": "/online-book-library/static/js/runtime-main.be7d996a.js.map",
+    "static/css/2.ec02d681.chunk.css": "/online-book-library/static/css/2.ec02d681.chunk.css",
+    "static/js/2.b0ed3552.chunk.js": "/online-book-library/static/js/2.b0ed3552.chunk.js",
+    "static/js/2.b0ed3552.chunk.js.map": "/online-book-library/static/js/2.b0ed3552.chunk.js.map",
     "index.html": "/online-book-library/index.html",
-    "precache-manifest.171479876bc538ed475c96e51235e0de.js": "/online-book-library/precache-manifest.171479876bc538ed475c96e51235e0de.js",
-    "service-worker.js": "/online-book-library/service-worker.js",
-    "static/css/main.d4defba4.chunk.css.map": "/online-book-library/static/css/main.d4defba4.chunk.css.map",
-    "static/js/2.52e0ebf2.chunk.js.LICENSE.txt": "/online-book-library/static/js/2.52e0ebf2.chunk.js.LICENSE.txt",
-    "static/media/bg.jpg": "/online-book-library/static/media/bg.3644ee70.jpg",
-    "static/media/contact.png": "/online-book-library/static/media/contact.88b5a256.png",
-    "static/media/libraryBackground.jpg": "/online-book-library/static/media/libraryBackground.e1dcc292.jpg"
+    "static/css/2.ec02d681.chunk.css.map": "/online-book-library/static/css/2.ec02d681.chunk.css.map",
+    "static/css/main.116cf8e2.chunk.css.map": "/online-book-library/static/css/main.116cf8e2.chunk.css.map",
+    "static/js/2.b0ed3552.chunk.js.LICENSE.txt": "/online-book-library/static/js/2.b0ed3552.chunk.js.LICENSE.txt",
+    "static/media/bg.7a330923.jpg": "/online-book-library/static/media/bg.7a330923.jpg",
+    "static/media/contact.9f587da5.png": "/online-book-library/static/media/contact.9f587da5.png",
+    "static/media/search.71da067a.png": "/online-book-library/static/media/search.71da067a.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.c90527d5.js",
-    "static/js/2.52e0ebf2.chunk.js",
-    "static/css/main.d4defba4.chunk.css",
-    "static/js/main.8673a4cd.chunk.js"
+    "static/js/runtime-main.be7d996a.js",
+    "static/css/2.ec02d681.chunk.css",
+    "static/js/2.b0ed3552.chunk.js",
+    "static/css/main.116cf8e2.chunk.css",
+    "static/js/main.f54c2267.chunk.js"
   ]
 }
