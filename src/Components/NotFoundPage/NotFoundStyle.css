@@ -1,5 +1,9 @@
 .notFound{
-    background-color: #FFF;
+    color: #fff;
+}
+
+.notFound.light{
+    color: #000;
 }
 
 #notfound{
@@ -48,7 +52,6 @@
 
 .notfound h2 {
     font-family: 'Montserrat', sans-serif;
-    color: #000;
     font-size: 24px;
     font-weight: 700;
     text-transform: uppercase;
@@ -57,7 +60,6 @@
 
 .notfound p {
     font-family: 'Montserrat', sans-serif;
-    color: #000;
     font-size: 14px;
     font-weight: 400;
     margin-bottom: 20px;

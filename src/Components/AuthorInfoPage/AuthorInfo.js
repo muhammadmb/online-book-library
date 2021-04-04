@@ -21,13 +21,14 @@ const AuthorInfo = (props) => {
     }, [id]);
 
     return (
-        <div className="container">
+
+        <div className="container" >
             {
                 isLoad ?
                     <div className="author-content">
-                        <div className="img-box">
+                        <div className="img-box" >
                             <img src={authorData.pictureUrl} alt="author" />
-                        </div>
+                        </div >
 
                         <div className={theme === 'light' ? "author-info light" : "author-info"}>
                             <h2>{authorData.name}</h2>
@@ -50,11 +51,15 @@ const AuthorInfo = (props) => {
                         <hr className={theme === 'light' ? "light" : ""} />
 
                         <div className={theme === 'light' ? "author-books light" : "author-books"}>
-                            <h3>Popular books of <span>{authorData.name}</span></h3>
 
                             {
+                                authorData.books.length !== 0 ?
+                                    <h3>Popular books of <span>{authorData.name}</span></h3>
+                                    :
+                                    null
+                            }
+                            {
                                 authorData.books != null ?
-
                                     authorData.books.map((item) => (
                                         <BookCard
                                             key={item.id}
@@ -63,6 +68,7 @@ const AuthorInfo = (props) => {
                                             src={item.bookCover}
                                             page={`/genre/${item.genreId}/books/${item.id}`}
                                         />
+
                                     ))
                                     :
                                     null
@@ -70,7 +76,7 @@ const AuthorInfo = (props) => {
 
                         </div>
 
-                    </div>
+                    </div >
                     :
                     <div className="skeletons">
                         <Skeleton className="skeleton-rect" variant="rect" width={285} height={430} />
@@ -80,7 +86,7 @@ const AuthorInfo = (props) => {
 
             }
 
-        </div>
+        </div >
     );
 
 }

@@ -32,7 +32,7 @@ const Search = (props) => {
         <div className="container">
 
             {
-                books.length === 0 || authors.length === 0 || SearchQuery === undefined ?
+                (books.length === 0 && authors.length === 0) || SearchQuery === undefined ?
                     <>
                         <img className="searchImg" src={notFoundImg} alt="not found" />
                         <p className={theme === 'light' ? "alert light" : "alert"}>we recommend you to search by book's title, author's name or publisher</p>

@@ -8,8 +8,12 @@
     background-color: #DDE4E7;
 }
 
+.MailContent .Mail{
+    display: flex;
+    flex-direction: row;
+}
+
 .MailContent form{
-    float: left;
     width: 65%;
 }
 
@@ -34,6 +38,7 @@
     height: 170px;
     resize: none;
 }
+
 .MailContent .button{
     display: block;
     width: 40%;
@@ -44,18 +49,24 @@
     border-radius: 5px;
     font-weight: 600;
 }
+
 .MailContent .button:hover{
     background-color: #F4F5F7;
     color: #0069D9;
     border: 1px solid #0069D9;
 }
+
 .MailContent img{
-    float: right;
-    margin: 2% 0;
-    width: 25%;
+    margin: 0 5%;
+    min-width: 25%;
 }
+
 @media (max-width: 767px){ /* small screen */
     
+    .MailContent .Mail{
+        flex-direction: column-reverse;
+    }
+
     .MailContent form{
         margin-top: 20px;
         float: none;
@@ -73,7 +84,8 @@
     }
 
     .MailContent img{
-        display: none;
+        width: 15%;
+        margin: 2% auto;
     }
 
 }

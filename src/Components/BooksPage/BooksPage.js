@@ -4,18 +4,29 @@ import BookCard from '../BookCard/BookCard';
 import BooksSlider from '../Slider/Slider';
 import DataServices from '../API/DataServices/DataServices';
 import { Link } from 'react-router-dom';
+import { Skeleton } from '@material-ui/lab';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const BookPage = () => {
 
     const [genres, setGenres] = useState([]);
+    const [isLoad, setIsLoad] = useState(false);
     const theme = localStorage.getItem("theme");
 
     useEffect(() => {
         const GetGenres = async () => {
             const result = await DataServices.GetGenres(1, 10, "genreName,id,picUrl,Books");
+            if (result.status === 200) {
+                setIsLoad(true);
+            }
             setGenres(result.data);
         }
         GetGenres();
+    }, []);
+
+    useEffect(() => {
+        AOS.init({ duration: 1000 });
     }, []);
 
     return (
@@ -26,9 +37,22 @@ const BookPage = () => {
             <div className="container content">
 
                 {
+                    isLoad !== true ?
+                        <>
+                            <Skeleton className="Skeleton" variant="text" height={60} />
+                            <Skeleton className="Skeleton" variant="rect" width={160} height={245} />
+                        </>
+                        :
+                        null
+                }
+
+                {
                     genres.map((item) => (
                         item.books.length !== 0 ?
-                            <div key={item.id}>
+                            <div
+                                key={item.id}
+                                data-aos="fade-up"
+                            >
                                 <h2 className="section">
                                     <Link className="link" to={`/genre/${item.id}`}>
                                         <span

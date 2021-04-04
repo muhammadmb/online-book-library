@@ -13,38 +13,41 @@ const Discuss = () => {
     return (
         <div className={theme === 'light' ? "MailContent light" : "MailContent"}>
             <div className="container">
-                <form onSubmit={SendMail}>
-                    <input
-                        type="text"
-                        placeholder="First Name"
-                        name="firstName"
-                        required
-                    />
-                    <input
-                        type="text"
-                        placeholder="Last Name"
-                        name="lastName"
-                        required
-                    />
-                    <input
-                        type="email"
-                        placeholder="Email Adrress"
-                        name="senderEmail"
-                        required
-                    />
-                    <textarea
-                        placeholder="We are pleased to know your sugesstions."
-                        name="message"
-                        required
-                    />
-                    <input
-                        className="button"
-                        type="submit"
-                        value="Send"
-                    />
-                </form>
-                <img src={icon} alt="readBook" />
-                <div className="Clear"></div>
+                <div className="Mail">
+                    <form onSubmit={SendMail}>
+                        <input
+                            type="text"
+                            placeholder="First Name"
+                            name="firstName"
+                            required
+                        />
+                        <input
+                            type="text"
+                            placeholder="Last Name"
+                            name="lastName"
+                            required
+                        />
+                        <input
+                            type="email"
+                            placeholder="Email Adrress"
+                            name="senderEmail"
+                            required
+                        />
+                        <textarea
+                            placeholder="We are pleased to know your sugesstions."
+                            name="message"
+                            required
+                        />
+                        <input
+                            className="button"
+                            type="submit"
+                            value="Send"
+                        />
+                    </form>
+                    <img src={icon} alt="readBook" />
+                    <div className="Clear"></div>
+                </div>
+
             </div>
         </div>
     );

@@ -24,8 +24,10 @@ const BookInfo = (props) => {
     useEffect(() => {
         const GetBook = async () => {
             const result = await DataServices.GetBookDetails(genreId, id);
+            if (result.status === 200) {
+                setIsLoad(true);
+            }
             setBookData(result.data);
-            setIsLoad(true);
         }
 
         const GetGenreBooks = async () => {
@@ -142,9 +144,15 @@ const BookInfo = (props) => {
 
                         <CreateComment content={bookData} />
 
-                        {bookData.reviews.map((item) => (
-                            <Reviews content={item} key={item.id} />
-                        ))}
+                        {
+                            bookData.reviews != null ?
+
+                                bookData.reviews.map((item) => (
+                                    <Reviews content={item} key={item.id} />
+                                ))
+                                :
+                                null
+                        }
 
                         <hr className={theme === 'light' ? "light" : ""} />
 

@@ -12,8 +12,10 @@ const AuthorPage = () => {
     useEffect(() => {
         const GetAuthors = async () => {
             const result = await DataServices.GetAuthors();
+            if (result.status === 200) {
+                setIsLoad(true);
+            }
             setAuthorData(result.data);
-            setIsLoad(true);
         }
 
         GetAuthors();
