@@ -12,6 +12,7 @@ const CreateComment = (props) => {
     const [reviewerName, setReviewerName] = useState("");
     const [email, setEmail] = useState("");
     const [description, setDescription] = useState("");
+    const [reviewCounter, SetReviewCounter] = useState(0);
     const [rate, setRate] = useState(0);
     const [error, setError] = useState(false);
     const theme = localStorage.getItem("theme");
@@ -58,8 +59,20 @@ const CreateComment = (props) => {
                     <>
                         <h2 className={theme === 'light' ? "light" : ""}>Review the book</h2>
                         <form onSubmit={handleSubmit}>
-                            <input type="text" placeholder="Name" onChange={(value) => setReviewerName(value.target.value)} value={reviewerName} required />
-                            <input type="email" placeholder="Email address" onChange={(value) => setEmail(value.target.value)} value={email} required />
+                            <input
+                                type="text"
+                                placeholder="Name"
+                                onChange={(value) => setReviewerName(value.target.value)}
+                                value={reviewerName}
+                                required
+                            />
+                            <input
+                                type="email"
+                                placeholder="Email address"
+                                onChange={(value) => setEmail(value.target.value)}
+                                value={email}
+                                required
+                            />
 
                             <span className={theme === 'light' ? "span light" : "span"}>Book rate</span>
 
@@ -74,10 +87,27 @@ const CreateComment = (props) => {
                                 }}
                                 required
                             />
+                            <div className="review-box">
 
-                            <textarea placeholder="Write Your Review" onChange={(value) => setDescription(value.target.value)} value={description} required />
+                                <textarea
+                                    placeholder="Write Your Review"
+                                    onChange={
+                                        (value) => {
+                                            setDescription(value.target.value)
+                                            console.log(value.target.value.length);
+                                            SetReviewCounter(value.target.value.length);
+                                        }}
+                                    value={description}
+                                    required
+                                    maxLength="150"
+                                />
+                                <span className="lettersCounter">{reviewCounter} / 150</span>
 
-                            <button className="SendButton"><SendIcon className="AddIcon" /></button>
+                            </div>
+
+                            <button className="SendButton">
+                                <SendIcon className="AddIcon" />
+                            </button>
                         </form>
 
                     </>
