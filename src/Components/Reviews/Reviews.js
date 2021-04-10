@@ -1,14 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ReviewsStyle.css';
 import Avatar from '@material-ui/core/Avatar';
 import Rating from '@material-ui/lab/Rating';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import DataServices from '../API/DataServices/DataServices';
 
-const Reviews = ({ content }) => {
+const Reviews = ({ content, genreId }) => {
 
     let name = content.reviewerName;
     const theme = localStorage.getItem("theme");
+    const [upVote, setUpVote] = useState(content.upVote);
+    const [downVote, setDownVote] = useState(content.downVote);
+
+    const handelUpVote = () => {
+        if (localStorage.getItem(`voteDown${content.id}`) === 'true') {
+            handelUnDownVote();
+        }
+        setUpVote(upVote + 1);
+        localStorage.setItem(`voteUp${content.id}`, true);
+        DataServices.UpdateUpVote(genreId, content.bookId, content.id, upVote + 1, "upVote");
+    }
+
+    const handelUnUpVote = () => {
+        setUpVote(upVote - 1);
+        localStorage.setItem(`voteUp${content.id}`, localStorage.getItem(`voteUp${content.id}`) === 'true' ? false : true);
+        DataServices.UpdateUpVote(genreId, content.bookId, content.id, upVote - 1, "upVote");
+    }
+
+    const handelDownVote = () => {
+        if (localStorage.getItem(`voteUp${content.id}`) === 'true') {
+            handelUnUpVote();
+        }
+        setDownVote(downVote + 1);
+        localStorage.setItem(`voteDown${content.id}`, true);
+        DataServices.UpdateUpVote(genreId, content.bookId, content.id, downVote + 1, "downVote");
+    }
+
+    const handelUnDownVote = () => {
+        setDownVote(downVote - 1);
+        localStorage.setItem(`voteDown${content.id}`, localStorage.getItem(`voteDown${content.id}`) === 'true' ? false : true);
+        DataServices.UpdateUpVote(genreId, content.bookId, content.id, downVote - 1, "downVote");
+    }
 
     return (
         <div className="Reviews">
@@ -43,20 +76,50 @@ const Reviews = ({ content }) => {
             <div className="voting">
 
                 <button className="vote">
-                    <ExpandLessIcon className="icon" />
+                    <ExpandLessIcon
+                        className=
+                        {
+                            localStorage.getItem(`voteUp${content.id}`) === 'true' ?
+                                "icon active"
+                                :
+                                "icon"
+                        }
+                        onClick=
+                        {
+                            () =>
+                                localStorage.getItem(`voteUp${content.id}`) === 'true' ?
+                                    handelUnUpVote()
+                                    :
+                                    handelUpVote()
+                        }
+                    />
                 </button>
 
-                <span className={theme === 'light' ? "counter light" : "counter"}>{content.upVote}</span>
-
+                <span className={theme === 'light' ? "counter light" : "counter"}>{upVote}</span>
             </div>
 
             <div className="voting">
 
                 <button className="vote">
-                    <ExpandMoreIcon className="icon" />
+                    <ExpandMoreIcon className=
+                        {
+                            localStorage.getItem(`voteDown${content.id}`) === 'true' ?
+                                "icon active"
+                                :
+                                "icon"
+                        }
+                        onClick=
+                        {
+                            () =>
+                                localStorage.getItem(`voteDown${content.id}`) === 'true' ?
+                                    handelUnDownVote()
+                                    :
+                                    handelDownVote()
+                        }
+                    />
                 </button>
 
-                <span className={theme === 'light' ? "counter light" : "counter"}>{content.downVote}</span>
+                <span className={theme === 'light' ? "counter light" : "counter"}>{downVote}</span>
 
             </div>
 

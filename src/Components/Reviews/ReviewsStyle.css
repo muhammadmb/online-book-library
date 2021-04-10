@@ -36,6 +36,10 @@
     font-size: 45px;
 }
 
+.Reviews .vote .icon.active{
+    color: #EEE;
+}
+
 .Reviews .vote:hover{
     color: #17a288bb;
 }

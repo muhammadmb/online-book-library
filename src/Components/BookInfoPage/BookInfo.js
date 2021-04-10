@@ -148,7 +148,7 @@ const BookInfo = (props) => {
                             bookData.reviews != null ?
 
                                 bookData.reviews.map((item) => (
-                                    <Reviews content={item} key={item.id} />
+                                    <Reviews content={item} genreId={bookData.genre.id} key={item.id} />
                                 ))
                                 :
                                 null

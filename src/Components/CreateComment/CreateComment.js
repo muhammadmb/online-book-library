@@ -117,8 +117,6 @@ const CreateComment = (props) => {
 
             <div className="Clear"></div>
 
-
-
         </div>
     );
 }

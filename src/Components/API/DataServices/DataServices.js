@@ -53,6 +53,17 @@ class DataServices {
         return axios.get(`${API_URL}/Authors?fields=id,name,bio,pictureUrl,dateOfBirth,dateOfDeath&SearchQuery=${SearchQuery}`);
     }
 
+    UpdateUpVote(genreId, bookId, reviewId, vote, path) {
+        return axios.patch(`${API_URL}/Genres/${genreId}/Books/${bookId}/reviews/${reviewId}`,
+            [
+                {
+                    "op": "replace",
+                    "path": `/${path}`,
+                    "value": vote
+                }
+            ]
+        );
+    }
 }
 
 export default new DataServices();
