@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/online-book-library/static/css/main.18ef598b.chunk.css",
-    "main.js": "/online-book-library/static/js/main.f3c2c11a.chunk.js",
-    "main.js.map": "/online-book-library/static/js/main.f3c2c11a.chunk.js.map",
+    "main.css": "/online-book-library/static/css/main.de7ef31b.chunk.css",
+    "main.js": "/online-book-library/static/js/main.489d5999.chunk.js",
+    "main.js.map": "/online-book-library/static/js/main.489d5999.chunk.js.map",
     "runtime-main.js": "/online-book-library/static/js/runtime-main.be7d996a.js",
     "runtime-main.js.map": "/online-book-library/static/js/runtime-main.be7d996a.js.map",
     "static/css/2.ec02d681.chunk.css": "/online-book-library/static/css/2.ec02d681.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.d7a5aa3b.chunk.js.map": "/online-book-library/static/js/2.d7a5aa3b.chunk.js.map",
     "index.html": "/online-book-library/index.html",
     "static/css/2.ec02d681.chunk.css.map": "/online-book-library/static/css/2.ec02d681.chunk.css.map",
-    "static/css/main.18ef598b.chunk.css.map": "/online-book-library/static/css/main.18ef598b.chunk.css.map",
+    "static/css/main.de7ef31b.chunk.css.map": "/online-book-library/static/css/main.de7ef31b.chunk.css.map",
     "static/js/2.d7a5aa3b.chunk.js.LICENSE.txt": "/online-book-library/static/js/2.d7a5aa3b.chunk.js.LICENSE.txt",
     "static/media/bg.7a330923.jpg": "/online-book-library/static/media/bg.7a330923.jpg",
     "static/media/contact.9f587da5.png": "/online-book-library/static/media/contact.9f587da5.png",
@@ -20,7 +20,7 @@
     "static/js/runtime-main.be7d996a.js",
     "static/css/2.ec02d681.chunk.css",
     "static/js/2.d7a5aa3b.chunk.js",
-    "static/css/main.18ef598b.chunk.css",
-    "static/js/main.f3c2c11a.chunk.js"
+    "static/css/main.de7ef31b.chunk.css",
+    "static/js/main.489d5999.chunk.js"
   ]
 }
