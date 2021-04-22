@@ -13,6 +13,7 @@ import NotFoundPage from './Components/NotFoundPage/NotFoundPage.js';
 import Genres from './Components/GenresPage/Genres';
 import AuthorInfo from './Components/AuthorInfoPage/AuthorInfo';
 import Search from './Components/Search/Search';
+import SignIn from './Components/SignIn/SignIn';
 
 function App() {
 
@@ -35,10 +36,12 @@ function App() {
           <Route exact path="/Authors/:Id" component={AuthorInfo} />
           <Route exact path="/search/:SearchQuery" component={Search} />
           <Route exact path="/search" component={Search} />
+          <Route exact path="/admin" component={SignIn} />
           <Route path="/*" component={NotFoundPage} />
         </Switch>
         <Footer />
       </BrowserRouter>
+
     </div>
   );
 }

@@ -37,7 +37,7 @@
 }
 
 .Reviews .vote .icon.active{
-    color: #EEE;
+    color: aqua;
 }
 
 .Reviews .vote:hover{

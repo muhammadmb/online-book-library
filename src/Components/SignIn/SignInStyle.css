@@ -1,0 +1,79 @@
+.signInContainer{
+    display: flex;
+    flex-direction: row;
+    margin: 3.5% 7%;
+    color: #EEE;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.signInContainer .form{
+    text-align: center;
+    width: 60%;
+    border-right: 2px solid #EEE;
+    padding: 10px 40px 10px;
+}
+
+.signInContainer .form.light{
+    border-right: 2px solid #000;
+}
+
+.signInContainer .form .inputBox{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.signInContainer .form input{
+    display: block;
+    width: 100%;
+    padding: 2.5% 5px;
+    margin: 6% 0;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.signInContainer .form input[type="submit"]{
+    color: #EEE;
+    font-size: 22px;
+    background-color: #2861A3;
+    transition: .3s ease-in-out;
+}
+
+.signInContainer .form input[type="submit"]:hover{
+    background-color: #e91e63;
+    transition: .3s ease-in-out;
+}
+
+.signInContainer .form span{
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 6px 5px;
+    padding: 5px 0;
+    font-size: 16px;
+    pointer-events: none;
+    transition: .2s;
+    color: #666;
+}
+
+.signInContainer .form input:valid ~ span,
+.signInContainer .form input:focus ~ span{
+    color: #e91e63;
+    font-weight: 600;
+    font-size: 14px;
+    transform: translateY(-35px);
+    transition: .4s;
+}
+
+.signInContainer .imgContainer{
+    display: flex;
+    width: 60%;
+}
+
+.signInContainer .imgContainer img{
+    width: 100%;
+}
