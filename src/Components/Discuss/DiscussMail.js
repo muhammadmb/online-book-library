@@ -34,7 +34,7 @@ const Discuss = () => {
                             required
                         />
                         <textarea
-                            placeholder="We are pleased to know your sugesstions."
+                            placeholder="We are pleased to know your suggestions."
                             name="message"
                             required
                         />

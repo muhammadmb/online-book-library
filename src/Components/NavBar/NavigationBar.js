@@ -1,23 +1,24 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from "react-redux";
 import '../../Style.css';
 import './NavigationBarStyle.css';
 import { Link, NavLink } from 'react-router-dom';
 import NightsStayIcon from '@material-ui/icons/NightsStay';
 import Brightness6Icon from '@material-ui/icons/Brightness6';
+import { ChangeTheme } from '../../Store/ThemeSlice';
 
 const NavigationBar = (props) => {
 
     const [search, setSearch] = useState("");
-    const [theme, setTheme] = useState(localStorage.getItem("theme"));
+    const { Dark } = useSelector((state) => state.Theme)
+    const dispatch = useDispatch();
 
     const handelChange = (event) => {
         setSearch(event.target.value);
     }
 
     const handelThemeChange = () => {
-        setTheme(theme === 'light' ? 'dark' : 'light');
-        localStorage.setItem("theme", theme);
-        props.onChange(theme);
+        dispatch(ChangeTheme());
     }
 
     return (
@@ -56,7 +57,7 @@ const NavigationBar = (props) => {
                     </ul>
 
                     {
-                        localStorage.getItem("theme") !== 'light' ?
+                        !Dark ?
                             <Brightness6Icon
                                 className="toogelIcon"
                                 fontSize="large"

@@ -100,11 +100,20 @@ const BookInfo = (props) => {
 
                             <h1 className={theme === 'light' ? "light" : ""}>{bookData.bookTitle}</h1>
 
-                            <span
-                                className={theme === 'light' ? "light" : ""}
-                            >
-                                By <Link className="link" to={authorLink}>{bookData.author != null ? bookData.author.name : null}</Link>
-                            </span>
+                            {bookData.author != null ?
+                                <span
+                                    className={theme === 'light' ? "light" : ""}
+                                >
+                                    By
+                                    <Link
+                                        className="link"
+                                        to={authorLink}
+                                    >
+                                        {bookData.author.name}
+                                    </Link>
+                                </span>
+                                :
+                                null}
 
                             <Box
                                 className="rating"

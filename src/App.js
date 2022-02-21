@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css'
 import About from './Components/About/About.js';
 import NavBar from './Components/NavBar/NavigationBar.js';
@@ -13,16 +13,16 @@ import NotFoundPage from './Components/NotFoundPage/NotFoundPage.js';
 import Genres from './Components/GenresPage/Genres';
 import AuthorInfo from './Components/AuthorInfoPage/AuthorInfo';
 import Search from './Components/Search/Search';
-import SignIn from './Components/SignIn/SignIn';
+import { useSelector } from "react-redux";
 
 function App() {
 
-  const [theme, setTheme] = useState(localStorage.getItem("theme"));
+  const { Dark } = useSelector((state) => state.Theme);
 
   return (
-    <div className={theme === 'light' ? "App light" : "App"}>
+    <div className={Dark ? "App" : "App light"}>
       <BrowserRouter>
-        <NavBar onChange={(value) => setTheme(value)} />
+        <NavBar />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/online-book-library" component={Home} />
@@ -36,7 +36,6 @@ function App() {
           <Route exact path="/Authors/:Id" component={AuthorInfo} />
           <Route exact path="/search/:SearchQuery" component={Search} />
           <Route exact path="/search" component={Search} />
-          <Route exact path="/admin" component={SignIn} />
           <Route path="/*" component={NotFoundPage} />
         </Switch>
         <Footer />
