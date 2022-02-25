@@ -1,0 +1,64 @@
+.recommendation-banner {
+    background-color: #5A1D41;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 500px;
+    padding: 3%;
+}
+
+.recommendation-books {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 65%;
+    justify-content: center;
+}
+
+.recommendation-banner img {
+    height: 120px;
+    width: 100px;
+    object-fit: cover;
+    margin: 5px;
+    transition: .3s linear;
+}
+
+.recommendation-banner img:hover {
+    box-shadow: 1px 1px 2px #FFF;
+}
+
+.recommendation-banner button {
+    background-color: #061724;
+    border: 1px solid transparent;
+    outline: none;
+    color: #FFF;
+    border-radius: 5px;
+    padding: 5px 20px;
+    transition: .3s linear;
+}
+
+.recommendation-banner button:hover {
+    background-color: transparent;
+    border: 1px solid #061724;
+}
+
+@media only screen and (max-width: 920px) {
+
+    .recommendation-books {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+
+    .recommendation-banner img {
+        height: 100px;
+        width: 70px;
+    }
+
+    .recommendation-books {
+        width: 100%;
+    }
+}
