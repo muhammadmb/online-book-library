@@ -1,0 +1,55 @@
+.genre-card {
+    height: 90px;
+    width: 275px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 20px 10px 10px;
+    border: 1px solid #EEE;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 2% 2% 0;
+    transition: .3s linear;
+}
+
+.genre-card:hover {
+    text-decoration: none;
+    box-shadow:inset 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.genre-card h1 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #EEE;
+}
+
+.genre-card .genre-img {
+    width: 86px;
+}
+
+.genre-card .genre-img img {
+    width: 100%;
+    object-fit: cover;
+    transform: rotate(18deg);
+    box-shadow: 0 0 10px rgb(255 255 255 / 35%);
+}
+
+.genre-card.light {
+    border: 1px solid #0C2233;
+}
+
+.genre-card.light:hover {
+    text-decoration: none;
+    box-shadow: inset 0 0 15px rgb(0 0 0 / 20%);
+}
+
+.genre-card.light h1 {
+    color: #0C2233;
+}
+
+.genre-card.light .genre-img img {
+    width: 100%;
+    object-fit: cover;
+    transform: rotate(18deg);
+    box-shadow: 0 0 10px rgb(0 0 0 / 15%);
+}
