@@ -14,6 +14,7 @@ import Genres from './Components/GenresPage/Genres';
 import AuthorInfo from './Components/AuthorInfoPage/AuthorInfo';
 import Search from './Components/Search/Search';
 import { useSelector } from "react-redux";
+import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
 
 function App() {
 
@@ -23,21 +24,23 @@ function App() {
     <div className={Dark ? "App" : "App light"}>
       <BrowserRouter>
         <NavBar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/online-book-library" component={Home} />
-          <Route exact path="/Home" component={Home} />
-          <Route exact path="/books" component={BookPage} />
-          <Route exact path="/authors" component={AuthorsPage} />
-          <Route exact path="/Connect" component={Contact} />
-          <Route exact path="/about" component={About} />
-          <Route path="/genre/:genreId/books/:id" component={BookInfo} />
-          <Route exact path="/genre/:id" component={Genres} />
-          <Route exact path="/Authors/:Id" component={AuthorInfo} />
-          <Route exact path="/search/:SearchQuery" component={Search} />
-          <Route exact path="/search" component={Search} />
-          <Route path="/*" component={NotFoundPage} />
-        </Switch>
+        <ScrollToTop>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/online-book-library" component={Home} />
+            <Route exact path="/Home" component={Home} />
+            <Route exact path="/books" component={BookPage} />
+            <Route exact path="/authors" component={AuthorsPage} />
+            <Route exact path="/Connect" component={Contact} />
+            <Route exact path="/about" component={About} />
+            <Route path="/genre/:genreId/books/:id" component={BookInfo} />
+            <Route exact path="/genre/:id" component={Genres} />
+            <Route exact path="/Authors/:Id" component={AuthorInfo} />
+            <Route exact path="/search/:SearchQuery" component={Search} />
+            <Route exact path="/search" component={Search} />
+            <Route path="/*" component={NotFoundPage} />
+          </Switch>
+        </ScrollToTop>
         <Footer />
       </BrowserRouter>
 
