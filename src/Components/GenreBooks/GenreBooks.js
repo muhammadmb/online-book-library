@@ -1,0 +1,58 @@
+import React, { Fragment, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import DataServices from '../API/DataServices/DataServices';
+import BookCard from '../Cards/BookCard/BookCard';
+import './GenreBooksStyle.css';
+
+const GenreBooks = ({ genreId, genreName }) => {
+
+    const { Dark } = useSelector((state) => state.Theme);
+    const [books, setBooks] = useState([]);
+
+    useEffect(() => {
+        const GetBooks = async () => {
+            const parameters = {
+                genreId,
+                fields: "id,booktitle,bookCover,genre,bookRating,author",
+                pageNumber: 1,
+                pageSize: 5
+            }
+            const result = await DataServices.GetBooksByGenre(parameters);
+            setBooks(result ? result.data : []);
+        }
+        GetBooks();
+    }, [genreId]);
+
+    return (
+        <Fragment className='genre-book'>
+            {
+                books.length !== 0 &&
+                <>
+                    <h2 className="section">
+                        <Link className="link" to={`/genre/${genreId}`}>
+                            <span
+                                className={Dark ? "" : "light"}
+                            >
+                                {genreName}
+                            </span>
+                        </Link>
+                    </h2>
+                    <div className="books">
+                        {
+                            books.map((item) => (
+                                < BookCard
+                                    key={item.id}
+                                    data={item}
+                                />
+                            ))
+                        }
+                    </div>
+                </>
+            }
+
+        </Fragment>
+    )
+}
+
+export default GenreBooks;
