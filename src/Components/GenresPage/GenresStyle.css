@@ -1,12 +1,13 @@
-.Genre{
-    padding: 3%;
+.Genre .container {
+    padding: 1% 0 3%;
+    position: relative;
 }
 
-.Genre .header{
+.Genre .header {
     color: #990c4b;
 }
 
-.Genre .GenrsDesc{
+.Genre .GenrsDesc {
     width: 80%;
     padding: 0 0 2%;
     line-height: 1.7;
@@ -15,18 +16,19 @@
     font-size: 19px;
 }
 
-.Genre .GenrsDesc.light{
+.Genre .GenrsDesc.light {
     color: #111;
 }
 
-.Genre .GenreDetails{
+.Genre .GenreDetails {
     display: flex;
     flex-direction: row;
+    margin-bottom: 3%;
 }
 
-.Genre .SortBy{
-    margin: 1% 5% 2% 3%;
-    padding-right: 2.5%;
+.Genre .SortBy {
+    margin: 1% 2% 2% 3%;
+    padding-right: 2%;
     font-size: 20px;
     width: 16%;
     color: #EEE;
@@ -34,12 +36,12 @@
     border-right: 1px solid #EEE;
 }
 
-.Genre .SortBy.light{
+.Genre .SortBy.light {
     color: #000444;
     border-color: #000444;
 }
 
-.Genre .SortBy button{
+.Genre .SortBy button {
     background: none;
     border: none;
     outline: none;
@@ -50,48 +52,67 @@
     color: rgb(204, 54, 54);
 }
 
-.Genre .SortBy button:hover{
+.Genre .SortBy button:hover {
     color: rgb(150, 37, 37);
 }
 
-.Genre .GenreDetails .BookCards{
-    margin: 0;
-    padding: 0;
-    display: inline-table;
+.Genre .GenreDetails .BookCards {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-.Genre .PaginationDiv{
+.Genre .PaginationDiv {
+    margin: 0;
+    position: absolute;
+    bottom: -.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: brown;
     outline: none;
-    margin: 4% 33% 0;
-    align-content: center;
 }
 
 @media (max-width: 767px){  /* phone screen */
     
-    .Genre{
+    .Genre {
         padding: 5% 0;
     }
 
-    .Genre .GenreDetails{
-        display: inline-block;
+    .Genre .header {
+        text-align: center;
+    }
+    
+    .Genre .GenrsDesc {
+        text-align: center;
+        width: 100%;
     }
 
-    .Genre .SortBy{
+    .Genre .GenreDetails {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .Genre .GenreDetails .BookCards {
+        justify-content: center;
+    }
+
+    .Genre .SortBy {
         width: 100%;
         border: none;
         margin-top: 1%;
     }
 
-    .Genre .SortBy button{
+    .Genre .SortBy button {
         display: inline;
     }
 
-    .Genre .GenreDetails .GenrsDesc{
+    .Genre .GenreDetails .GenrsDesc {
         width: 100%;
     }
 
-    .Genre .GenreDetails .BookCards{
-        text-align: center;
+    .Genre .PaginationDiv {
+        bottom: -2%;
     }
 }

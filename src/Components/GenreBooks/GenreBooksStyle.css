@@ -5,6 +5,7 @@
     text-align: left; 
     border-bottom: 1px solid rgb(3, 195, 253); 
     line-height: 0.1em;
+    margin: 2% 0 3%;
 }
 
 .section span {
@@ -31,5 +32,15 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 3% 0 0 5%;
+    position: relative;
+}
+
+@media (max-width: 767px){
+    .section {
+        margin: 6% 0;
+    }
+
+    .books {
+        justify-content: center;
+    }
 }

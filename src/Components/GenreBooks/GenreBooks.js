@@ -25,7 +25,7 @@ const GenreBooks = ({ genreId, genreName }) => {
     }, [genreId]);
 
     return (
-        <Fragment className='genre-book'>
+        <div className='genre-book'>
             {
                 books.length !== 0 &&
                 <>
@@ -51,7 +51,7 @@ const GenreBooks = ({ genreId, genreName }) => {
                 </>
             }
 
-        </Fragment>
+        </div>
     )
 }
 
