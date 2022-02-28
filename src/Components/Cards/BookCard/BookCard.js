@@ -29,7 +29,7 @@ const BookCard = (props) => {
                     }
 
                     {
-                        props.data.bookRating &&
+
                         <Box
                             className="rating"
                             borderColor="transparent"
@@ -37,12 +37,16 @@ const BookCard = (props) => {
                             <Rating
                                 name="hover-feedback"
                                 precision={1}
-                                value={props.data.bookRating.bookRate}
+                                value={
+                                    props.data.bookRating ?
+                                        props.data.bookRating.bookRate
+                                        :
+                                        0
+                                }
                                 readOnly
                             />
                         </Box>
                     }
-
                 </div>
             </div>
         </Link>
