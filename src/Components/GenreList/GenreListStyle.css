@@ -1,0 +1,6 @@
+.genre-list {
+    display: flex;
+    flex-wrap: wrap;
+    transition: .5s;
+    margin-top: 2%;
+}
