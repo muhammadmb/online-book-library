@@ -1,129 +1,108 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from "react-redux";
 import DataServices from "../API/DataServices/DataServices";
-import HomePic from "../../Images/HomePic.png";
 import './HomeStyle.css';
-import MiniCard from '../Card/HomeCard';
-import Skeleton from '@material-ui/lab/Skeleton';
-import { Link } from 'react-router-dom';
+import BookCard from '../Cards/BookCard/BookCard';
+import HomeBanner from '../HomeBanner/HomeBanner';
+import BookLoading from '../Loading/BookLoading/BookLoading';
+import RecommendationBanner from '../RecommendationBanner/RecommendationBanner';
+import GenreList from '../GenreList/GenreList';
 
 const Home = () => {
 
-  const [classicsBooks, setClassicsBooks] = useState([]);
-  const [action, setAction] = useState([]);
-  const [genres, setGenres] = useState([]);
-  const theme = localStorage.getItem("theme");
-  const Skeletons = [1, 2, 3, 4, 5];
+  const [recentBooks, setRecentBooks] = useState([]);
+  const [popularBooks, setPopularBooks] = useState([]);
+  const [topRatedBooks, setTopRatedBooks] = useState([]);
+  const { Dark } = useSelector((state) => state.Theme);
+  const genreId = '00000000-0000-0000-0000-000000000000';
+  const fields = "id,booktitle,bookCover,genre,bookRating,author";
 
   useEffect(() => {
-    const GetEditorsBooks = async () => {
-      const result = await DataServices.GetBooksByGenre(`00000000-0000-0000-abcd-000000000000`, "id,booktitle,bookCover,genre", 1, 5);
-      setClassicsBooks(result.data);
+    const GetPopularBooks = async () => {
+      const parameters = {
+        genreId,
+        fields,
+        sortby: "popularity",
+        pageNumber: 1,
+        pageSize: 5
+      }
+      const result = await DataServices.GetBooksByGenre(parameters);
+      setPopularBooks(result.data);
     }
 
-    const GetGenres = async () => {
-      const result = await DataServices.GetGenres(1, 10, "genreName,id,picUrl");
-      setGenres(result.data);
+    const GetTopRatedBooks = async () => {
+      const parameters = {
+        genreId,
+        fields,
+        sortby: "rating",
+        pageNumber: 1,
+        pageSize: 5
+      }
+      const result = await DataServices.GetBooksByGenre(parameters);
+      setTopRatedBooks(result.data);
     }
 
-    const GetAction = async () => {
-      const result = await DataServices.GetBooksByGenre(`00000000-0000-0000-abcd-000000000002`, "id,booktitle,bookCover,genre", 1, 5);
-      setAction(result.data);
+    const GetRecentBooks = async () => {
+      const parameters = {
+        genreId,
+        fields,
+        yearOfPublish: new Date().getFullYear(),
+        pageNumber: 1,
+        pageSize: 5
+      }
+      const result = await DataServices.GetBooksByGenre(parameters);
+      setRecentBooks(result.data);
     }
-
-    GetEditorsBooks();
-    GetGenres();
-    GetAction();
-
+    GetRecentBooks();
+    GetTopRatedBooks();
+    GetPopularBooks();
   }, []);
 
   const BooksList = (props) => (
     props.list.map(item =>
-      <MiniCard
+      <BookCard
         key={item.id}
-        name={item.bookTitle}
-        page={`genre/${item.genre.id}/books/${item.id}`}
-        cover={item.bookCover}
+        data={item}
       />
     )
-  )
-
-  const GenresList = () => (
-    genres.map(item =>
-      <MiniCard
-        key={item.id}
-        name={item.genreName}
-        page={`genre/${item.id}`}
-        cover={item.picUrl}
-      />
-    )
-  )
-
-  const SkeletonView = () => (
-    Skeletons.map(index =>
-      <Skeleton key={index} className="Skeleton" variant="rect" width={175} height={260} />
-    )
-  )
+  );
 
   return (
-    <div className="container">
-      <div
-        className={theme === 'light' ? "welcomeCard light" : "welcomeCard"}
-        data-aos="fade-down"
-        data-aos-duration="1000"
-      >
-        <div className="welcomeTexts">
-
-          <h2 className={theme === 'light' ? "light" : ""}>Hi, welcome back!</h2>
-          <h4 className={theme === 'light' ? "light" : ""}>Here is a customised world of books for you.</h4>
-
-          <Link to="/books">
-            <button className="button">
-              Browse Latest
-              </button>
-          </Link>
-
-        </div>
-        <img src={HomePic} alt="Homepicture" />
-      </div>
-
-      <span className={theme === 'light' ? "light sideTitles" : "sideTitles"} >Classics</span>
-
-      <div className="swipperDiv" >
+    <>
+      <div className="container">
+        <HomeBanner />
 
         {
-          classicsBooks.length === 0 ?
-            <SkeletonView />
+          recentBooks.length === 0 && recentBooks.length === 0 && topRatedBooks.length === 0 ?
+            <BookLoading />
             :
-            <BooksList list={classicsBooks} />
+            <div className={Dark ? 'books-home' : 'books-home light'}>
+              <span className="side-titles">Most recent published</span>
+
+              <div className="swipper" >
+                <BooksList list={recentBooks} />
+              </div>
+
+              <span className="side-titles">Popular Books</span>
+
+              <div className="swipper" >
+                <BooksList list={popularBooks} />
+              </div>
+
+              <span className="side-titles">Get more</span>
+              <GenreList />
+
+              <span className="side-titles">Top Rated Books</span>
+
+              <div className="swipper" >
+                <BooksList list={topRatedBooks} />
+              </div>
+            </div>
         }
 
       </div>
-
-      <span className={theme === 'light' ? "light sideTitles" : "sideTitles"}>Action and Adventure</span>
-
-      <div className="swipperDiv">
-        {
-          action.length === 0 ?
-            <SkeletonView />
-            :
-            <BooksList list={action} />
-        }
-      </div>
-
-      <span className={theme === 'light' ? "light sideTitles" : "sideTitles"}>Genres</span>
-
-      <div className="swipperDiv">
-
-        {
-          genres.length === 0 ?
-            <SkeletonView />
-            :
-            <GenresList />
-        }
-
-      </div>
-
-    </div>
+      <RecommendationBanner />
+    </>
   );
 }
 export default Home;

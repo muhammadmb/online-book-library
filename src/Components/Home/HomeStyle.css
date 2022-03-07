@@ -1,84 +1,27 @@
-.welcomeCard{
-    border: 2px solid white;
-    border-radius : 50px;
-    width:90%;
-    min-height: 280px;
-    margin:40px auto ;
-    text-align: left;
-}
-
-.welcomeCard.light{
-    border: 2px solid #061724;
-}
-
-.button{
-    margin: 30px;
-    background-color: #061724;
+.books-home .side-titles {
     color: #17A2B8;
-    padding: 10px 15px;
-    border-radius: 25px;
-    transition: .5s;
-    border: 1px solid #17A2B8;
-}
-
-.button:hover{
-    transform: translateY(-20px);
-}
-
-.welcomeTexts{
-    float: left;
-}
-.welcomeCard h2{
-    color: #EEE;
-    margin: 8% 4% 0;
-}
-.welcomeCard h4{
-    color: #FFF;
-    margin: 1% 5%;
-}
-.welcomeCard img{
-    margin-top: -2%;
-    width: 41%;
-}
-
-.sideTitles{
-    color: #17A2B8;
-    margin-left: 5%;
+    margin-left: -5px;
     font-size: 24px;
     font-weight: 500;
     text-decoration: underline;
 }
 
-.swipperDiv{
-    margin: 20px 0 20px 7%;
-}
-
-.swipperDiv .Skeleton{
-    margin: 7px;
-    display: inline-block;
-    background-color: #777;
-}
-
-h2.light,
-h4.light,
-.sideTitles.light{
+.books-home.light .side-titles {
     color: #061724;
 }
 
-@media (max-width: 767px){  /* phone screen */
-    .welcomeCard img{
-        margin: 10px -7% 0 0;
-        width: 50%;
-        margin-top: -25%;
-        float: right;
-    }
+.swipper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 20px 0 20px 0;
 }
 
-@media (min-width: 768px) and (max-width: 991px){ /* small screen */
-    .welcomeCard img{
-        margin: 10px -7% 0 0;
-        width: 50%;
-        margin-top: -25%;
-        float: right;
+
+@media (max-width: 700px) {
+   
+    .swipper {
+        justify-content: center;
+        align-items: center;
     }
 }

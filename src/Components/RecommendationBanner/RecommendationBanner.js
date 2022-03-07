@@ -21,8 +21,6 @@ const RecommendationBanner = () => {
         GetRecommendationBooks();
     }, [])
 
-    console.log(recommendation);
-
     return (
         <div className='recommendation-banner'>
             <h4>THE BEST BOOKS ARE WAITING FOR YOU</h4>
