@@ -1,135 +1,205 @@
-.CreateComment{
-    margin: 2%;
-    padding: 2%;
-}
-.CreateComment .buttonDiv{
-    text-align: center;
+.create-comment {
+    margin: 2% 0 5%;
 }
 
-.CreateComment .ReviewButton{
+.create-comment .review-button {
     outline: none;
     color: #FFF;
-    padding: 1.5% 2.5%;
+    padding: 15px 2.5%;
     border: none;
-    background-color: #17A288;
-    margin-right: 16.5%;
+    background-color: #005A98;
+    border-radius: 5px;
+    display: table;
+    margin: 0 auto;
+    transition: .5s;
 }
 
-.CreateComment .ReviewButton:hover{
-    background-color: #2ca08ba8;
+.create-comment .review-button::after {
+    content: "⯆";
+    display: block;
+    position: absolute;
+    left: calc(50% - 1px);
+    opacity: 0;
+    transition: 0.5s;
+    margin-top: 12px;
 }
 
-.CreateComment .alert{
+.create-comment .review-button:hover {
+    background-color: #003c64;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.create-comment .review-button:hover:after {
+    opacity: 1;
+    margin-top: -7px;
+}
+
+.create-comment .alert {
     margin-top: 4%;
     padding: 1%;
 }
 
-.CreateComment > h2{
+.create-comment > h2 {
     color: #FFF;
     margin: 1% 0 2%;
 }
 
-.CreateComment input{
-    margin: 0 2% 1% 0;
+.create-comment form {
+    position: relative;
+}
+
+.create-comment form .rate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.create-comment form input {
     outline: none;
     border: none;
-    width: 20%;
-    height: 30px;
+    width: 30%;
+    height: 100%;
     padding: 1%;
     border-radius: 10px;
-    background-color: #D3D3D3;
+    background-color: #EEE;
+    border: transparent;
+    box-shadow: 0px 0px 2px #000444;
 }
 
-.CreateComment .span{
-    font-size: 22px;
+.create-comment form .your-rate {
+    display: flex;
+    align-items: center;
+    width: 30%;
+    justify-content: space-between;
+}
+
+.create-comment form .rate .rate-lable {
     color: #FFF;
-    margin: 0 1.5% .5% 5%;
+    font-size: 1.5rem;
 }
 
-.CreateComment > h2.light,
-.CreateComment .span.light{
-    color: #000444;
-}
-
-.review-box{
+.review-box {
     width: 85%;
     position:relative;
-    display:table;
-    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.CreateComment textarea{
-    width: 100%;
+.create-comment textarea {
+    width: 90%;
     margin-top: 2%;
     padding: 20px;
-    background-color: #D3D3D3;
+    background-color: #EEE;
     border-radius: 10px;
     outline: none;
+    border: transparent;
+    box-shadow: 0px 0px 2px #000444;
     height: 140px;
     resize: none;
 }
 
-.lettersCounter{
+.create-comment textarea:focus,
+.create-comment input:focus {
+    box-shadow: 0px 0px 4px #000cb1;
+}
+
+.letters-counter {
     position: absolute;
     bottom: 12%;
-    right: 2%;
-    color: #EF442B;
+    right: 12%;
+    color: #000;
     font-weight: 500;
-    font-family: sans-serif;
 }
 
-.CreateComment .SendButton{
-    float: left;
+.create-comment .send {
+    background-color: #EEE;
     outline: none;
-    background-color: #EF442B;
     border-radius: 50%;
-    padding: 1.7%;
-    border: none;
+    height: 50px;
+    width: 50px;
+    border: transparent;
     outline: none;
-    margin: 9% 2% 0;
 }
 
-.CreateComment .SendButton:hover{
-    background-color: #f05b44;
+.create-comment .send .add-icon {
+    color: #000444;
 }
 
-.CreateComment .SendButton .AddIcon{
+/* light mode */
+
+.create-comment.light > h2 {
+    color: #000444;
+}
+
+.create-comment.light input {
+    background-color: transparent;
+}
+
+.create-comment.light form .rate .rate-lable {
+    color: #000444;
+}
+
+.create-comment.light textarea {
+    background-color: transparent;
+}
+
+.create-comment.light .send {
+    background-color: #0C2233;
+}
+
+.create-comment.light .send .add-icon {
     color: #FFF;
 }
 
-.CreateComment .Fab{
-    margin: 8% 20px 0;
-}
-
-@media (max-width: 767px){  /* phone screen */
+@media (max-width: 767px) {  /* phone screen */
     
-    .CreateComment input{
-        width: 48%;
-        height: 35px;
-        margin-bottom: 5%;
-    }
-    
-    .CreateComment .span{
-        margin: 0 5% 0 0;
+    .create-comment {
+        margin-top: 15%;
     }
 
-    .review-box{
+    .create-comment form .rate {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .create-comment form input {
         width: 100%;
+        margin-bottom: 15px;
     }
 
-    .CreateComment textarea{
+    .create-comment form .your-rate {
+        width: 70%;
+    }
+
+    .review-box {
         width: 100%;
-        height: 170px;
-    }
-     
-    .lettersCounter{
-        bottom: 12px;
-        right: 15px;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .CreateComment .SendButton{
+    .create-comment textarea {
+        width: 100%;
+        margin-top: 5%;
+    }
+
+    .letters-counter {
+        bottom: 32%;
+        right: 5%;
+    }
+
+    .create-comment .send {
+        margin-top: 5%;
         border-radius: 5px;
-        padding: 4% 10%;
-        margin: 10% 35% 8%;
-    }
+        padding: 10px;
+        width: 25%;
+    }   
 }
+
+@media (max-width: 1200px) {
+    .create-comment form .rate {
+        width: 100%;
+    }
+ }

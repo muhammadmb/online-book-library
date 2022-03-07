@@ -3,23 +3,23 @@ import { Link } from 'react-router-dom';
 import Rating from '@material-ui/lab/Rating';
 import Box from '@material-ui/core/Box';
 import './BookInfoStyle.css';
-import MiniCard from '../Card/HomeCard';
-import BooksRate from '../books Rate/BooksRate';
+import BooksRate from '../BooksRate/BooksRate';
 import CreateComment from '../CreateComment/CreateComment';
-import Reviews from '../Reviews/Reviews';
+import Reviews from '../ReviewsList/Reviews';
 import DataServices from '../API/DataServices/DataServices';
-import Skeleton from '@material-ui/lab/Skeleton';
+import { useSelector } from 'react-redux';
+import GenreList from '../GenreList/GenreList';
+import GenreBooks from '../GenreBooks/GenreBooks';
+import BookLoading from '../Loading/BookLoading/BookLoading';
 
 const BookInfo = (props) => {
 
     const id = props.match.params.id;
     const genreId = props.match.params.genreId;
-    const [genreBooks, setGenreBooks] = useState([]);
-    const [genres, setGenres] = useState([]);
     const [bookData, setBookData] = useState([]);
     const [isLoad, setIsLoad] = useState(false);
-    const theme = localStorage.getItem("theme");
-    let authorLink = `/authors/${bookData.author != null ? bookData.author.id : 0}`;
+    const { Dark } = useSelector((state) => state.Theme);
+    let authorLink = `/authors/${bookData.author ? bookData.author.id : ""}`;
 
     useEffect(() => {
         const GetBook = async () => {
@@ -29,168 +29,111 @@ const BookInfo = (props) => {
             }
             setBookData(result.data);
         }
-
-        const GetGenreBooks = async () => {
-            const result = await DataServices.GetBooksByGenre(`${genreId}`, "id,booktitle,bookCover,genre", 1, 5);
-            setGenreBooks(result.data);
-        }
-
-        const GetGenres = async () => {
-            const result = await DataServices.GetGenres(1, 10, "");
-            setGenres(result.data);
-        }
-
         GetBook();
-        GetGenreBooks();
-        GetGenres();
     }, [genreId, id]);
 
-    const BooksList = (props) => (
-        props.list.map(item =>
-            <MiniCard
-                key={item.id}
-                name={item.bookTitle}
-                page={`genre/${item.genre.id}/books/${item.id}`}
-                cover={item.bookCover}
-            />
-        )
-    )
-
-    const GenresList = () => (
-        genres.map(item =>
-            <MiniCard
-                key={item.id}
-                name={item.genreName}
-                page={`genre/${item.id}`}
-                cover={item.picUrl}
-            />
-        )
-    )
-
     return (
-        <div className="container">
+        <>
+            <div className={Dark ? "container" : "container light"}>
+                {
+                    isLoad && bookData.length !== 0 ?
+                        <>
+                            <div className="book-info">
 
-            {
-                isLoad ?
-                    <div className="bookInfo">
-                        <div className="leftSection">
-                            <div className="imgDiv">
+                                <div className="book-img">
+                                    <img src={bookData.bookCover} alt={bookData.bookTitle} title={bookData.bookTitle} />
+                                </div>
 
-                                <img src={bookData.bookCover} alt={bookData.bookTitle} title={bookData.bookTitle} />
+                                <div className="information">
+                                    <h1 >{bookData.bookTitle}</h1>
 
+                                    {
+                                        bookData.author != null ?
+                                            <span>
+                                                By
+                                                <Link
+                                                    className="link"
+                                                    to={authorLink}
+                                                >
+                                                    {bookData.author.name}
+                                                </Link>
+                                            </span>
+                                            :
+                                            null
+                                    }
+
+                                    <div>
+                                        <Box
+                                            className="rating"
+                                            borderColor="transparent"
+                                        >
+                                            <Rating
+                                                name="hover-feedback"
+                                                precision={.5}
+                                                value={bookData.bookRating != null ? bookData.bookRating.bookRate : 0}
+                                                readOnly
+                                                size='small'
+                                            />
+
+                                            <span
+                                                className="reviews-number"
+                                            >
+                                                ({bookData.bookRating != null ? bookData.bookRating.reviewsCount : 0} Reviews)
+                                            </span>
+
+                                            <span
+                                                className='side-info '
+                                            >
+                                                {bookData.numberOfBookPages} Pages
+                                            </span>
+
+                                            <span
+                                                className='side-info'
+                                            >
+                                                Publisher: {bookData.publisher} - {bookData.dateOfPublish != null ? bookData.dateOfPublish.substring(0, 4) : ""}
+                                            </span>
+                                        </Box>
+                                    </div>
+
+                                    <hr />
+
+                                    <h4>book overview</h4>
+                                    <p >
+                                        {bookData.description}
+                                    </p>
+                                </div>
                             </div>
-                            <span
-                                className={theme === 'light' ? 'light' : ''}
-                            >
-                                Published <span>{bookData.dateOfPublish != null ? bookData.dateOfPublish.substring(0, 4) : 2000}</span>
-                            </span>
-                            <span
-                                className={theme === 'light' ? 'light' : ''}
-                            >
-                                Pages <span>{bookData.numberOfBookPages}</span>
-                            </span>
-                            <span
-                                className={theme === 'light' ? 'light' : ''}
-                            >
-                                Publisher <span>{bookData.publisher}</span>
-                            </span>
-                        </div>
 
-                        <div className="rightSection">
+                            {
+                                bookData.bookRating != null &&
+                                <>
+                                    <hr />
+                                    <BooksRate rates={bookData.bookRating} />
+                                </>
+                            }
 
-                            <h1 className={theme === 'light' ? "light" : ""}>{bookData.bookTitle}</h1>
+                            <CreateComment content={bookData} />
 
-                            {bookData.author != null ?
-                                <span
-                                    className={theme === 'light' ? "light" : ""}
-                                >
-                                    By
-                                    <Link
-                                        className="link"
-                                        to={authorLink}
-                                    >
-                                        {bookData.author.name}
-                                    </Link>
-                                </span>
-                                :
-                                null}
-
-                            <Box
-                                className="rating"
-                                borderColor="transparent"
-                            >
-                                <Rating
-                                    name="hover-feedback"
-                                    precision={1}
-                                    value={bookData.bookRating != null ? bookData.bookRating.bookRate : 0}
-                                    readOnly
-                                />
-                            </Box>
+                            <Reviews genreId={genreId} bookId={id} />
 
                             <span
-                                className={theme === 'light' ? "light" : ""}
+                                className="sugesstion-title"
                             >
-                                ({bookData.reviews != null ? bookData.reviews.length : 0} Reviews)
+                                Related to {bookData.genre != null ? bookData.genre.genreName : ""}
                             </span>
 
-                            <div className="Clear"></div>
+                            <GenreBooks genreId={genreId} />
 
-                            <p className={theme === 'light' ? "light" : ""}>
-                                {bookData.description}
-                            </p>
+                            <span className="sugesstion-title">Recommended Genres</span>
+                            <GenreList />
+                        </>
+                        :
+                        <div className="book-info">
+                            <BookLoading />
                         </div>
-
-                        <div className="Clear"></div>
-
-                        <hr className={theme === 'light' ? "light" : ""} />
-
-                        {
-                            bookData.bookRating != null ?
-                                <BooksRate rates={bookData.bookRating} />
-                                :
-                                <BooksRate rates={null} />
-                        }
-
-                        <CreateComment content={bookData} />
-
-                        {
-                            bookData.reviews != null ?
-
-                                bookData.reviews.map((item) => (
-                                    <Reviews content={item} genreId={bookData.genre.id} key={item.id} />
-                                ))
-                                :
-                                null
-                        }
-
-                        <hr className={theme === 'light' ? "light" : ""} />
-
-                        <span
-                            className={theme === 'light' ? "suggestionSpan light" : "suggestionSpan"}
-                        >
-                            Popular books in {bookData.genre != null ? bookData.genre.genreName : 0}
-                        </span>
-
-                        <div className="books">
-                            <BooksList list={genreBooks} />
-                        </div>
-
-                        <span className={theme === 'light' ? "suggestionSpan light" : "suggestionSpan"}>Genres</span>
-
-                        <div className="books">
-                            <GenresList />
-                        </div>
-
-                    </div>
-                    :
-                    <div className="skeletons">
-                        <Skeleton className="skeleton-rect" variant="rect" width={285} height={430} />
-                        <Skeleton className="skeleton-text" variant="text" height={60} />
-                        <div className="Clear"></div>
-                    </div>
-            }
-
-        </div>
+                }
+            </div>
+        </>
     );
 }
 
