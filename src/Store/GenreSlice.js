@@ -21,7 +21,7 @@ export const getGenres = createAsyncThunk(
 
 const GenreSlice = createSlice({
     name: "Genre",
-    initialState: { genres: null, headers: {}, isLoading: false, error: null },
+    initialState: { genres: [], headers: {}, isLoading: false, error: null },
     reducers: {},
     extraReducers: {
         [getGenres.pending]: (state, action) => {

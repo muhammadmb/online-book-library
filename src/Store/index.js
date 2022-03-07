@@ -1,17 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit';
-import Theme from './ThemeSlice'
-import Genre from './GenreSlice'
+import Theme from './ThemeSlice';
+import Genre from './GenreSlice';
+import Review from './ReviewSlice';
 
 export default configureStore({
 
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
-            serializableCheck: {
-                ignoredActions: ['genre/getGenres/fulfilled']
-            }
+            serializableCheck: false
         }),
     reducer: {
         Theme,
-        Genre
+        Genre,
+        Review
     }
 });
