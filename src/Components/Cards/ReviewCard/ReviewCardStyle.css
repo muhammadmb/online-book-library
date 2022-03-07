@@ -1,0 +1,126 @@
+.review-card{
+    color: #EEE;
+    margin-bottom: 3%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-radius: 5px;
+}
+
+.review-card .info {
+    display: flex;
+    flex-direction: row;
+    width: 18%;
+    overflow: hidden;
+}
+
+.review-card .info .avatar{
+    margin-right: 10%;
+    background-color: #FF5722;
+    width: 50px;
+    height: 50px;
+}
+
+.review-card .info .reviwer-data > h5{
+    text-transform: capitalize;
+    margin: 0;
+    word-wrap: break-all;
+}
+
+.review-card .info .reviwer-data > h5[long="true"] {
+    font-size: 15px;
+}
+
+.review-card .info .reviwer-data .MuiRating-icon {
+    font-size: .8rem;
+}
+
+.review-card .date{
+    color: rgb(104, 104, 104);
+    display: block;
+    font-size: .8rem;
+}
+
+.review-card .review-info {
+    display: flex;
+}
+
+.review-card p{
+    width: 60%;
+    overflow: hidden;
+}
+
+.review-card .voting{
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.review-card .voting .vote{
+    background: none;
+    border: none;
+    outline: none;
+    color: #17A288;
+    display: inline;
+}
+
+.review-card .voting .vote .icon{
+    font-size: 45px;
+}
+
+.review-card .voting .vote .icon.active{
+    color: aqua;
+}
+
+.review-card .voting .vote:hover{
+    color: #17a288bb;
+}
+
+.review-card .voting .vote .counter {
+    color: #EEE;
+}
+
+/* light mode */
+
+.review-card.light {
+    color: #000;
+}
+
+.review-card.light .voting .vote .icon.active{
+    color: #06332b;
+}
+
+.review-card.light .voting .vote:hover{
+    color: #0b5e4e;
+}
+
+.review-card.light .voting .vote .counter{
+    color: #000;
+}
+
+@media (max-width:991px) {
+
+    .review-card{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .review-card .info {
+        width: 100%;
+    }
+
+    .review-card p{
+        width: 100%;
+        padding: 10px;
+    }
+
+    .review-card .voting{
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
