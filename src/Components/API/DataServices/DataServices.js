@@ -7,12 +7,15 @@ class DataServices {
         return axios.get(`${API_URL}/Genres?fields=${fields}&PageNumber=${PageNumber}&PageSize=${PageSize}`);
     }
 
-    GetGenre(id) {
-        return axios.get(`${API_URL}/Genres/${id}`);
+    GetGenre(id, fields) {
+        return axios.get(`${API_URL}/Genres/${id}?fields=${fields}`);
     }
 
-    GetBooksByGenre(genreId, fields, PageNumber, PageSize, sortby) {
-        return axios.get(`${API_URL}/Genres/${genreId}/Books?fields=${fields}&PageNumber=${PageNumber}&PageSize=${PageSize}&sortby=${sortby}`);
+    GetBooksByGenre(parameters) {
+        const { genreId, fields, sortby, yearOfPublish, pageNumber, pageSize } = parameters;
+        return axios.get(
+            `${API_URL}/Genres/${genreId ? genreId : '00000000-0000-0000-0000-000000000000'}/Books?${fields ? `fields=${fields}` : ''}${pageNumber ? `&PageNumber=${pageNumber}` : ''}${pageSize ? `&PageSize=${pageSize}` : ''}${sortby ? `&sortby=${sortby}` : ''}${yearOfPublish ? `&YearOfPublish=${yearOfPublish}` : ''}`
+        )
     }
 
     GetBookSearch(fields, SearchQuery) {
@@ -23,7 +26,12 @@ class DataServices {
         return axios.get(`${API_URL}/Genres/${genreId}/Books/${bookId}`);
     }
 
-    CreateCommentToPost(genreId, bookId, reviewerName, email, reviewDescription, bookRate) {
+    GetReviews(parameters) {
+        const { genreId, bookId, fields, pageNumber, pageSize } = parameters;
+        return axios.get(`${API_URL}/Genres/${genreId}/Books/${bookId}/reviews?${fields ? `fields=${fields}` : ''}${pageNumber ? `&PageNumber=${pageNumber}` : ''}${pageSize ? `&PageSize=${pageSize}` : ''}`);
+    }
+
+    async CreateCommentToPost(genreId, bookId, reviewerName, email, reviewDescription, bookRate) {
 
         const postData = {
             reviewerName,
@@ -32,12 +40,11 @@ class DataServices {
             bookRate,
             bookId
         }
-        return axios.post(`${API_URL}/Genres/${genreId}/Books/${bookId}/reviews`,
+        console.log(postData)
+        return await axios.post(`${API_URL}/Genres/${genreId}/Books/${bookId}/reviews`,
             postData
         ).then((response) => {
-            console.log(response);
         }, (error) => {
-            console.log(error);
         });
     }
 
@@ -53,8 +60,8 @@ class DataServices {
         return axios.get(`${API_URL}/Authors?fields=id,name,bio,pictureUrl,dateOfBirth,dateOfDeath&SearchQuery=${SearchQuery}`);
     }
 
-    UpdateUpVote(genreId, bookId, reviewId, vote, path) {
-        return axios.patch(`${API_URL}/Genres/${genreId}/Books/${bookId}/reviews/${reviewId}`,
+    async UpdateVote(genreId, bookId, reviewId, vote, path) {
+        return await axios.patch(`${API_URL}/Genres/${genreId}/Books/${bookId}/reviews/${reviewId}`,
             [
                 {
                     "op": "replace",

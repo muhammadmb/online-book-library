@@ -29,15 +29,18 @@ const GenreBooks = ({ genreId, genreName }) => {
             {
                 books.length !== 0 &&
                 <>
-                    <h2 className="section">
-                        <Link className="link" to={`/genre/${genreId}`}>
-                            <span
-                                className={Dark ? "" : "light"}
-                            >
-                                {genreName}
-                            </span>
-                        </Link>
-                    </h2>
+                    {
+                        genreName &&
+                        <h2 className="section">
+                            <Link className="link" to={`/genre/${genreId}`}>
+                                <span
+                                    className={Dark ? "" : "light"}
+                                >
+                                    {genreName}
+                                </span>
+                            </Link>
+                        </h2>
+                    }
                     <div className="books">
                         {
                             books.map((item) => (

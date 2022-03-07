@@ -4,7 +4,7 @@ import BooksSlider from '../Slider/Slider';
 import { useDispatch, useSelector } from 'react-redux';
 import { getGenres } from '../../Store/GenreSlice';
 import GenreBooks from '../GenreBooks/GenreBooks';
-import BookLoading from '../BookLoading/BookLoading';
+import BookLoading from '../Loading/BookLoading/BookLoading';
 
 const BookPage = () => {
 
