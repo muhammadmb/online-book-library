@@ -28,7 +28,6 @@
 
 .Genre .SortBy {
     margin: 1% 2% 2% 3%;
-    padding-right: 2%;
     font-size: 20px;
     width: 16%;
     color: #EEE;
@@ -48,6 +47,7 @@
     margin: 3%;
     padding: 1%;
     font-weight: 600;
+    font-size: 15px;
     display: block;
     color: rgb(204, 54, 54);
 }
@@ -99,9 +99,8 @@
     }
 
     .Genre .SortBy {
-        width: 100%;
+        width: 95%;
         border: none;
-        margin-top: 1%;
     }
 
     .Genre .SortBy button {

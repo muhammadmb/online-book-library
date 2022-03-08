@@ -17,12 +17,14 @@
 
 .book-info .information {
     color: #FFF;
-    width: 80%;
+    width: 78%;
+    margin-left: 15px;
 }
 
 .book-info .information > h1 {
     text-transform: uppercase;
     font-size: 24px;
+    margin: 0 0 20px;
 }
 
 .book-info .information > span {
@@ -63,6 +65,10 @@
     line-height: 1.7;
     margin: 0;
     text-indent: 20px;
+}
+
+.book-info .information h4 {
+    font-size: 19px;
 }
 
 .container hr {
@@ -125,7 +131,7 @@
 @media (max-width: 991px){ /* small screen */
 
     .book-info .information{
-        margin-left: 10px;
+        margin-left: 20px;
     }
 
 }

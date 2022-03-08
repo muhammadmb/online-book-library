@@ -28,7 +28,7 @@ const RecommendationBanner = () => {
                 {
                     recommendation.map((item) => (
                         <Link key={item.id} to={`/${`genre/${item.genre.id}/books/${item.id}`}`}>
-                            <img src={item.bookCover} alt={item.title} />
+                            <img src={item.bookCover} alt={item.bookTitle} />
                         </Link>
                     ))
                 }

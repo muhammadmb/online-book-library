@@ -1,25 +1,25 @@
-.Clear{
-    clear: both;
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,900&display=swap');
+
+*{
+    font-family: "Source Sans Pro", serif;
+    margin: 0;
 }
 
-.skeletons{
-    margin: 5% 0;
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
-.skeletons .skeleton-rect{
-    float: left;
-    background-color: #777;
+body {
+    margin: 0;
 }
 
-.skeletons .skeleton-text{
-    float: right;
-    margin-top: 3%;
-    width: calc(100% - 320px);
-    background-color: #777;
-}
-
-.skeleton{
-    background-color: #777;
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .App{
@@ -34,4 +34,44 @@
 
 .light{
     color: #061724;
+}
+
+.MuiRating-root > label {
+    margin: 0;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+.Clear{
+    clear: both;
+}
+
+@media (max-width: 768px) {
+    .container {
+      max-width: 750px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
 }

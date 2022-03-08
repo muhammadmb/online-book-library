@@ -1,6 +1,6 @@
 .genre-card {
-    height: 90px;
-    width: 18%;
+    height: 50px;
+    width: 17%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -57,5 +57,5 @@
 
 @media (max-width:991px) {
     .genre-card {
-        width: calc(48%);
+        width: 40.5%;
     }}

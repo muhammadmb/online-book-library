@@ -5,11 +5,14 @@ import './NavigationBarStyle.css';
 import { Link, NavLink } from 'react-router-dom';
 import NightsStayIcon from '@material-ui/icons/NightsStay';
 import Brightness6Icon from '@material-ui/icons/Brightness6';
+import PublishIcon from '@material-ui/icons/Publish';
+import MenuOpenIcon from '@material-ui/icons/MenuOpen';
 import { ChangeTheme } from '../../Store/ThemeSlice';
 
-const NavigationBar = (props) => {
+const NavigationBar = () => {
 
     const [search, setSearch] = useState("");
+    const [openNav, setOpenNav] = useState(false);
     const { Dark } = useSelector((state) => state.Theme)
     const dispatch = useDispatch();
 
@@ -18,71 +21,89 @@ const NavigationBar = (props) => {
     }
 
     const handelThemeChange = () => {
+        setOpenNav(false);
         dispatch(ChangeTheme());
     }
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark">
-            <div className="container">
+        <nav className={Dark ? "navbar" : "navbar light"}>
 
-                <button className="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarContent"
-                    aria-controls="navbarContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                    style={{ outline: "none" }}
+            <div className='container'>
+                <button
+                    className="navbar-toggler"
+                    onClick={() => { setOpenNav(!openNav) }}
                 >
-                    <span className="navbar-toggler-icon"></span>
+                    <MenuOpenIcon />
                 </button>
-                <div className="collapse navbar-collapse" id="navbarContent">
-                    <NavLink className="navbar-brand" to="/">BookReaders</NavLink>
-                    <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/">Home</NavLink>
+
+                <div className={openNav ? "navbar-content" : "navbar-content hide"}>
+
+                    <ul>
+                        <li>
+                            <NavLink className="navbar-brand" to="/" onClick={() => { setOpenNav(false) }}>BR</NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/Authors">Authors</NavLink>
+                        <li>
+                            <NavLink className="nav-link" to="/" onClick={() => { setOpenNav(false) }} >Home</NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/Books">Books</NavLink>
+                        <li>
+                            <NavLink className="nav-link" to="/Authors" onClick={() => { setOpenNav(false) }}>Authors</NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/Connect">Connect</NavLink>
+                        <li>
+                            <NavLink className="nav-link" to="/Books" onClick={() => { setOpenNav(false) }}>Books</NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/About">About</NavLink>
+                        <li>
+                            <NavLink className="nav-link" to="/Connect" onClick={() => { setOpenNav(false) }}>Connect</NavLink>
+                        </li>
+                        <li>
+                            <NavLink className="nav-link" to="/About" onClick={() => { setOpenNav(false) }}>About</NavLink>
                         </li>
                     </ul>
 
-                    {
-                        !Dark ?
-                            <Brightness6Icon
-                                className="toogelIcon"
-                                fontSize="large"
-                                onClick={handelThemeChange}
-                            />
-                            :
-                            <NightsStayIcon
-                                className="toogelIcon"
-                                fontSize="large"
-                                onClick={handelThemeChange}
-                            />
-                    }
+                    <div className='search-area'>
+                        <div className='icons'>
+                            <NavLink to="/Add-book" onClick={() => { setOpenNav(false) }}>
+                                <PublishIcon className="nav-icon" fontSize="large" />
+                            </NavLink>
 
-                    <form className="form-inline my-2 my-lg-0">
-                        <input
-                            className="form-control mr-sm-2"
-                            type="search"
-                            placeholder="Search"
-                            aria-label="Search"
-                            onChange={handelChange}
-                            value={search}
-                        />
+                            {
+                                !Dark ?
+                                    <Brightness6Icon
+                                        className="nav-icon"
+                                        fontSize="large"
+                                        onClick={handelThemeChange}
+                                    />
+                                    :
+                                    <NightsStayIcon
+                                        className="nav-icon"
+                                        fontSize="large"
+                                        onClick={handelThemeChange}
+                                    />
+                            }
+                        </div>
 
-                        <Link to={`/search/${search}`}><button className="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button></Link>
-                    </form>
+                        <form className="form-inline">
+                            <input
+                                className="form-control"
+                                type="search"
+                                placeholder="Search"
+                                aria-label="Search"
+                                onChange={handelChange}
+                                value={search}
+                            />
+
+                            <Link
+                                to={`/search/${search}`}
+                                onClick={() => { setOpenNav(false) }}
+                            >
+                                <button
+                                    className="search-btn"
+                                    type="submit"
+                                >Search
+                                </button>
+                            </Link>
+                        </form>
+                    </div>
+
                 </div>
             </div>
         </nav>

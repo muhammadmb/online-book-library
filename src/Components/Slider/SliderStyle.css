@@ -37,18 +37,19 @@
     width: 60%;
     height: 60%;
     color: #FFF;
-    margin-left: 3rem;
+    margin-left: 4rem;
     background-color: rgba(0, 0, 0, 0.582);
-    padding: 1%;
+    padding: 1% 5%;
     animation: left;
     animation-duration: 10s;
     animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
 @keyframes left {
     0%{ margin-left: -100%;}
-    10%{ margin-left: unset;}
-    90%{ margin-left: unset;}
+    15%{ margin-left: unset;}
+    85%{ margin-left: unset;}
     100%{ margin-left: -100%;}
 }
 
@@ -92,6 +93,7 @@
 
     .sliderContent {    
         width: 100%;
+        padding: 1%;
     }
 
     .sliderContent h1{

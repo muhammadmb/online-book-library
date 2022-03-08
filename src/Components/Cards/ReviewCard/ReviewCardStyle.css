@@ -24,6 +24,7 @@
 }
 
 .review-card .info .reviwer-data > h5{
+    font-size: 20px;
     text-transform: capitalize;
     margin: 0;
     word-wrap: break-all;
@@ -50,6 +51,7 @@
 .review-card p{
     width: 60%;
     overflow: hidden;
+    margin: 0;
 }
 
 .review-card .voting{
@@ -65,7 +67,8 @@
     border: none;
     outline: none;
     color: #17A288;
-    display: inline;
+    display: flex;
+    align-items: center;
 }
 
 .review-card .voting .vote .icon{
@@ -114,7 +117,7 @@
     }
 
     .review-card p{
-        width: 100%;
+        width: 99%;
         padding: 10px;
     }
 

@@ -23,13 +23,15 @@
 }
 
 .welcome-card h2 {
+    font-size: 40px;
     color: #EEE;
     margin: 8% 4% 0;
 }
 
 .welcome-card h4 {
+    font-size: 25px;
     color: #FFF;
-    margin: 1% 5%;
+    margin: 1% 4%;
 }
 
 .welcome-card img {

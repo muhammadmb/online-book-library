@@ -5,8 +5,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 500px;
+    height: 380px;
     padding: 3%;
+}
+
+.recommendation-banner h4 {
+    font-size: 30px;
+    margin: 0;
 }
 
 .recommendation-books {
@@ -35,7 +40,7 @@
     outline: none;
     color: #FFF;
     border-radius: 5px;
-    padding: 5px 20px;
+    padding: 8px 28px;
     transition: .3s linear;
 }
 
