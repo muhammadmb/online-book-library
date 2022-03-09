@@ -19,7 +19,9 @@ const GenreBooks = ({ genreId, genreName }) => {
                 pageSize: 5
             }
             const result = await DataServices.GetBooksByGenre(parameters);
-            setBooks(result ? result.data : []);
+            if (result.status === 200) {
+                setBooks(result ? result.data : []);
+            }
         }
         GetBooks();
     }, [genreId]);
