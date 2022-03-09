@@ -1,96 +1,119 @@
-.about p{
-    color:#444;
+.about {
+    color:#EEE;
     line-height: 1.7;
 }
 
-.about .AboutHeader{
+.about .about-header {
     background-color: #17A2B8;
     width: 100%;
     height: 180px;
 }
 
-.about .AboutHeader h3{
-    color: #EEE;
+.about .about-header h3 {
     padding: 5%;
     width: 50%;
+    font-size: 30px;
     margin: 0;
 }
 
-.about .ourMessage .card{
+.about .message {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5%;
+}
+
+.about .message .card {
     text-align: center;
-    float: left;
-    margin: 5%;
     width: 35%;
     padding: 2%;
+    margin-top: 7%;
 }
-.about .ourMessage .card img{
+
+.about .message .card img {
     width: 100px;
     height: 100px;
-    margin: 7% auto;
+    object-fit: cover;
     border-radius: 50%;
 }
-.about .ourMessage .card h4{
+
+.about .message .card h4 {
+    font-size: 21px;
     color: #563D7C;
 }
-.about .ourMessage .blogCard{
-    margin-top: 12%;
+
+.about .message span {
+    color: #FFF;
+    font-weight: 600;
+}
+
+.about .message .blog-card {
     background-color: #EEE;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border: none;
 }
 
-.about .ourMessage .blogCard h2{
-    text-align: left;
+.about .message .blog-card h2 {
+    text-align: center;
     color: #563D7C;
-    margin: 5%;
+    margin: 5% 0;
     width: 100%;
 }
-.about .ourMessage .blogCard .blogButton{
+
+.about .message .blog-card p {
+    color: #563D7C;
+}
+
+.about .message .blog-card .blogButton {
     background-color: #563D7C;
     color: #EEE;
     border: 1px solid #EEE;
-    padding: 1.5%;
+    padding: 10px 50px;
     margin-top: 2%;
-    width: 35%;
     border-radius: 5px;
     outline: none;
+    transition: .5s;
 }
-.about .ourMessage .blogCard .blogButton:hover{
+
+.about .message .blog-card .blogButton:hover {
     background-color: #EEE;
     color: #563D7C;
     border: 1px solid #563D7C;
 }
 
-@media (max-width: 767px){  /* phone screen */
+/* light mode */
 
-    .about .AboutHeader h3{
-        width: 70%;
-    }
-    
-    .about .ourMessage .card{
-        width: 90%;
-    }
-    .about .ourMessage .blogCard {
-        margin-top: 1%;
-    }
-    .about .ourMessage .blogCard h2{
-        margin-top: -2%;
-        width: 80%;
-    }
+.about.light {
+    color: #000;
 }
 
-@media (min-width: 768px) and (max-width: 991px){ /* small screen */
-    .about .AboutHeader h3{
-        width: 70%;
-    }
-    
-    .about .ourMessage .card{
+.about.light .message span {
+    color: #563D7C;
+}
+
+.about.light .message .blog-card {
+    background-color: transparent;
+    box-shadow: 2px 2px 5px #563D7C;
+}
+
+@media (max-width: 767px){  /* phone screen */
+
+    .about .about-header h3 {
         width: 90%;
     }
-    .about .ourMessage .blogCard {
-        margin-top: 1%;
+    
+    .about .message {
+        flex-direction: column;
+        align-items: center;
     }
-    .about .ourMessage .blogCard h2{
-        margin-top: -2%;
+
+    .about .message .card {
         width: 80%;
+    }
+
+    .about .message .blog-card {
+        height: 60vh;
+        padding: 8%;
     }
 }
