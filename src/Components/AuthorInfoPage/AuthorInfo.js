@@ -1,91 +1,98 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import DataServices from '../API/DataServices/DataServices';
-import BookCard from '../BookCard/BookCard';
+import BookCard from '../Cards/BookCard/BookCard';
+import GenreList from '../GenreList/GenreList';
+import LoadingAnimation from '../Loading/LoadingAnimation/LoadingAnimation';
 import './AuthorInfoStyle.css';
-import Skeleton from '@material-ui/lab/Skeleton';
 
 const AuthorInfo = (props) => {
 
     const id = props.match.params.Id;
     const [authorData, setAuthorData] = useState([]);
+    const [books, setBooks] = useState([]);
     const [isLoad, setIsLoad] = useState(false);
-    const theme = localStorage.getItem("theme")
+    const { Dark } = useSelector((state) => state.Theme);
+
     useEffect(() => {
         const authorInfo = async () => {
             const result = await DataServices.GetAuthor(id);
             setAuthorData(result.data);
-            setIsLoad(true);
+            if (result.status === 200) {
+                setIsLoad(true);
+            }
         }
         authorInfo();
     }, [id]);
 
+    useEffect(() => {
+        const getBooks = async () => {
+            const parameters = {
+                fields: "id,booktitle,bookCover,genre,bookRating,author",
+                author: id,
+                pageNumber: 1,
+                pageSize: 5
+            }
+            const result = await DataServices.GetBooksByGenre(parameters);
+            setBooks(result.data);
+        }
+        getBooks();
+    }, [id]);
+
     return (
 
-        <div className="container" >
+        <div className={Dark ? "container" : "container light"} >
             {
                 isLoad ?
-                    <div className="author-content">
-                        <div className="img-box" >
-                            <img src={authorData.pictureUrl} alt="author" />
+                    <>
+                        <div className="author-content">
+                            <div className="img-box" >
+                                <img src={authorData.pictureUrl} alt="author" />
+                            </div >
+
+                            <div className={"author-info"}>
+                                <h2>{authorData.name}</h2>
+                                <p>
+                                    {authorData.bio}
+                                </p>
+                                <span>
+                                    {authorData.dateOfBirth != null ? authorData.dateOfBirth.substring(0, 4) : null}
+                                    {authorData.dateOfDeath != null ? authorData.dateOfDeath.substring(0, 4) !== "0001" ? - authorData.dateOfDeath.substring(0, 4) : "" : ""}</span>
+                                <Link
+                                    className="link"
+                                    to={`/genre/${authorData.genre != null ? authorData.genre.id : ""}`}
+                                >
+                                    {authorData.genre != null ? authorData.genre.genreName : null}
+                                </Link>
+                            </div>
                         </div >
 
-                        <div className={theme === 'light' ? "author-info light" : "author-info"}>
-                            <h2>{authorData.name}</h2>
-                            <p>
-                                {authorData.bio}
-                            </p>
-                            <span>
-                                {authorData.dateOfBirth != null ? authorData.dateOfBirth.substring(0, 4) : null}
-                                {authorData.dateOfDeath != null ? authorData.dateOfDeath.substring(0, 4) !== "0001" ? - authorData.dateOfDeath.substring(0, 4) : "" : ""}</span>
-                            <Link
-                                className="link"
-                                to={`/genre/${authorData.genre != null ? authorData.genre.id : ""}`}
-                            >
-                                {authorData.genre != null ? authorData.genre.genreName : null}
-                            </Link>
-                        </div>
+                        <hr />
+                        {
+                            books.length !== 0 &&
+                            <div className="author-books">
+                                <h3 className='side-title'>Books By <span>{authorData.name}</span></h3>
+                                <div className="books-list">
+                                    {
+                                        books.map((item) => (
+                                            <BookCard
+                                                key={item.id}
+                                                data={item}
+                                            />
 
-                        <div className="Clear"></div>
+                                        ))
+                                    }
+                                </div>
+                            </div>
+                        }
 
-                        <hr className={theme === 'light' ? "light" : ""} />
-
-                        <div className={theme === 'light' ? "author-books light" : "author-books"}>
-
-                            {
-                                authorData.books.length !== 0 ?
-                                    <h3>Popular books of <span>{authorData.name}</span></h3>
-                                    :
-                                    null
-                            }
-                            {
-                                authorData.books != null ?
-                                    authorData.books.map((item) => (
-                                        <BookCard
-                                            key={item.id}
-                                            BookTitle={item.bookTitle}
-                                            AuthorName={item.author != null ? item.author.name : null}
-                                            src={item.bookCover}
-                                            page={`/genre/${item.genreId}/books/${item.id}`}
-                                        />
-
-                                    ))
-                                    :
-                                    null
-                            }
-
-                        </div>
-
-                    </div >
+                        <h3 className='side-title'>Related Genres</h3>
+                        <GenreList />
+                    </>
                     :
-                    <div className="skeletons">
-                        <Skeleton className="skeleton-rect" variant="rect" width={285} height={430} />
-                        <Skeleton className="skeleton-text" variant="text" height={60} />
-                        <div className="Clear"></div>
-                    </div>
-
+                    <LoadingAnimation />
             }
-
         </div >
     );
 

@@ -46,9 +46,6 @@ const NavigationBar = () => {
                             <NavLink className="nav-link" to="/" onClick={() => { setOpenNav(false) }} >Home</NavLink>
                         </li>
                         <li>
-                            <NavLink className="nav-link" to="/Authors" onClick={() => { setOpenNav(false) }}>Authors</NavLink>
-                        </li>
-                        <li>
                             <NavLink className="nav-link" to="/Books" onClick={() => { setOpenNav(false) }}>Books</NavLink>
                         </li>
                         <li>

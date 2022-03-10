@@ -12,9 +12,9 @@ class DataServices {
     }
 
     GetBooksByGenre(parameters) {
-        const { genreId, fields, sortby, yearOfPublish, pageNumber, pageSize } = parameters;
+        const { genreId, fields, sortby, yearOfPublish, pageNumber, pageSize, author } = parameters;
         return axios.get(
-            `${API_URL}/Genres/${genreId ? genreId : '00000000-0000-0000-0000-000000000000'}/Books?${fields ? `fields=${fields}` : ''}${pageNumber ? `&PageNumber=${pageNumber}` : ''}${pageSize ? `&PageSize=${pageSize}` : ''}${sortby ? `&sortby=${sortby}` : ''}${yearOfPublish ? `&YearOfPublish=${yearOfPublish}` : ''}`
+            `${API_URL}/Genres/${genreId ? genreId : '00000000-0000-0000-0000-000000000000'}/Books?${author ? `author=${author}` : ''}${fields ? `&fields=${fields}` : ''}${pageNumber ? `&PageNumber=${pageNumber}` : ''}${pageSize ? `&PageSize=${pageSize}` : ''}${sortby ? `&sortby=${sortby}` : ''}${yearOfPublish ? `&YearOfPublish=${yearOfPublish}` : ''}`
         )
     }
 
