@@ -1,28 +1,43 @@
+.search-result {
+    color: #EEE;
+    margin: 24px 0;
+}
+
+.search-result h3 {
+    line-height: 1.3;
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+.side-title {
+    margin: 15px 0 0 5px;
+}
+
+.side-title .link {
+    color: aqua;
+}
+
+.side-title .link:hover {
+    color: rgb(5, 143, 143);
+}
+
+.genres {
+    margin-top: 50px;
+}
+
 .header{
-    color: #EEE;
-    margin: 2% 0 4%;
+    margin-top: 2%;
 }
 
-.Cards{
-    display: flex;
-    flex-wrap: wrap;
+.results-number {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(112, 112, 112);
 }
 
-.searchImg{
-    width: 40%;
-    margin-left: calc(30%);
+/* light mode */
+
+.search-result.light {
+    color: #000;
 }
 
-.alert{
-    justify-self: center;
-    margin: 5% auto;
-    width: 80%;
-    color: #EEE;
-    font-size: 44px;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-.alert.light,
-.header.light{
-    color: #061724;
-}
