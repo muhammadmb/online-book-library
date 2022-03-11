@@ -1,26 +1,27 @@
 .AuthorCard{
-    margin: 2% auto;
-    background-color: #FFF;
-    width: 30%;
+    margin: 2% 1%;
+    background-color: transparent;
+    width: 20%;
     text-align: center;
     color: #000;
     padding-bottom: 2%;
+    box-shadow: 1px 1px 2px #EEE;
+    color: #EEE;
 }
 
 .AuthorCard .cardHeader{
     background-image: url("https://images.unsplash.com/photo-1463320726281-696a485928c7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
     background-size: cover;
-    height: 200px;
+    height: 100px;
 }
 
 .AuthorCard img{
-    padding: 5%;
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     object-fit: cover;
     position: relative;
-    top: 80px;
+    top: 30%;
     background-color: #EEE;
     padding: 2%;
     transition: all .4s ease-in-out;
@@ -40,7 +41,7 @@
 }
 
 .AuthorCard span{
-    color: #000444;
+    color: #646464;
     font-weight: 600;
 }
 
@@ -51,33 +52,37 @@
 
 .AuthorCard .getMore{
     display: block;
-    margin: 3% auto 0;
+    margin: 5% auto 0;
     color: #FFF;
     outline: none;
     border: 1px solid #66A29D;
     background-color: #66A29D;
-        padding: 2% 3%;
+    padding: 2% 3%;
     font-size: large;
     border-radius: 10px;
     transition: all .3s ease-in-out;
 }
 
 .AuthorCard .getMore:hover{
-    background-color: #FFF;
+    background-color: transparent;
     color: #66A29D;
     transform: translateY(-5px);
 }
 
-@media (max-width: 767px){  /* phone screen */
-    .AuthorCard{
-        width: 100%;
-        margin: 6% 0;
-    }
+/* light mode */
+
+.AuthorCard.light {
+    box-shadow: 1px 1px 2px #0C2233;
+    color: #0C2233;
 }
 
-@media (min-width: 768px) and (max-width: 991px){ /* small screen */
-
+@media (max-width: 767px){  /* phone screen */
     .AuthorCard{
         width: 46%;
+        margin: 6% 2% 6% 0;
+    }
+
+    .AuthorCard p{
+        padding: 8px;
     }
 }

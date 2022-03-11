@@ -1,30 +1,39 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './AuthorCardStyle.css';
-const AuthorCard = (props) => {
+
+const AuthorCard = ({ data }) => {
+
+    const { Dark } = useSelector((state) => state.Theme);
 
     return (
-        <div className="AuthorCard" >
+        <div className={Dark ? "AuthorCard" : "AuthorCard light"} >
             <div className="cardHeader">
-                <img src={props.src} alt={props.name} />
+                <img src={data.pictureUrl} alt={data.name} />
             </div>
 
             <h4>
-                {props.name}
+                {data.name}
             </h4>
 
-            <p>
-                {props.description}
-            </p>
-
-            <span>{props.dateOfBirth}</span>
             {
-                props.dateOfDeath ?
-                    <span> - {props.dateOfDeath}</span>
+                data.bio.length > 95 ?
+                    <p>
+                        {data.bio.substring(0, 95) + "..."}
+                    </p>
                     :
-                    null
+                    <p>
+                        {data.bio}
+                    </p>
             }
-            <Link className="link" to={props.page}><button className="getMore">Get More</button></Link>
+
+            <span>{data.dateOfBirth.substring(0, 4)}</span>
+            {
+                (data.dateOfDeath !== null && data.dateOfDeath.substring(0, 4) !== "0001") &&
+                <span> - {data.dateOfDeath.substring(0, 4)}</span>
+            }
+            <Link className="link" to={`/Authors/${data.id}`}><button className="getMore">Get More</button></Link>
         </div>
 
     );
