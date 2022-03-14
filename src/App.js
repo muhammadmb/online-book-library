@@ -14,6 +14,7 @@ import AuthorInfo from './Components/AuthorInfoPage/AuthorInfo';
 import Search from './Components/Search/Search';
 import { useSelector } from "react-redux";
 import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
+import SuggestBooks from './Components/SuggestBook/SuggestBooks';
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
             <Route exact path="/Authors/:Id" component={AuthorInfo} />
             <Route exact path="/search/:SearchQuery" component={Search} />
             <Route exact path="/search" component={Search} />
+            <Route exact path="/Add-book" component={SuggestBooks} />
             <Route path="/*" component={NotFoundPage} />
           </Switch>
         </ScrollToTop>

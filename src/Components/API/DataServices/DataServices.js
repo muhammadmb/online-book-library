@@ -3,8 +3,11 @@ import { API_URL } from '../APIConstants';
 
 class DataServices {
 
-    async GetGenres(PageNumber, PageSize, fields) {
-        return await axios.get(`${API_URL}/Genres?fields=${fields}&PageNumber=${PageNumber}&PageSize=${PageSize}`);
+    async GetGenres(parameters) {
+        const { fields, pageNumber, pageSize, SearchQuery } = parameters;
+        return await axios.get(
+            `${API_URL}/Genres?${fields ? `fields=${fields}` : ''}${SearchQuery ? `&SearchQuery=${SearchQuery}` : ''}${pageNumber ? `&PageNumber=${pageNumber}` : ''}${pageSize ? `&PageSize=${pageSize}` : ''}`
+        );
     }
 
     async GetGenre(id, fields) {
@@ -75,6 +78,14 @@ class DataServices {
             ]
         );
     }
+
+    async AddSuggestBook(suggestBook) {
+        return await axios.post(
+            `${API_URL}/Suggestions`,
+            suggestBook
+        )
+    }
+
 }
 
 export default new DataServices();

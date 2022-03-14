@@ -1,0 +1,143 @@
+.suggest-book {
+    display: flex;
+    justify-content: space-between;
+    padding: 45px 0 20px;
+    color: #EEE;
+}
+
+.suggest-book form {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 8px 25px;
+    width: 45%;
+}
+
+.suggest-book form h1 {
+    margin-bottom: 10px;
+    grid-column: 1/3;
+    color: #F66CA7;
+    text-transform: capitalize;
+}
+
+.suggest-book form input,
+.suggest-book form textarea {
+    outline: none;
+    height: 25px;
+    border-radius: 5px;
+    border: transparent;
+    background-color: #1a415f71;
+    padding: 5px;
+    color: #EEE;
+    font-size: 16px;
+    width: 100%;
+}
+
+.suggest-book form input::placeholder {
+    color:rgb(124, 124, 124);
+}
+
+.suggest-book form textarea {
+    grid-column: 1/3;
+    resize: none;
+    height: 100px;
+}
+
+.suggest-book form .datalist {
+    position: relative;
+}
+
+.suggest-book form .datalist ul {
+    list-style: none;
+    background-color: #EEE;
+    position: absolute;
+    overflow-y: auto;
+    color: #003e70;
+    padding: 5px;
+    width: 100%;
+    border-radius: 5px;
+    transition: .5s;
+}
+
+.suggest-book form .datalist ul li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggest-book form .datalist ul li:hover {
+    background-color: rgb(194, 194, 194);
+}
+
+.suggest-book form input[type='submit'] {
+    grid-column: 1/3;
+    cursor: pointer;
+    display: table;
+    height: 40px;
+    width: 40%;
+    margin: 0 auto;
+    transition: .5s;
+}
+
+.suggest-book form input[type='submit']:hover {
+    background-color: #003e70;
+}
+
+.suggest-book form .error-alert {
+    grid-column: 1/3;
+    padding: 5px;
+    width: 100%;
+}
+
+.suggest-book .message {
+    width: 40%;
+}
+
+.suggest-book .message h2 {
+    color: #F66CA7;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+/* light mode */
+
+.suggest-book.light {
+    color: #0C2233;
+}
+
+.suggest-book.light form input,
+.suggest-book.light form textarea {
+    background-color: transparent;
+    box-shadow: 1px 1px 3px #0C2233;
+    color: #0C2233;
+}
+
+.suggest-book.light form input[type='submit'] {
+    color: #0C2233;
+}
+
+.suggest-book.light form input[type='submit']:hover {
+    color: #EEE;
+}
+
+@media (max-width: 700px) {
+    
+    .suggest-book {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .suggest-book form {
+        grid-template-columns: auto auto;
+        width: 90%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .suggest-book form input {
+        grid-column: 1/3;
+    }
+
+    .suggest-book .message {
+        margin-top: 60px;
+        width: 100%;
+    }
+}
