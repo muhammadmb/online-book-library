@@ -1,99 +1,84 @@
-.footer{
+.footer {
     background-color: #021d3a;
+    padding: 3% 0;
 }
 
-.footer .firstPartation{
-    float: left;
-    width: 50%;
+.footer .container {
+    display: flex;
+    justify-content: space-between;
 }
-.footer .firstPartation > h1{
+
+.footer .information {
+    width: 40%;
+}
+
+.footer .information > h1 {
     color: #EEE;
-    display: inline-block;
-    margin: 4% 0;
-    width: 100%;
+    display: flex;
     text-transform: uppercase;
 }
-.footer .firstPartation > h1 > span{
-    color: rgb(5, 143, 143);
-}
-.footer .firstPartation > h1 .BookIcon{
-    margin-right: 4%;
+
+.footer .information > h1 > span:first-of-type {
+    margin-right: 2%;
 }
 
-.footer .firstPartation > p{
+.footer .information > h1 > span {
+    color: rgb(5, 143, 143);
+}
+
+.footer .information > p {
     width: 85%;
     color: #969696;
     margin-left: 4%;
     line-height: 1.7;
 }
 
-.footer .firstPartation .fa{
-    font-size: 40px;
-    margin: 2.5%;
+.footer .social a {
     color: rgb(5, 143, 143);
 }
 
-.footer .firstPartation .fa:hover{
-    text-decoration: none;
+.footer .social a:hover {
     color: rgb(11, 133, 116, .4);
 }
 
-.footer .MostPopular,
-.footer .AddressPartation{
-    width: 25%;
-    float: left;
+.footer .social,
+.footer .address-partation {
+    width: 20%;
 }
 
-.footer .MostPopular > span,
-.footer .AddressPartation > span{
+.footer .address-partation > span {
     display: block;
     color: #969696;
-    margin-left: 10%;
 }
 
-.footer h3{
+.footer h3 {
     color: #EEE;
-    margin: 15% 8% 11%;
     font-size: 20px;
+    margin-bottom: 10%;
 }
 
-.footer .footerParagraph{
+.footer .rights-partation {
     color: #FFF;
     text-align: center;
-    margin: 2%;
+    padding: 2%;
 }
 
-@media (max-width: 991px){ /* small screen */
+@media (max-width: 991px) { /* small screen */
     
-    .footer .firstPartation{
-        float: none;
-        width: 100%;
-    }
-    .footer .firstPartation > h1{
-        margin: 4% 0;
-        width: 100%;
-        font-size: 30px;
+    .footer .container {
+        flex-direction: column;
     }
 
-    .footer .firstPartation > p{
-        width: 95%;
-        line-height: 1.5;
-    }
-
-    .footer .firstPartation .fa{
-        font-size: 30px;
-    }
-
-    .footer .MostPopular,
-    .footer .AddressPartation{
+    .footer .information {
         width: 100%;
     }
 
-    .footer h3{
-        margin: 7% 0 2%;
+    .footer h3 {
+        margin: 4% 0 2%;
     }
-    
-    .footer .footerParagraph{
-        margin: 4%;
+
+    .footer .social,
+    .footer .address-partation {
+        width: 100%;
     }
 }
