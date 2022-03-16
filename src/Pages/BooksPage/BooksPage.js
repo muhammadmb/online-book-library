@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import './BookPageStyle.css';
-import BooksSlider from '../Slider/Slider';
+import BooksSlider from '../../Components/Slider/Slider';
 import { useDispatch, useSelector } from 'react-redux';
 import { getGenres } from '../../Store/GenreSlice';
-import GenreBooks from '../GenreBooks/GenreBooks';
-import BookLoading from '../Loading/BookLoading/BookLoading';
+import GenreBooks from '../../Components/GenreBooks/GenreBooks';
+import BookLoading from '../../Components/Loading/BookLoading/BookLoading';
 
 const BookPage = () => {
 

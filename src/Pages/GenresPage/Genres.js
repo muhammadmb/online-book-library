@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './GenresStyle.css';
-import BookCard from '../Cards/BookCard/BookCard';
+import BookCard from '../../Components/Cards/BookCard/BookCard';
 import Pagination from '@material-ui/lab/Pagination';
-import DataServices from '../API/DataServices/DataServices';
+import DataServices from '../../API/DataServices/DataServices';
 import { useSelector } from 'react-redux';
 
 const Genres = (props) => {

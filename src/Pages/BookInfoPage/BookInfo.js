@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import Rating from '@material-ui/lab/Rating';
 import Box from '@material-ui/core/Box';
 import './BookInfoStyle.css';
-import BooksRate from '../BooksRate/BooksRate';
-import CreateComment from '../CreateComment/CreateComment';
-import Reviews from '../ReviewsList/Reviews';
-import DataServices from '../API/DataServices/DataServices';
+import BooksRate from '../../Components/BooksRate/BooksRate';
+import CreateComment from '../../Components/CreateComment/CreateComment';
+import Reviews from '../../Components/ReviewsList/Reviews';
+import DataServices from '../../API/DataServices/DataServices';
 import { useSelector } from 'react-redux';
-import GenreList from '../GenreList/GenreList';
-import GenreBooks from '../GenreBooks/GenreBooks';
-import BookLoading from '../Loading/BookLoading/BookLoading';
+import GenreList from '../../Components/GenreList/GenreList';
+import GenreBooks from '../../Components/GenreBooks/GenreBooks';
+import BookLoading from '../../Components/Loading/BookLoading/BookLoading';
 
 const BookInfo = (props) => {
 

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import DataServices from '../API/DataServices/DataServices';
-import AuthorCard from '../AuthorCard/AuthorCard';
-import BookCard from '../Cards/BookCard/BookCard';
-import GenreList from '../GenreList/GenreList';
+import DataServices from '../../API/DataServices/DataServices';
+import AuthorCard from '../../Components/Cards/AuthorCard/AuthorCard';
+import BookCard from '../../Components/Cards/BookCard/BookCard';
+import GenreList from '../../Components/GenreList/GenreList';
 import './Search.css';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';

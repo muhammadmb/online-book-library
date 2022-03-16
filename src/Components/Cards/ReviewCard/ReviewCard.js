@@ -4,7 +4,7 @@ import Avatar from '@material-ui/core/Avatar';
 import Rating from '@material-ui/lab/Rating';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import DataServices from '../../API/DataServices/DataServices';
+import DataServices from '../../../API/DataServices/DataServices';
 import { useSelector } from 'react-redux';
 
 const ReviewCard = ({ content, genreId }) => {

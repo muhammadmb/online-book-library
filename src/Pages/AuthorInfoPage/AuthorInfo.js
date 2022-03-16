@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import DataServices from '../API/DataServices/DataServices';
-import BookCard from '../Cards/BookCard/BookCard';
-import GenreList from '../GenreList/GenreList';
-import LoadingAnimation from '../Loading/LoadingAnimation/LoadingAnimation';
+import DataServices from '../../API/DataServices/DataServices';
+import BookCard from '../../Components/Cards/BookCard/BookCard';
+import GenreList from '../../Components/GenreList/GenreList';
+import LoadingAnimation from '../../Components/Loading/LoadingAnimation/LoadingAnimation';
 import './AuthorInfoStyle.css';
 
 const AuthorInfo = (props) => {

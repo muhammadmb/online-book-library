@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './RecommendationBannerStyle.css';
 import { Link } from 'react-router-dom';
-import DataServices from '../API/DataServices/DataServices';
+import DataServices from '../../API/DataServices/DataServices';
 
 const RecommendationBanner = () => {
 

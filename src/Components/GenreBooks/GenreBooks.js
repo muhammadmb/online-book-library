@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import DataServices from '../API/DataServices/DataServices';
+import DataServices from '../../API/DataServices/DataServices';
 import BookCard from '../Cards/BookCard/BookCard';
 import './GenreBooksStyle.css';
 

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from "react-redux";
-import DataServices from "../API/DataServices/DataServices";
+import DataServices from "../../API/DataServices/DataServices";
 import './HomeStyle.css';
-import BookCard from '../Cards/BookCard/BookCard';
-import HomeBanner from '../HomeBanner/HomeBanner';
-import BookLoading from '../Loading/BookLoading/BookLoading';
-import RecommendationBanner from '../RecommendationBanner/RecommendationBanner';
-import GenreList from '../GenreList/GenreList';
+import BookCard from '../../Components/Cards/BookCard/BookCard';
+import HomeBanner from '../../Components/HomeBanner/HomeBanner';
+import BookLoading from '../../Components/Loading/BookLoading/BookLoading';
+import RecommendationBanner from '../../Components/RecommendationBanner/RecommendationBanner';
+import GenreList from '../../Components/GenreList/GenreList';
 
 const Home = () => {
 

@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
-import { API_URL } from '../Components/API/APIConstants';
+import { API_URL } from '../API/APIConstants';
 
 export const getReviews = createAsyncThunk(
     "reviews/getReviews",

@@ -1,20 +1,20 @@
 import React from 'react';
 import './App.css'
-import About from './Components/About/About.js';
-import NavBar from './Components/NavBar/NavigationBar.js';
-import Home from './Components/Home/Home.js';
-import Footer from './Components/Footer/Footer.js';
-import BookPage from './Components/BooksPage/BooksPage';
+import About from './Pages/About/About.js';
+import NavBar from './Layouts/NavBar/NavigationBar.js';
+import Home from './Pages/Home/Home.js';
+import Footer from './Layouts/Footer/Footer.js';
+import BookPage from './Pages/BooksPage/BooksPage';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Contact from './Components/Connect/ContactUs.js';
-import BookInfo from './Components/BookInfoPage/BookInfo.js';
-import NotFoundPage from './Components/NotFoundPage/NotFoundPage.js';
-import Genres from './Components/GenresPage/Genres';
-import AuthorInfo from './Components/AuthorInfoPage/AuthorInfo';
-import Search from './Components/Search/Search';
+import Contact from './Pages/Connect/ContactUs.js';
+import BookInfo from './Pages/BookInfoPage/BookInfo.js';
+import NotFoundPage from './Pages/NotFoundPage/NotFoundPage.js';
+import Genres from './Pages/GenresPage/Genres';
+import AuthorInfo from './Pages/AuthorInfoPage/AuthorInfo';
+import Search from './Pages/Search/Search';
 import { useSelector } from "react-redux";
 import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
-import SuggestBooks from './Components/SuggestBook/SuggestBooks';
+import SuggestBooks from './Pages/SuggestBook/SuggestBooks';
 
 function App() {
 
