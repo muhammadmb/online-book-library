@@ -8,7 +8,7 @@ import ReviewCard from '../Cards/ReviewCard/ReviewCard';
 const Reviews = ({ genreId, bookId }) => {
 
     const Dispatch = useDispatch();
-    const { reviews, headers } = useSelector((state) => state.Review);
+    const { reviews, headers, isReviewsLoading } = useSelector((state) => state.Review);
     const [reviewPageNumber, setReviewPageNumber] = useState(1);
     const xPagination = headers["x-pagination"] !== undefined ? JSON.parse(headers["x-pagination"]) : {};
 
@@ -25,36 +25,42 @@ const Reviews = ({ genreId, bookId }) => {
     return (
         <>
             {
-                reviews.length !== 0 ?
+                reviews.length > 0 && !isReviewsLoading ?
                     reviews.map((item) => (
                         <div key={item.id}>
                             <ReviewCard content={item} genreId={genreId} />
                         </div>
                     ))
                     :
-                    <LoadingAnimation />
+                    isReviewsLoading ?
+                        <LoadingAnimation />
+                        :
+                        null
             }
 
             <div className='nav-buttons'>
-                <button
-                    className='nav-btn previous'
-                    onClick={() => setReviewPageNumber(reviewPageNumber - 1)}
-                    disabled={!xPagination.hasPrevious}
-                >
-                    Previous
-                </button>
+                {
+                    reviews.length > 0 && !isReviewsLoading &&
+                    <>
+                        <button
+                            className='nav-btn previous'
+                            onClick={() => setReviewPageNumber(reviewPageNumber - 1)}
+                            disabled={!xPagination.hasPrevious}
+                        >
+                            Previous
+                        </button>
 
-                <button
-                    className='nav-btn next'
-                    onClick={() => setReviewPageNumber(reviewPageNumber + 1)}
-                    disabled={!xPagination.hasNext}
-                >
-                    Next
-                </button>
+                        <button
+                            className='nav-btn next'
+                            onClick={() => setReviewPageNumber(reviewPageNumber + 1)}
+                            disabled={!xPagination.hasNext}
+                        >
+                            Next
+                        </button>
+                    </>
+                }
             </div>
         </>
-
-
     );
 }
 

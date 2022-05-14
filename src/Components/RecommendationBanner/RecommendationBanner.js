@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './RecommendationBannerStyle.css';
 import { Link } from 'react-router-dom';
 import DataServices from '../../API/DataServices/DataServices';
+import BookLoading from '../../Components/Loading/BookLoading/BookLoading';
 
 const RecommendationBanner = () => {
 
@@ -24,15 +25,22 @@ const RecommendationBanner = () => {
     return (
         <div className='recommendation-banner'>
             <h4>THE BEST BOOKS ARE WAITING FOR YOU</h4>
-            <div className='recommendation-books'>
-                {
-                    recommendation.map((item) => (
-                        <Link key={item.id} to={`/${`genre/${item.genre.id}/books/${item.id}`}`}>
-                            <img src={item.bookCover} alt={item.bookTitle} />
-                        </Link>
-                    ))
-                }
-            </div>
+
+            {
+                recommendation.length < 1 ?
+                    <BookLoading />
+                    :
+                    <div className='recommendation-books'>
+                        {
+                            recommendation.map((item) => (
+                                <Link key={item.id} to={`/${`genre/${item.genre.id}/books/${item.id}`}`}>
+                                    <img src={item.bookCover} alt={item.bookTitle} />
+                                </Link>
+                            ))
+                        }
+                    </div>
+            }
+
             <Link to="/Books" >
                 <button>Discover more</button>
             </Link>
