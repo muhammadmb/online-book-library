@@ -2,33 +2,20 @@
 Online book library build in React with backend build in ASP.NET core 3.1, It made to display books, authors, Genres and their information.
 It allows clients to know everything about the book like the author, publisher, date of publish and brief of the book.
 
-## Libraries and Frameworks for Frontend
+# Quick start
+- run [API](https://github.com/muhammadmb/BookLibraryAPI)
 
-React Router Dom
+This module is distributed via [yarn](https://yarnpkg.com/) which is bundled with [node](https://nodejs.org/) and should be installed as one of your project's `dependencies`:
+```bash
+	yarn start
+```
+
+## Libraries
+
+[React Router Dom](https://reactrouter.com/docs/en/v6/getting-started/overview)
 
 [Hooks](https://reactjs.org/docs/hooks-intro.html)
 
 [Material UI](https://material-ui.com/)
 
-[Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
-
-[AOS](https://michalsnik.github.io/aos/)
-
-[Github pages](https://pages.github.com/)
-
 [axios](https://github.com/axios/axios)
-
-## Frameworks and Libraries for Backend
-
-[ASP.NET Core 3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1)
-
-[Entity Framework Core](https://docs.microsoft.com/en-us/ef/core/) for data access
-
-[AutoMapper](https://automapper.org/) for mapping resources and models
-
-[SQL Server](https://www.microsoft.com/en-us/sql-server)
-
-[Azure](https://azure.microsoft.com/en-us/) for cloud services
-
-## live dimo
-[BOOKREADERS](https://muhammadmb.github.io/online-book-library)
